@@ -29,7 +29,11 @@ export default function Home() {
                     <motion.p
                       initial={{ y: "100%" }}
                       animate={{ y: "0%" }}
-                      transition={{ duration: 0.5, ease: "easeOut" }}
+                      transition={{
+                        duration: 0.5,
+                        delay: 0.1,
+                        ease: "easeOut",
+                      }}
                       className="font-medium tracking-tight"
                     >
                       {tech}
@@ -61,7 +65,7 @@ export default function Home() {
                   animate={{ y: "0%" }}
                   transition={{
                     duration: 0.5,
-                    delay: index * 0.025,
+                    delay: index * 0.025 + 0.1,
                     ease: "easeOut",
                   }}
                   key={line}
@@ -89,7 +93,7 @@ export default function Home() {
               key={currentProject.title}
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
+              transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
               className="text-[145px] font-semibold leading-none tracking-tighter"
             >
               {currentProject.year}
@@ -111,9 +115,9 @@ export default function Home() {
         </div>
         <ProjectList />
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: "2%" }}
+          initial={{ opacity: 0, scale: 0.97, y: 12 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.3, delay: 0.25, ease: "easeOut" }}
+          transition={{ duration: 0.3, delay: 0.4, ease: "easeOut" }}
           className="w-full h-[700px] p-3 bg-neutral-900 rounded-xl"
         >
           <div className="w-full h-full bg-neutral-800 rounded-lg" />

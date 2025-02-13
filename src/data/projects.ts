@@ -9,6 +9,28 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Linkstack",
+    stack: [
+      "Next.js",
+      "Tailwind CSS",
+      "GSAP",
+      "Lenis",
+      "Vercel",
+      "Supabase",
+      "Contentful",
+      "Various APIs",
+    ],
+    summary: [
+      "Designed and developed a free link-in-bio platform tailored for ",
+      "DJs. As part of the Trackstack ecosystem, the platform ",
+      "seamlessly integrates with their product suite, including demo ",
+      "submissions to the Inbox platform.",
+    ],
+    year: 2024,
+    video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    link: "https://www.kick-bass.com",
+  },
+  {
     title: "Presave",
     stack: ["Figma"],
     summary: [
@@ -31,28 +53,6 @@ export const projects: Project[] = [
       "developer on the product team.",
     ],
     year: 2025,
-    video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    link: "https://www.kick-bass.com",
-  },
-  {
-    title: "Linkstack",
-    stack: [
-      "Next.js",
-      "Tailwind CSS",
-      "GSAP",
-      "Lenis",
-      "Vercel",
-      "Supabase",
-      "Contentful",
-      "Various APIs",
-    ],
-    summary: [
-      "Designed and developed a free link-in-bio platform tailored for ",
-      "DJs. As part of the Trackstack ecosystem, the platform ",
-      "seamlessly integrates with their product suite, including demo ",
-      "submissions to the Inbox platform.",
-    ],
-    year: 2024,
     video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     link: "https://www.kick-bass.com",
   },

@@ -1,12 +1,27 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useState, useRef } from "react";
+import { cubicBezier } from "motion";
+import useOnClickOutside from "@/hooks/useOnClickOutside";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const navbarRef = useRef<HTMLElement>(null!);
+  const easing = cubicBezier(0.83, 0, 0.17, 1);
+
+  useOnClickOutside(navbarRef, () => setIsOpen(false));
+
   return (
-    <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-[450px] bg-neutral-900 rounded-lg">
+    <nav
+      ref={navbarRef}
+      className="fixed top-6 left-1/2 -translate-x-1/2 w-[450px] bg-neutral-900 rounded-lg"
+    >
       <div className="flex w-full justify-between items-center border-b border-neutral-800 px-3 h-8">
-        <button className="text-sm font-medium tracking-tight text-neutral-100">
+        <button
+          onClick={() => setIsOpen(true)}
+          className="text-sm font-medium tracking-tight text-neutral-100"
+        >
           About
         </button>
         <button className="absolute left-1/2 -translate-x-1/2 text-sm font-medium tracking-tight text-neutral-100">
@@ -18,6 +33,27 @@ export default function Navbar() {
       </div>
 
       <Slider />
+
+      <motion.div
+        initial={{ height: 0 }}
+        animate={{ height: isOpen ? "auto" : 0 }}
+        transition={{ duration: 0.4, ease: easing }}
+        className="overflow-hidden"
+      >
+        <div className="flex flex-col gap-2 px-3 pt-8 pb-4">
+          <h3 className="text-xs font-medium font-mono uppercase tracking-wider text-neutral-400">
+            About
+          </h3>
+          <p className="text-sm text-neutral-100">
+            I'm a full-stack developer based in Los Angeles, CA, currently
+            working at Trackstack. I consider myself a design engineer because
+            of my meticulous eye for detail and passion for crafting beautiful
+            user experiences. But don&apos;t get me wrong—I&apos;m also
+            well-versed in building complex, high-performance, and scalable web
+            applications.
+          </p>
+        </div>
+      </motion.div>
     </nav>
   );
 }
