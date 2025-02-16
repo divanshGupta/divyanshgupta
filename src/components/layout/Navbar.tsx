@@ -40,17 +40,23 @@ export default function Navbar() {
         transition={{ duration: 0.4, ease: easing }}
         className="overflow-hidden"
       >
-        <div className="flex flex-col gap-2 px-3 pt-8 pb-4">
+        <div className="flex flex-col gap-2 px-3 py-4">
           <h3 className="text-xs font-medium font-mono uppercase tracking-wider text-neutral-400">
             About
           </h3>
           <p className="text-sm text-neutral-100">
             I'm a full-stack developer based in Los Angeles, CA, currently
-            working at Trackstack. I consider myself a design engineer because
-            of my meticulous eye for detail and passion for crafting beautiful
-            user experiences. But don&apos;t get me wrong—I&apos;m also
-            well-versed in building complex, high-performance, and scalable web
-            applications.
+            working at{" "}
+            <a
+              href="https://trackstack.app"
+              className="hover:text-neutral-400 transition-colors"
+            >
+              Trackstack
+            </a>
+            . I consider myself a design engineer because of my meticulous eye
+            for detail and passion for crafting beautiful user experiences. But
+            don&apos;t get it twisted — I&apos;m also well-versed in building
+            complex, high-performance, and scalable web applications.
           </p>
         </div>
       </motion.div>
@@ -68,8 +74,8 @@ function Slider() {
         <motion.p
           initial={{ x: 0 }}
           animate={{ x: "-100%" }}
-          transition={{ duration: 24, ease: "linear", repeat: Infinity }}
-          className="text-[11px] uppercase font-mono tracking-wider text-neutral-400 whitespace-nowrap pr-1"
+          transition={{ duration: 40, ease: "linear", repeat: Infinity }}
+          className="text-xs typeface-offbit-dotbold tracking-widest text-white uppercase whitespace-nowrap pr-1.5"
         >
           React, Next.js, TypeScript, Tailwind CSS, Prisma, Vercel, GSAP,
           Motion, Contentful, Supabase, Python, Figma,
@@ -77,8 +83,8 @@ function Slider() {
         <motion.p
           initial={{ x: 0 }}
           animate={{ x: "-100%" }}
-          transition={{ duration: 24, ease: "linear", repeat: Infinity }}
-          className="text-[11px] uppercase font-mono tracking-wider text-neutral-400 whitespace-nowrap pr-1"
+          transition={{ duration: 40, ease: "linear", repeat: Infinity }}
+          className="text-xs typeface-offbit-dotbold tracking-widest text-white uppercase whitespace-nowrap pr-1.5"
         >
           React, Next.js, TypeScript, Tailwind CSS, Prisma, Vercel, GSAP,
           Motion, Contentful, Supabase, Python, Figma,

@@ -1,4 +1,5 @@
 import Navbar from "./Navbar";
+import LiveTime from "../ui/LiveTime";
 
 export default function Header() {
   return (
@@ -7,9 +8,7 @@ export default function Header() {
         Design Engineer
       </p>
       <Navbar />
-      <p className="fixed top-6 right-6 font-medium tracking-tight">
-        Los Angeles, CA 9:33 AM
-      </p>
+      <LiveTime />
     </header>
   );
 }
