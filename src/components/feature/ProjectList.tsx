@@ -25,7 +25,7 @@ export default function ProjectList() {
             }`}
           >
             <span
-              className={`text-xs typeface-lcd tracking-wider uppercase group-hover:text-neutral-800 transition-colors duration-300 ${
+              className={`text-[13px] typeface-offbit-dotbold tracking-widest uppercase group-hover:text-neutral-800 transition-colors duration-300 ${
                 currentProject.title === project.title
                   ? "text-neutral-800"
                   : "text-neutral-400"

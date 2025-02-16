@@ -8,7 +8,7 @@ export default function Home() {
   const { currentProject } = useProjectStore();
 
   return (
-    <main className="py-52 p-6">
+    <main className="pt-52 p-6">
       <div className="grid grid-cols-12 gap-8 mb-12">
         <div className="col-span-3">
           <div className="overflow-hidden mb-2">
@@ -16,7 +16,7 @@ export default function Home() {
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
               transition={{ duration: 0.25, ease: "easeOut" }}
-              className="text-xs font-mono font-medium text-neutral-600 tracking-wider uppercase"
+              className="text-[13px] typeface-offbit-dotbold text-neutral-700 tracking-widest uppercase"
             >
               Built With
             </motion.h2>
@@ -51,7 +51,7 @@ export default function Home() {
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
               transition={{ duration: 0.25, ease: "easeOut" }}
-              className="text-xs font-mono font-medium text-neutral-600 tracking-wider uppercase"
+              className="text-[13px] typeface-offbit-dotbold text-neutral-700 tracking-widest uppercase"
             >
               Summary
             </motion.h2>
@@ -83,7 +83,7 @@ export default function Home() {
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
               transition={{ duration: 0.25, ease: "easeOut" }}
-              className="text-xs font-mono font-medium text-neutral-600 tracking-wider uppercase"
+              className="text-[13px] typeface-offbit-dotbold text-neutral-700 tracking-widest uppercase"
             >
               Year
             </motion.h2>
@@ -108,7 +108,7 @@ export default function Home() {
             initial={{ y: "100%" }}
             animate={{ y: "0%" }}
             transition={{ duration: 0.25, delay: 0.2, ease: "easeOut" }}
-            className="text-xs font-mono font-medium text-neutral-600 tracking-wider uppercase"
+            className="text-[13px] typeface-offbit-dotbold text-neutral-700 tracking-widest uppercase"
           >
             Select Project
           </motion.h2>
@@ -118,9 +118,15 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.97, y: 12 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.4, ease: "easeOut" }}
-          className="w-full h-[700px] p-3 bg-neutral-900 rounded-xl"
+          className="w-full h-[700px] p-3 bg-neutral-900 rounded-xl relative overflow-hidden"
         >
-          <div className="w-full h-full bg-neutral-800 rounded-lg" />
+          <video
+            src={currentProject.video}
+            className="w-full h-full bg-neutral-800 rounded-lg object-cover object-center"
+            autoPlay
+            muted
+            loop
+          />
         </motion.div>
       </div>
     </main>

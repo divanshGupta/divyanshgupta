@@ -7,12 +7,12 @@
 }
 
 @font-face {
-  font-family: "LCD";
-  src: url("/fonts/lcddot.ttf") format("truetype");
+  font-family: "OffBit-DotBold";
+  src: url("/fonts/OffBit-DotBold.otf") format("opentype");
 }
 
-.typeface-lcd {
-  font-family: "LCD", sans-serif;
+.typeface-offbit-dotbold {
+  font-family: "OffBit-DotBold", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
