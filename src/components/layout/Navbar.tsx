@@ -5,6 +5,7 @@ import { useState, useRef } from "react";
 import { cubicBezier } from "motion";
 import useOnClickOutside from "@/hooks/useOnClickOutside";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function Navbar() {
   const [activeMenu, setActiveMenu] = useState<"about" | "contact" | null>(
@@ -28,9 +29,13 @@ export default function Navbar() {
         >
           About
         </button>
-        <button className="absolute left-1/2 -translate-x-1/2 text-sm font-medium tracking-tight text-neutral-100 hover:text-neutral-400 transition-colors">
+        <Link
+          href={pathname === "/" ? "/lab" : "/"}
+          onClick={() => setActiveMenu(null)}
+          className="absolute left-1/2 -translate-x-1/2 text-sm font-medium tracking-tight text-neutral-100 hover:text-neutral-400 transition-colors"
+        >
           {pathname === "/" ? "Lab" : "Home"}
-        </button>
+        </Link>
         <button
           onClick={() =>
             setActiveMenu(activeMenu === "contact" ? null : "contact")

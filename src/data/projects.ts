@@ -27,7 +27,8 @@ export const projects: Project[] = [
       "submissions to the Inbox platform.",
     ],
     year: 2024,
-    video: "https://framerusercontent.com/assets/xczsI9Xq2X6OvsvU8NVUiUJUXuA.mp4",
+    video:
+      "https://framerusercontent.com/assets/xczsI9Xq2X6OvsvU8NVUiUJUXuA.mp4",
     link: "https://www.kick-bass.com",
   },
   {
@@ -40,7 +41,8 @@ export const projects: Project[] = [
       "optimize visitor-to-paid-member conversion.",
     ],
     year: 2025,
-    video: "https://framerusercontent.com/assets/xczsI9Xq2X6OvsvU8NVUiUJUXuA.mp4",
+    video:
+      "https://framerusercontent.com/assets/xczsI9Xq2X6OvsvU8NVUiUJUXuA.mp4",
     link: "https://www.kick-bass.com",
   },
   {
@@ -53,7 +55,8 @@ export const projects: Project[] = [
       "developer on the product team.",
     ],
     year: 2025,
-    video: "https://framerusercontent.com/assets/xczsI9Xq2X6OvsvU8NVUiUJUXuA.mp4",
+    video:
+      "https://framerusercontent.com/assets/xczsI9Xq2X6OvsvU8NVUiUJUXuA.mp4",
     link: "https://www.kick-bass.com",
   },
   {
@@ -75,7 +78,8 @@ export const projects: Project[] = [
       "optimize visitor-to-paid-member conversion.",
     ],
     year: 2024,
-    video: "https://framerusercontent.com/assets/xczsI9Xq2X6OvsvU8NVUiUJUXuA.mp4",
+    video:
+      "https://framerusercontent.com/assets/xczsI9Xq2X6OvsvU8NVUiUJUXuA.mp4",
     link: "https://www.kick-bass.com",
   },
   {
@@ -87,7 +91,8 @@ export const projects: Project[] = [
       "releases, past performances, and upcoming tour dates.",
     ],
     year: 2024,
-    video: "https://framerusercontent.com/assets/xczsI9Xq2X6OvsvU8NVUiUJUXuA.mp4",
+    video:
+      "https://framerusercontent.com/assets/xczsI9Xq2X6OvsvU8NVUiUJUXuA.mp4",
     link: "https://www.itsthewestend.com",
   },
   {
@@ -100,7 +105,8 @@ export const projects: Project[] = [
       "user experience. I continue to maintain and improve the site.",
     ],
     year: 2023,
-    video: "https://framerusercontent.com/assets/xczsI9Xq2X6OvsvU8NVUiUJUXuA.mp4",
+    video:
+      "https://framerusercontent.com/assets/xczsI9Xq2X6OvsvU8NVUiUJUXuA.mp4",
     link: "https://www.delivrd.live",
   },
 ];
