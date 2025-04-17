@@ -4,7 +4,7 @@
 
 * {
   @apply m-0 p-0 box-border;
-  cursor: none;
+  /* cursor: none; */
 }
 
 @font-face {
@@ -29,3 +29,6 @@
   font-style: normal;
 }
 
+::selection {
+  @apply bg-[#caf182];
+}

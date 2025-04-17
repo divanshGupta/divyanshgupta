@@ -1,6 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import ProjectList from "@/components/feature/ProjectList";
+import SplitType from "split-type";
 import { useProjectStore } from "@/lib/zustand/stores/project-store";
 import { motion } from "motion/react";
 
@@ -15,16 +17,18 @@ export default function Home() {
             <motion.h2
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
-              transition={{ duration: 0.25, ease: "easeOut" }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
               className="text-[13px] typeface-offbit-dotbold text-neutral-700 tracking-widest uppercase"
             >
-              Built With
+              {currentProject.projectType === "development"
+                ? "Built With"
+                : "Services"}
             </motion.h2>
           </div>
           <div key={currentProject.title} className="columns-2 gap-4">
             <ul className="space-y-px">
-              {currentProject.stack.map((tech) => (
-                <li key={tech} className="break-inside-avoid">
+              {currentProject.details.map((item) => (
+                <li key={item} className="break-inside-avoid">
                   <div className="overflow-hidden">
                     <motion.p
                       initial={{ y: "100%" }}
@@ -36,7 +40,7 @@ export default function Home() {
                       }}
                       className="font-medium tracking-tight"
                     >
-                      {tech}
+                      {item}
                     </motion.p>
                   </div>
                 </li>
@@ -50,12 +54,13 @@ export default function Home() {
             <motion.h2
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
-              transition={{ duration: 0.25, ease: "easeOut" }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
               className="text-[13px] typeface-offbit-dotbold text-neutral-700 tracking-widest uppercase"
             >
               Summary
             </motion.h2>
           </div>
+
           <div>
             {currentProject.summary.map((line, index) => (
               <div key={index} className="overflow-hidden">
@@ -82,7 +87,7 @@ export default function Home() {
             <motion.h2
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
-              transition={{ duration: 0.25, ease: "easeOut" }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
               className="text-[13px] typeface-offbit-dotbold text-neutral-700 tracking-widest uppercase"
             >
               Year
@@ -107,7 +112,7 @@ export default function Home() {
           <motion.h2
             initial={{ y: "100%" }}
             animate={{ y: "0%" }}
-            transition={{ duration: 0.25, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.3, delay: 0.2, ease: "easeOut" }}
             className="text-[13px] typeface-offbit-dotbold text-neutral-700 tracking-widest uppercase"
           >
             Select Project
@@ -117,16 +122,25 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0, scale: 0.97, y: 12 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.3, delay: 0.4, ease: "easeOut" }}
-          className="w-full h-[700px] p-3 bg-neutral-900 rounded-xl relative overflow-hidden"
+          transition={{ duration: 0.3, delay: 0.3, ease: "easeOut" }}
+          className="w-full h-[800px] p-3 bg-neutral-900 rounded-xl relative overflow-hidden z-0"
         >
-          <video
-            src={currentProject.video}
-            className="w-full h-full bg-neutral-800 rounded-lg object-cover object-center"
-            autoPlay
-            muted
-            loop
-          />
+          {currentProject.fileType === "video" ? (
+            <video
+              src={currentProject.fileUrl}
+              className="w-full h-full rounded-lg object-cover object-center"
+              autoPlay
+              muted
+              loop
+            />
+          ) : (
+            <Image
+              src={currentProject.fileUrl}
+              alt={currentProject.title}
+              fill
+              className="w-full h-full rounded-lg object-cover"
+            />
+          )}
         </motion.div>
       </div>
     </main>

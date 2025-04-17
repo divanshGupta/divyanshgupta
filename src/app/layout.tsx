@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "../components/layout/Header";
 import { LenisContext } from "../context/LenisContext";
 import Cursor from "../components/ui/Cursor";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -30,7 +31,7 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-100 text-neutral-900`}
         >
-          <Cursor />
+          {/* <Cursor /> */}
           <Header />
           {children}
         </body>

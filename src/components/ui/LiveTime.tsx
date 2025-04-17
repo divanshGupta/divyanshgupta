@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { motion } from "motion/react";
 
 export default function LiveTime() {
   const [hours, setHours] = useState<string>("");
@@ -42,12 +43,17 @@ export default function LiveTime() {
   }, []);
 
   return (
-    <p className="fixed top-6 right-6 font-medium tracking-tight">
-      <span className="pr-px">Los Angeles, CA {hours}</span>
-      <span className="pr-px" style={{ opacity: showSemicolon ? 1 : 0 }}>
-        :
-      </span>
-      <span>{minutes}</span>
-    </p>
+    <div className="overflow-hidden fixed top-6 right-6 hidden lg:block">
+      <motion.p
+        initial={{ y: "100%" }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.25, ease: "easeOut" }}
+        className="font-medium tracking-tight"
+      >
+        <span>Los Angeles, CA {hours}</span>
+        <span style={{ opacity: showSemicolon ? 1 : 0 }}>:</span>
+        <span>{minutes}</span>
+      </motion.p>
+    </div>
   );
 }

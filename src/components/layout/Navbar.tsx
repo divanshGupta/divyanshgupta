@@ -20,7 +20,7 @@ export default function Navbar() {
   return (
     <nav
       ref={navbarRef}
-      className="fixed top-6 left-1/2 -translate-x-1/2 w-[470px] bg-neutral-900 rounded-lg"
+      className="fixed top-6 left-1/2 -translate-x-1/2 w-[470px] bg-neutral-900 rounded-lg z-[999]"
     >
       <div className="flex w-full justify-between items-center border-b border-neutral-800 px-3 h-8">
         <button
