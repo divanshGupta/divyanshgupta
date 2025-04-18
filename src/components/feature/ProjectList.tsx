@@ -8,31 +8,30 @@ export default function ProjectList() {
   const { currentProject, setCurrentProject } = useProjectStore();
 
   return (
-    <ul className="flex gap-3 mb-8">
+    <ul className="flex gap-2 mb-8">
       {projects.map((project, index) => (
         <motion.li
           key={index}
           initial={{ opacity: 0, scale: 0.85, y: "50%" }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
+          className="cursor-pointer"
         >
           <button
+            type="button"
             onClick={() => setCurrentProject(projects[index])}
-            className={`flex py-2 px-3 rounded hover:border-neutral-800 transition-colors duration-300 border group ${
+            className={`px-3 pt-2 pb-2.5 rounded-full text-sm font-medium tracking-tight transition-colors duration-300 group ${
               currentProject.title === project.title
-                ? "border-neutral-800"
-                : "border-neutral-400"
+                ? "bg-neutral-900 text-neutral-50"
+                : "bg-neutral-900/10 text-neutral-900"
             }`}
           >
-            <span
-              className={`text-[13px] typeface-offbit-dotbold tracking-widest uppercase group-hover:text-neutral-800 transition-colors duration-300 ${
-                currentProject.title === project.title
-                  ? "text-neutral-800"
-                  : "text-neutral-400"
-              }`}
-            >
-              {project.title}
-            </span>
+            <div className="overflow-hidden h-5">
+              <div className="flex flex-col group-hover:-translate-y-1/2 transition-transform duration-300">
+                <span>{project.title}</span>
+                <span>{project.title}</span>
+              </div>
+            </div>
           </button>
         </motion.li>
       ))}

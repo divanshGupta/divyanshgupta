@@ -12,7 +12,7 @@ export default function Header() {
           initial={{ y: "100%" }}
           animate={{ y: 0 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className=" font-medium tracking-tight"
+          className=" font-medium tracking-tight z-999"
         >
           Design Engineer
         </motion.p>

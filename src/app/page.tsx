@@ -2,12 +2,21 @@
 
 import Image from "next/image";
 import ProjectList from "@/components/feature/ProjectList";
-import SplitType from "split-type";
+// import SplitType from "split-type";
 import { useProjectStore } from "@/lib/zustand/stores/project-store";
-import { motion } from "motion/react";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
 
 export default function Home() {
   const { currentProject } = useProjectStore();
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["-15vh", "15vh"]);
 
   return (
     <main className="pt-52 p-6">
@@ -20,15 +29,13 @@ export default function Home() {
               transition={{ duration: 0.3, ease: "easeOut" }}
               className="text-[13px] typeface-offbit-dotbold text-neutral-700 tracking-widest uppercase"
             >
-              {currentProject.projectType === "development"
-                ? "Built With"
-                : "Services"}
+              {currentProject.projectType.join(", ")}
             </motion.h2>
           </div>
           <div key={currentProject.title} className="columns-2 gap-4">
             <ul className="space-y-px">
-              {currentProject.details.map((item) => (
-                <li key={item} className="break-inside-avoid">
+              {currentProject.keywords.map((keyword) => (
+                <li key={keyword} className="break-inside-avoid">
                   <div className="overflow-hidden">
                     <motion.p
                       initial={{ y: "100%" }}
@@ -40,7 +47,7 @@ export default function Home() {
                       }}
                       className="font-medium tracking-tight"
                     >
-                      {item}
+                      {keyword}
                     </motion.p>
                   </div>
                 </li>
@@ -65,7 +72,7 @@ export default function Home() {
             {currentProject.summary.map((line, index) => (
               <div key={index} className="overflow-hidden">
                 <motion.div
-                  className="text-xl font-medium tracking-tight"
+                  className="text-xl font-medium tracking-tight leading-[1.3]"
                   initial={{ y: "100%" }}
                   animate={{ y: "0%" }}
                   transition={{
@@ -99,7 +106,7 @@ export default function Home() {
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
               transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
-              className="text-[145px] font-semibold leading-none tracking-tighter"
+              className="text-[clamp(100px,9.8vw,145px)] font-semibold leading-none tracking-tighter"
             >
               {currentProject.year}
             </motion.p>
@@ -120,27 +127,33 @@ export default function Home() {
         </div>
         <ProjectList />
         <motion.div
+          ref={containerRef}
           initial={{ opacity: 0, scale: 0.97, y: 12 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.3, ease: "easeOut" }}
-          className="w-full h-[800px] p-3 bg-neutral-900 rounded-xl relative overflow-hidden z-0"
+          className="w-full h-[800px] bg-neutral-900 rounded-xl overflow-hidden relative"
         >
-          {currentProject.fileType === "video" ? (
-            <video
-              src={currentProject.fileUrl}
-              className="w-full h-full rounded-lg object-cover object-center"
-              autoPlay
-              muted
-              loop
-            />
-          ) : (
+          <motion.div
+            className="absolute inset-0 w-full h-[120%] -top-[20%]"
+            style={{ y }}
+          >
             <Image
-              src={currentProject.fileUrl}
+              src={currentProject.backgroundImageUrl}
               alt={currentProject.title}
               fill
-              className="w-full h-full rounded-lg object-cover"
+              className="object-cover object-center z-0"
             />
-          )}
+          </motion.div>
+
+          <div className="absolute top-0 left-0 h-full w-full bg-neutral-900/10 backdrop-blur-sm z-10"></div>
+
+          <video
+            src={currentProject.videoUrl}
+            className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[75%] max-w-[1200px] h-auto object-cover z-20 aspect-[auto_16/9] rounded-lg"
+            autoPlay
+            muted
+            loop
+          />
         </motion.div>
       </div>
     </main>

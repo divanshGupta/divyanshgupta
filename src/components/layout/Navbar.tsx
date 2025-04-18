@@ -1,8 +1,7 @@
 "use client";
 
-import { motion } from "motion/react";
 import { useState, useRef } from "react";
-import { cubicBezier } from "motion";
+import { motion } from "motion/react";
 import useOnClickOutside from "@/hooks/useOnClickOutside";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
@@ -13,118 +12,124 @@ export default function Navbar() {
   );
   const pathname = usePathname();
   const navbarRef = useRef<HTMLElement>(null!);
-  const easing = cubicBezier(0.83, 0, 0.17, 1);
 
   useOnClickOutside(navbarRef, () => setActiveMenu(null));
 
   return (
-    <nav
-      ref={navbarRef}
-      className="fixed top-6 left-1/2 -translate-x-1/2 w-[470px] bg-neutral-900 rounded-lg z-[999]"
-    >
-      <div className="flex w-full justify-between items-center border-b border-neutral-800 px-3 h-8">
-        <button
-          onClick={() => setActiveMenu(activeMenu === "about" ? null : "about")}
-          className="text-sm font-medium tracking-tight text-neutral-100 hover:text-neutral-400 transition-colors"
-        >
-          About
-        </button>
-        <Link
-          href={pathname === "/" ? "/lab" : "/"}
-          onClick={() => setActiveMenu(null)}
-          className="absolute left-1/2 -translate-x-1/2 text-sm font-medium tracking-tight text-neutral-100 hover:text-neutral-400 transition-colors"
-        >
-          {pathname === "/" ? "Lab" : "Home"}
-        </Link>
-        <button
-          onClick={() =>
-            setActiveMenu(activeMenu === "contact" ? null : "contact")
-          }
-          className="text-sm font-medium tracking-tight text-neutral-100 hover:text-neutral-400 transition-colors"
-        >
-          Contact
-        </button>
-      </div>
-
-      <Slider />
-
-      <motion.div
-        initial={{ height: 0 }}
-        animate={{ height: activeMenu === "about" ? "auto" : 0 }}
-        transition={{ duration: 0.4, ease: easing }}
-        className="overflow-hidden"
+    <div className="fixed top-6 left-1/2 -translate-x-1/2 w-[470px] z-[999]">
+      <motion.nav
+        initial={{ opacity: 0, scale: 0.98, y: 24 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
+        ref={navbarRef}
+        className="w-full bg-neutral-900 rounded-lg will-change-transform"
       >
-        <div className="flex flex-col gap-2 px-3 py-4">
-          <h3 className="text-[13px] typeface-offbit-dotbold text-white tracking-widest uppercase">
-            Bio
-          </h3>
-          <p className="text-sm text-neutral-100 font-medium">
-            I'm a full-stack developer based in Los Angeles, CA, currently
-            working at{" "}
-            <a
-              href="https://trackstack.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-neutral-400 transition-colors"
-            >
-              Trackstack
-            </a>
-            . I consider myself a design engineer because of my meticulous eye
-            for detail and passion for crafting beautiful user experiences. But
-            don&apos;t get it twisted — I&apos;m also well-versed in building
-            complex, high-performance, and scalable web applications.
-          </p>
+        <div className="flex w-full justify-between items-center border-b border-neutral-800 px-3 h-8">
+          <button
+            onClick={() =>
+              setActiveMenu(activeMenu === "about" ? null : "about")
+            }
+            className="text-sm font-medium tracking-tight text-neutral-100 hover:text-neutral-400 transition-colors"
+          >
+            About
+          </button>
+          <Link
+            href={pathname === "/" ? "/lab" : "/"}
+            onClick={() => setActiveMenu(null)}
+            className="absolute left-1/2 -translate-x-1/2 text-sm font-medium tracking-tight text-neutral-100 hover:text-neutral-400 transition-colors"
+          >
+            {pathname === "/" ? "Lab" : "Home"}
+          </Link>
+          <button
+            onClick={() =>
+              setActiveMenu(activeMenu === "contact" ? null : "contact")
+            }
+            className="text-sm font-medium tracking-tight text-neutral-100 hover:text-neutral-400 transition-colors"
+          >
+            Contact
+          </button>
         </div>
-      </motion.div>
 
-      <motion.div
-        initial={{ height: 0 }}
-        animate={{ height: activeMenu === "contact" ? "auto" : 0 }}
-        transition={{ duration: 0.4, ease: easing }}
-        className="overflow-hidden"
-      >
-        <div className="flex flex-col gap-2 px-3 py-4">
-          <h3 className="text-[13px] typeface-offbit-dotbold text-white tracking-widest uppercase">
-            Get in touch
-          </h3>
-          <div>
-            <a
-              href="mailto:jzubiate.dev@gmail.com"
-              className="text-sm text-neutral-100 font-medium hover:text-neutral-400 transition-colors"
-            >
-              Mail
-            </a>
-            <span className="text-neutral-100"> • </span>
-            <a
-              href="https://instagram.com/itsjay.us"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-neutral-100 font-medium hover:text-neutral-400 transition-colors"
-            >
-              Instagram
-            </a>
-            <span className="text-neutral-100"> • </span>
-            <a
-              href="https://github.com/jasonzubiate"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-neutral-100 font-medium hover:text-neutral-400 transition-colors"
-            >
-              GitHub
-            </a>
-            <span className="text-neutral-100"> • </span>
-            <a
-              href="https://linkedin.com/in/jasonzubiate"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-neutral-100 font-medium hover:text-neutral-400 transition-colors"
-            >
-              LinkedIn
-            </a>
+        <Slider />
+
+        <motion.div
+          initial={{ height: 0 }}
+          animate={{ height: activeMenu === "about" ? "auto" : 0 }}
+          transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
+          className="overflow-hidden"
+        >
+          <div className="flex flex-col gap-2 px-3 py-4">
+            <h3 className="text-[13px] typeface-offbit-dotbold text-white tracking-widest uppercase">
+              Bio
+            </h3>
+            <p className="text-sm text-neutral-100 font-medium">
+              I&apos;m a full-stack developer based in Los Angeles, CA,
+              currently working at{" "}
+              <a
+                href="https://trackstack.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-neutral-400 transition-colors"
+              >
+                Trackstack
+              </a>
+              . I consider myself a design engineer because of my meticulous eye
+              for detail and passion for crafting beautiful user experiences.
+              But don&apos;t get it twisted — I&apos;m also well-versed in
+              building complex, high-performance, and scalable web applications.
+            </p>
           </div>
-        </div>
-      </motion.div>
-    </nav>
+        </motion.div>
+
+        <motion.div
+          initial={{ height: 0 }}
+          animate={{ height: activeMenu === "contact" ? "auto" : 0 }}
+          transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
+          className="overflow-hidden"
+        >
+          <div className="flex flex-col gap-2 px-3 py-4">
+            <h3 className="text-[13px] typeface-offbit-dotbold text-white tracking-widest uppercase">
+              Get in touch
+            </h3>
+            <div>
+              <a
+                href="mailto:jzubiate.dev@gmail.com"
+                className="text-sm text-neutral-100 font-medium hover:text-neutral-400 transition-colors"
+              >
+                Mail
+              </a>
+              <span className="text-neutral-100"> • </span>
+              <a
+                href="https://instagram.com/itsjay.us"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-neutral-100 font-medium hover:text-neutral-400 transition-colors"
+              >
+                Instagram
+              </a>
+              <span className="text-neutral-100"> • </span>
+              <a
+                href="https://github.com/jasonzubiate"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-neutral-100 font-medium hover:text-neutral-400 transition-colors"
+              >
+                GitHub
+              </a>
+              <span className="text-neutral-100"> • </span>
+              <a
+                href="https://linkedin.com/in/jasonzubiate"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-neutral-100 font-medium hover:text-neutral-400 transition-colors"
+              >
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </motion.div>
+      </motion.nav>
+    </div>
   );
 }
 
