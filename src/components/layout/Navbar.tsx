@@ -18,9 +18,9 @@ export default function Navbar() {
   return (
     <div className="fixed top-6 left-1/2 -translate-x-1/2 w-[470px] z-[999]">
       <motion.nav
-        initial={{ opacity: 0, scale: 0.98, y: 24 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
+        initial={{ y: -150 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 1.5, delay: 1.5, ease: [0.16, 1, 0.3, 1] }}
         ref={navbarRef}
         className="w-full bg-neutral-900 rounded-lg will-change-transform"
       >
@@ -55,7 +55,7 @@ export default function Navbar() {
         <motion.div
           initial={{ height: 0 }}
           animate={{ height: activeMenu === "about" ? "auto" : 0 }}
-          transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
+          transition={{ duration: 0.8, ease: [0.87, 0, 0.13, 1] }}
           className="overflow-hidden"
         >
           <div className="flex flex-col gap-2 px-3 py-4">

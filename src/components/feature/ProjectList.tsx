@@ -8,7 +8,7 @@ export default function ProjectList() {
   const { currentProject, setCurrentProject } = useProjectStore();
 
   return (
-    <ul className="flex gap-2 mb-8">
+    <ul className="flex flex-wrap gap-2 mb-8">
       {projects.map((project, index) => (
         <motion.li
           key={index}
