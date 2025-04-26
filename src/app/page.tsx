@@ -145,7 +145,7 @@ export default function Home() {
             />
           </motion.div>
 
-          <div className="absolute top-0 left-0 h-full w-full bg-neutral-900/10 backdrop-blur-sm z-10"></div>
+          <div className="absolute top-0 left-0 h-full w-full bg-neutral-900/10 backdrop-blur-xs z-10"></div>
 
           <video
             src={currentProject.videoUrl}

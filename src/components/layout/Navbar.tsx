@@ -16,7 +16,7 @@ export default function Navbar() {
   useOnClickOutside(navbarRef, () => setActiveMenu(null));
 
   return (
-    <div className="fixed top-6 left-1/2 -translate-x-1/2 w-[470px] z-[999]">
+    <div className="fixed top-6 left-1/2 -translate-x-1/2 w-[470px] z-999">
       <motion.nav
         initial={{ y: -150 }}
         animate={{ y: 0 }}
@@ -136,8 +136,8 @@ export default function Navbar() {
 function Slider() {
   return (
     <div className="flex justify-center items-center h-8 overflow-hidden relative">
-      <div className="absolute left-0 h-full w-16 bg-gradient-to-r from-neutral-900/95 to-neutral-900/0 rounded-bl-lg z-10" />
-      <div className="absolute right-0 h-full w-16 bg-gradient-to-l from-neutral-900/95 to-neutral-900/0 rounded-br-lg z-10" />
+      <div className="absolute left-0 h-full w-16 bg-linear-to-r from-neutral-900/95 to-neutral-900/0 rounded-bl-lg z-10" />
+      <div className="absolute right-0 h-full w-16 bg-linear-to-l from-neutral-900/95 to-neutral-900/0 rounded-br-lg z-10" />
 
       <div className="flex overflow-hidden">
         <motion.p
