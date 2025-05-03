@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "../components/layout/Header";
-import { LenisContext } from "../context/LenisContext";
+import { ReactLenis } from "lenis/react";
 // import Cursor from "../components/ui/Cursor";
 
 const geistSans = Geist({
@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <LenisContext>
+      <ReactLenis root>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-100 text-neutral-900`}
         >
@@ -35,7 +35,7 @@ export default function RootLayout({
           <Header />
           {children}
         </body>
-      </LenisContext>
+      </ReactLenis>
     </html>
   );
 }

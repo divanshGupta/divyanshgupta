@@ -2,21 +2,40 @@
 
 import Image from "next/image";
 import ProjectList from "@/components/feature/ProjectList";
-// import SplitType from "split-type";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { SplitText } from "gsap/SplitText";
 import { useProjectStore } from "@/lib/zustand/stores/project-store";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 
+gsap.registerPlugin(SplitText, useGSAP);
+
 export default function Home() {
   const { currentProject } = useProjectStore();
   const containerRef = useRef<HTMLDivElement>(null);
-
+  const summaryRef = useRef<HTMLParagraphElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
   });
 
   const y = useTransform(scrollYProgress, [0, 1], ["-15vh", "15vh"]);
+
+  useGSAP(() => {
+    const split = SplitText.create(summaryRef.current, {
+      type: "lines",
+      autoSplit: true,
+      mask: "lines",
+    });
+
+    gsap.from(split.lines, {
+      duration: 0.6,
+      yPercent: 100,
+      opacity: 0,
+      stagger: 0.05,
+    });
+  }, []);
 
   return (
     <main className="pt-52 p-6 flex flex-col-reverse lg:flex-col gap-12">
@@ -45,7 +64,7 @@ export default function Home() {
                         delay: 0.1,
                         ease: "easeOut",
                       }}
-                      className="font-medium tracking-tight"
+                      className="text-[clamp(14px,1.2vw,20px)] font-medium tracking-tight leading-[1.3]"
                     >
                       {keyword}
                     </motion.p>
@@ -68,25 +87,13 @@ export default function Home() {
             </motion.h2>
           </div>
 
-          <div>
-            {currentProject.summary.map((line, index) => (
-              <div key={index} className="overflow-hidden">
-                <motion.div
-                  className="text-[clamp(16px,1.5vw,24px)] font-medium tracking-tight leading-[1.3]"
-                  initial={{ y: "100%" }}
-                  animate={{ y: "0%" }}
-                  transition={{
-                    duration: 0.5,
-                    delay: index * 0.025 + 0.1,
-                    ease: "easeOut",
-                  }}
-                  key={line}
-                >
-                  {line}
-                </motion.div>
-              </div>
-            ))}
-          </div>
+          <p
+            ref={summaryRef}
+            className="text-[clamp(16px,1.5vw,24px)] font-medium tracking-tight leading-[1.3]"
+            style={{ fontKerning: "none" }}
+          >
+            {currentProject.summary}
+          </p>
         </div>
 
         <div className="col-span-3">
