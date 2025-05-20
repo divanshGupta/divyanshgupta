@@ -48,7 +48,7 @@ export default function LiveTime() {
         initial={{ y: "100%" }}
         animate={{ y: 0 }}
         transition={{ duration: 0.25, ease: "easeOut" }}
-        className="font-medium tracking-tight z-[999]"
+        className="font-medium tracking-tight z-999"
       >
         <span>Los Angeles, CA {hours}</span>
         <span style={{ opacity: showSemicolon ? 1 : 0 }}>:</span>
