@@ -29,10 +29,9 @@ export default function RootLayout({
     <html lang="en">
       <ReactLenis root>
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-100 text-neutral-900`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-100 text-neutral-900 overscroll-none`}
         >
-          {/* <Cursor /> */}
-          <Header />
+          {/* <Header /> */}
           {children}
         </body>
       </ReactLenis>
