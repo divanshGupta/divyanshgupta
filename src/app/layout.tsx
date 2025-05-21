@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "../components/layout/Header";
 import { ReactLenis } from "lenis/react";
+import CTAButton from "@/components/ui/CTAButton";
 // import Cursor from "../components/ui/Cursor";
 import { saans } from "@/fonts";
 
@@ -21,7 +22,7 @@ export default function RootLayout({
         <body
           className={`${saans.className} antialiased bg-neutral-100 text-neutral-900 overscroll-none`}
         >
-          <Header />
+          {/* <Header /> */}
           {children}
         </body>
       </ReactLenis>
