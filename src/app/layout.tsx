@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "../components/layout/Header";
 import { ReactLenis } from "lenis/react";
+import CTAButton from "@/components/ui/CTAButton";
 // import Cursor from "../components/ui/Cursor";
 
 const geistSans = Geist({
@@ -32,6 +33,7 @@ export default function RootLayout({
           className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-100 text-neutral-900 overscroll-none`}
         >
           {/* <Header /> */}
+          <CTAButton />
           {children}
         </body>
       </ReactLenis>
