@@ -1,19 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "../components/layout/Header";
 import { ReactLenis } from "lenis/react";
 // import Cursor from "../components/ui/Cursor";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { saans } from "@/fonts";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -29,9 +19,9 @@ export default function RootLayout({
     <html lang="en">
       <ReactLenis root>
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-100 text-neutral-900 overscroll-none`}
+          className={`${saans.className} antialiased bg-neutral-100 text-neutral-900 overscroll-none`}
         >
-          {/* <Header /> */}
+          <Header />
           {children}
         </body>
       </ReactLenis>

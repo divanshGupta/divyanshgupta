@@ -91,13 +91,13 @@ export default function InfiniteGrid() {
     >
       {imagePaths.map((path, index) => (
         <div
-          className="w-[25vw] aspect-square select-none will-change-transform"
+          className="w-[15vw] aspect-square select-none will-change-transform z-0"
           key={`${index}-${ariaHidden ? "hidden" : "visible"}`}
         >
           <motion.img
             src={path || "/placeholder.svg"}
             alt=""
-            className="w-full h-full block object-contain rounded-xl"
+            className="w-full h-full block object-contain z-0"
             initial={
               ariaHidden
                 ? undefined
