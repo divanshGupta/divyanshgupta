@@ -20,3 +20,14 @@ export const saans = localFont({
   ],
   variable: "--font-saans",
 });
+
+export const lcddot = localFont({
+  src: [
+    {
+      path: "./lcddot.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-lcddot",
+});

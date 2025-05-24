@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "../components/layout/Header";
 import { ReactLenis } from "lenis/react";
 import CTAButton from "@/components/ui/CTAButton";
-// import Cursor from "../components/ui/Cursor";
+import { ViewTransitions } from "next-view-transitions";
 import { saans } from "@/fonts";
 
 export const metadata: Metadata = {
@@ -17,15 +17,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <ReactLenis root>
-        <body
-          className={`${saans.className} antialiased bg-neutral-100 text-neutral-900 overscroll-none`}
-        >
-          {/* <Header /> */}
-          {children}
-        </body>
-      </ReactLenis>
-    </html>
+    <ViewTransitions>
+      <html lang="en">
+        <ReactLenis root>
+          <body
+            className={`${saans.className} antialiased bg-neutral-100 text-neutral-900 overscroll-none`}
+          >
+            <Header />
+            <CTAButton />
+            {children}
+          </body>
+        </ReactLenis>
+      </html>
+    </ViewTransitions>  
   );
 }

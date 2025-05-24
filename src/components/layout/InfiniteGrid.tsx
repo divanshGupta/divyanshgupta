@@ -91,7 +91,7 @@ export default function InfiniteGrid() {
     >
       {imagePaths.map((path, index) => (
         <div
-          className="w-[15vw] aspect-square select-none will-change-transform z-0"
+          className="w-[18vw] aspect-square select-none will-change-transform z-0"
           key={`${index}-${ariaHidden ? "hidden" : "visible"}`}
         >
           <motion.img

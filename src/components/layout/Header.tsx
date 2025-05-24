@@ -1,9 +1,5 @@
 "use client";
 
-import Navbar from "./Navbar";
-import LiveTime from "../ui/LiveTime";
-import { motion } from "motion/react";
-
 export default function Header() {
   return (
     <header>
@@ -13,7 +9,7 @@ export default function Header() {
             US Based
           </span>
           <span className="block text-neutral-400 font-medium text-[clamp(12px,1.2vw,20px)] leading-tight">
-            Working globaly
+            Working globally
           </span>
         </div>
         <div className="col-span-3">
@@ -24,9 +20,18 @@ export default function Header() {
             href="https://trackstack.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="block text-neutral-400 font-medium text-[clamp(12px,1.2vw,20px)] leading-tight"
+            className="group"
           >
-            Trackstack
+            <div className="overflow-hidden h-6">
+              <div className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:-translate-y-1/2">
+                <span className="text-[clamp(12px,1.2vw,20px)] text-neutral-400 font-medium mb-1.5">
+                  Trackstack
+                </span>
+                <span className="text-[clamp(12px,1.2vw,20px)] text-neutral-400 font-medium mb-1.5">
+                  Trackstack
+                </span>
+              </div>
+            </div>
           </a>
         </div>
         <div className="col-span-3">
@@ -42,8 +47,6 @@ export default function Header() {
           Get in touch
         </button>
       </div>
-      {/* <Navbar />
-      <LiveTime /> */}
     </header>
   );
 }

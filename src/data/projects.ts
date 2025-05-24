@@ -1,6 +1,7 @@
 export type Project = {
   title: string;
-  projectType: string[];
+  slug: string;
+  category: string;
   keywords: string[];
   summary: string[];
   year: number;
@@ -12,8 +13,12 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: "Jazmin Wong",
-    projectType: ["Web Design", "Development"],
+    slug: "jazmin-wong",
+    category: "Portfolio",
     keywords: [
+      "Art Direction",
+      "UI",
+      "UX",
       "Next.js",
       "Tailwind CSS",
       "GSAP",
@@ -27,36 +32,36 @@ export const projects: Project[] = [
     ],
     year: 2025,
     backgroundImageUrl:
-      "https://images.unsplash.com/photo-1719917998992-e69c56a4d866?q=80&w=2835&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1744731036457-b74958fd6bf5?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     videoUrl: "/videos/jazminwong-preview-compressed.mp4",
     link: "https://www.jazzicreates.tv",
   },
-  // {
-  //   title: "Trackstack",
-  //   projectType: ["Web Design", "Development"],
-  //   keywords: [
-  //     "React",
-  //     "Tailwind CSS",
-  //     "Prisma",
-  //     "Various APIs",
-  //     "Web Design",
-  //     "Responsive Design",
-  //     "Art Direction",
-  //     "Brand Design",
-  //     "Strategy",
-  //   ],
-  //   summary: [
-  //     "Redesigned the website for a UK-based software company ",
-  //     "supporting 10,000+ high-performance DJs and labels. The ",
-  //     "goal was to communicate their mission of streamlining career ",
-  //     "growth. I currently work on their product team as a developer.",
-  //   ],
-  //   year: 2025,
-  //   backgroundImageUrl:
-  //     "https://images.unsplash.com/photo-1512734099960-65a682cbfe2b?q=80&w=3271&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //   videoUrl: "/videos/trackstack-preview-compressed.mp4",
-  //   link: "https://www.trackstack.app",
-  // },
+  {
+    title: "Trackstack",
+    slug: "trackstack",
+    category: "Product",
+    keywords: [
+      "Art Direction",
+      "Brand Design",
+      "Strategy",
+      "UX",
+      "UI",
+      "Web Design",
+      "Responsive Design",
+      "Media Production",
+    ],
+    summary: [
+      "Redesigned the website for a UK-based software company ",
+      "supporting 10,000+ high-performance DJs and labels. The ",
+      "goal was to communicate their mission of streamlining career ",
+      "growth. I currently work on their product team as a developer.",
+    ],
+    year: 2025,
+    backgroundImageUrl:
+      "https://images.squarespace-cdn.com/content/v1/5c9534c4af4683461d462c6b/2aa072cf-19b7-4b05-a353-26bd9904bb6d/240329_DRUMSHEDS_Radio1Dance_JakeDavis_%40jakephilipdavis-6160+%281%29.jpg",
+    videoUrl: "/videos/trackstack-preview-compressed.mp4",
+    link: "https://www.trackstack.app",
+  },
   // {
   //   title: "Kick & Bass",
   //   projectType: ["Web Design", "Development"],
