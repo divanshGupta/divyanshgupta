@@ -85,7 +85,7 @@ export default function CTAButton() {
         <div className="flex items-center gap-4 md:gap-5">
           <div className="h-[60px] w-[60px] md:h-[80px] md:w-[80px] rounded-lg md:rounded-xl overflow-hidden relative">
             <Image
-              src="https://media1.popsugar-assets.com/files/thumbor/ety_2aPyhRZLDSz00sb7g_PbEYs=/1142x644/top/filters:format_auto():quality(85):extract_cover()/2017/09/12/009/n/38761221/56408472f441404b_iphonex_animoji_chicken.gif"
+              src="/images/other/me.png"
               alt="CTA Button"
               fill
               className="object-cover object-center"

@@ -43,7 +43,7 @@ export default function Header() {
           </span>
         </div>
 
-        <button className="fixed right-6 top-4 px-7 h-14 rounded-full bg-neutral-900 text-neutral-100 font-medium text-[clamp(12px,1.2vw,20px)] cursor-pointer">
+        <button className="fixed right-8 top-5 px-7 h-14 rounded-full bg-neutral-900 text-neutral-100 font-medium text-[clamp(12px,1.2vw,20px)] border border-neutral-800 cursor-pointer">
           Get in touch
         </button>
       </div>

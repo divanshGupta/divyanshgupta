@@ -8,6 +8,10 @@ export type Project = {
   backgroundImageUrl: string;
   videoUrl: string;
   link: string;
+  media: {
+    type: "image" | "video";
+    url: string;
+  }[];
 };
 
 export const projects: Project[] = [
@@ -17,6 +21,7 @@ export const projects: Project[] = [
     category: "Portfolio",
     keywords: [
       "Art Direction",
+      "Voice & Tone",
       "UI",
       "UX",
       "Next.js",
@@ -35,6 +40,24 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1744731036457-b74958fd6bf5?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     videoUrl: "/videos/jazminwong-preview-compressed.mp4",
     link: "https://www.jazzicreates.tv",
+    media: [
+      {
+        type: "image",
+        url: "/images/work/jazmin-wong/image-01.jpg",
+      },
+      {
+        type: "video",
+        url: "/videos/work/jazmin-wong/video-01.mp4",
+      },
+      {
+        type: "image",
+        url: "/images/work/jazmin-wong/image-01.jpg",
+      },
+      {
+        type: "video",
+        url: "/videos/work/jazmin-wong/video-01.mp4",
+      },
+    ],
   },
   {
     title: "Trackstack",
@@ -61,35 +84,73 @@ export const projects: Project[] = [
       "https://images.squarespace-cdn.com/content/v1/5c9534c4af4683461d462c6b/2aa072cf-19b7-4b05-a353-26bd9904bb6d/240329_DRUMSHEDS_Radio1Dance_JakeDavis_%40jakephilipdavis-6160+%281%29.jpg",
     videoUrl: "/videos/trackstack-preview-compressed.mp4",
     link: "https://www.trackstack.app",
+    media: [
+      {
+        type: "image",
+        url: "/images/work/jazmin-wong/image-01.jpg",
+      },
+      {
+        type: "video",
+        url: "/videos/work/jazmin-wong/video-01.mp4",
+      },
+      {
+        type: "image",
+        url: "/images/work/jazmin-wong/image-01.jpg",
+      },
+      {
+        type: "video",
+        url: "/videos/work/jazmin-wong/video-01.mp4",
+      },
+    ],
   },
-  // {
-  //   title: "Kick & Bass",
-  //   projectType: ["Web Design", "Development"],
-  //   keywords: [
-  //     "Next.js",
-  //     "Tailwind CSS",
-  //     "GSAP",
-  //     "Motion",
-  //     "Lenis",
-  //     "Contentful",
-  //     "Vercel",
-  //     "Shopify API",
-  //     "Web Design",
-  //     "Responsive Design",
-  //     "Art Direction",
-  //   ],
-  //   summary: [
-  //     "Designed & developed the primary website for an artist-run ",
-  //     "tech house coaching and mentoring community. The focus   ",
-  //     "was on creating a visually striking and intuitive user  ",
-  //     "experience to optimize visitor-to-paid-member conversion.",
-  //   ],
-  //   year: 2024,
-  //   backgroundImageUrl:
-  //     "https://images.unsplash.com/photo-1738827125457-288529e341cc?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //   videoUrl: "/videos/kickbass-preview-compressed.mp4",
-  //   link: "https://www.kick-bass.com",
-  // },
+  {
+    title: "Kick & Bass",
+    slug: "kick-bass",
+    category: "Services",
+    keywords: [
+      "Art Direction",
+      "Web Design",
+      "Responsive Design",
+      "Next.js",
+      "Tailwind CSS",
+      "GSAP",
+      "Motion",
+      "Lenis",
+      "Contentful",
+      "Vercel",
+      "Shopify API",
+    ],
+    summary: [
+      "Designed & developed the primary website for an artist-run ",
+      "tech house coaching and mentoring community. The focus   ",
+      "was on creating a visually striking and intuitive user  ",
+      "experience to optimize visitor-to-paid-member conversion.",
+    ],
+    year: 2024,
+    backgroundImageUrl:
+      "https://images.unsplash.com/photo-1599423424751-54e0c1187a02?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    videoUrl: "/videos/kickbass-preview-compressed.mp4",
+    link: "https://www.kick-bass.com",
+    media: [
+      {
+        type: "image",
+        url: "/images/work/jazmin-wong/image-01.jpg",
+      },
+      {
+        type: "video",
+        url: "/videos/work/jazmin-wong/video-01.mp4",
+      },
+      {
+        type: "image",
+        url: "/images/work/jazmin-wong/image-01.jpg",
+      },
+      {
+        type: "video",
+        url: "/videos/work/jazmin-wong/video-01.mp4",
+      },
+    ],
+  },
+
   // // {
   // //   title: "Inbox",
   // //   projectType: ["Development"],
@@ -139,30 +200,49 @@ export const projects: Project[] = [
   // //     "https://framerusercontent.com/assets/xczsI9Xq2X6OvsvU8NVUiUJUXuA.mp4",
   // //   link: "https://www.kick-bass.com",
   // // },
-  // {
-  //   title: "Westend",
-  //   projectType: ["Web Design", "Development"],
-  //   keywords: [
-  //     "Next.js",
-  //     "Tailwind CSS",
-  //     "GSAP",
-  //     "Lenis",
-  //     "Contentful",
-  //     "Vercel",
-  //     "Web Design",
-  //     "Responsive Design",
-  //   ],
-  //   summary: [
-  //     "Designed and developed the official website for professional DJ ",
-  //     "and producer Westend, focusing on showcasing his latest ",
-  //     "releases, past performances, and upcoming tour dates.",
-  //   ],
-  //   year: 2024,
-  //   backgroundImageUrl:
-  //     "https://images.unsplash.com/photo-1741683386377-f59badc91174?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //   videoUrl: "/videos/westend-preview-compressed.mp4",
-  //   link: "https://www.itsthewestend.com",
-  // },
+  {
+    title: "Westend",
+    slug: "westend",
+    category: "Portfolio",
+    keywords: [
+      "Art Direction",
+      "Web Design",
+      "Responsive Design",
+      "Next.js",
+      "Tailwind CSS",
+      "GSAP",
+      "Lenis",
+      "Contentful",
+      "Vercel",
+    ],
+    summary: [
+      "Designed and developed the official website for professional DJ ",
+      "and producer Westend, focusing on showcasing his latest ",
+      "releases, past performances, and upcoming tour dates.",
+    ],
+    year: 2024,
+    backgroundImageUrl: "/images/other/westend.jpg",
+    videoUrl: "/videos/westend-preview-compressed.mp4",
+    link: "https://www.itsthewestend.com",
+    media: [
+      {
+        type: "image",
+        url: "/images/work/jazmin-wong/image-01.jpg",
+      },
+      {
+        type: "video",
+        url: "/videos/work/jazmin-wong/video-01.mp4",
+      },
+      {
+        type: "image",
+        url: "/images/work/jazmin-wong/image-01.jpg",
+      },
+      {
+        type: "video",
+        url: "/videos/work/jazmin-wong/video-01.mp4",
+      },
+    ],
+  },
   // {
   //   title: "Presave",
   //   projectType: ["Web Design"],
@@ -181,7 +261,8 @@ export const projects: Project[] = [
   // },
   // {
   //   title: "DELIVRD",
-  //   projectType: ["Web Design", "Development"],
+  //   slug: "delivrd",
+  //   category: "Showcase",
   //   keywords: [
   //     "Next.js",
   //     "Tailwind CSS",
@@ -200,7 +281,7 @@ export const projects: Project[] = [
   //   ],
   //   year: 2023,
   //   backgroundImageUrl:
-  //     "https://images.unsplash.com/photo-1741587467707-97e1fc8eff1e?q=80&w=2615&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  //     "https://images.unsplash.com/photo-1617864848089-9c54bf240fe6?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   //   videoUrl: "/videos/delivrd-preview-compressed.mp4",
   //   link: "https://www.delivrd.live",
   // },
