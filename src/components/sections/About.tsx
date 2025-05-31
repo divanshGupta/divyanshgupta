@@ -68,16 +68,20 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" className="flex justify-between py-24 px-8">
-      <p
-        ref={paragraphRef}
-        className="text-[clamp(16px,3.5vw,96px)] font-semibold w-[50vw] uppercase tracking-tight leading-none"
-      >
-        Passionate about merging design and engineering, I craft smooth,
-        interactive experiences with purpose. With a focus on motion,
-        performance, and detail, I help bring digital products to life for
-        forward-thinking brands around the world.
-      </p>
+    <section id="about" className="flex justify-between pt-56 pb-28 px-8">
+      <div className="flex flex-col w-1/2">
+        <h4 className="font-semibold uppercase mb-4">Myself</h4>
+
+        <p
+          ref={paragraphRef}
+          className="text-[clamp(16px,3.5vw,96px)] font-semibold  uppercase tracking-tight leading-none"
+        >
+          Passionate about merging design and engineering, I craft smooth,
+          interactive experiences with purpose. With a focus on motion,
+          performance, and detail, I help bring digital products to life for
+          forward-thinking brands around the world.
+        </p>
+      </div>
 
       <div className="relative h-screen">
         <div className="sticky top-[calc(100vh-20vw-164px)] w-[33vw] h-[20vw] rounded-lg overflow-hidden">

@@ -72,7 +72,7 @@ export default function TechnologiesLit() {
     <section className="pb-24 px-8">
       <LetterScroll />
 
-      <h4 className="font-semibold uppercase mb-8">Professional at</h4>
+      <h4 className="font-semibold uppercase mb-4">Professional at</h4>
       <div ref={containerRef} className="relative">
         <div className="grid grid-rows-2 h-120">
           <div className="grid grid-cols-3 border-b border-neutral-300">
@@ -248,69 +248,69 @@ function LetterScroll() {
       ref={containerRef}
       className="letter-scroll flex flex-col justify-center items-center h-screen py-24"
     >
-      <li className="text-[clamp(100px,16vw,250px)] font-medium tracking-tight leading-[0.85] overflow-hidden flex">
+      <li className="text-[clamp(100px,14vw,250px)] font-semibold tracking-tight leading-[0.85] overflow-hidden flex">
         <span className="letter relative inline-block">
           <span>M</span>
           <span className="absolute bottom-full left-0">M</span>
         </span>
         <span className="letter relative inline-block">
-          <span>o</span>
-          <span className="absolute bottom-full left-0">o</span>
+          <span>O</span>
+          <span className="absolute bottom-full left-0">O</span>
         </span>
         <span className="letter relative inline-block">
-          <span>d</span>
-          <span className="absolute bottom-full left-0">d</span>
+          <span>D</span>
+          <span className="absolute bottom-full left-0">D</span>
         </span>
         <span className="letter relative inline-block">
-          <span>e</span>
-          <span className="absolute bottom-full left-0">e</span>
+          <span>E</span>
+          <span className="absolute bottom-full left-0">E</span>
         </span>
         <span className="letter relative inline-block">
-          <span>r</span>
-          <span className="absolute bottom-full left-0">r</span>
+          <span>R</span>
+          <span className="absolute bottom-full left-0">R</span>
         </span>
         <span className="letter relative inline-block">
-          <span>n</span>
-          <span className="absolute bottom-full left-0">n</span>
+          <span>N</span>
+          <span className="absolute bottom-full left-0">N</span>
         </span>
       </li>
-      <li className="text-[clamp(100px,16vw,250px)] font-medium tracking-tight leading-[0.85] overflow-hidden flex">
+      <li className="text-[clamp(100px,14vw,250px)] font-semibold tracking-tight leading-[0.85] overflow-hidden flex">
         <span className="letter relative inline-block">
-          <span>t</span>
-          <span className="absolute bottom-full left-0">t</span>
+          <span>T</span>
+          <span className="absolute bottom-full left-0">T</span>
         </span>
         <span className="letter relative inline-block">
-          <span>e</span>
-          <span className="absolute bottom-full left-0">e</span>
+          <span>E</span>
+          <span className="absolute bottom-full left-0">E</span>
         </span>
         <span className="letter relative inline-block">
-          <span>c</span>
-          <span className="absolute bottom-full left-0">c</span>
+          <span>C</span>
+          <span className="absolute bottom-full left-0">C</span>
         </span>
         <span className="letter relative inline-block mr-16">
-          <span>h</span>
-          <span className="absolute bottom-full left-0">h</span>
+          <span>H</span>
+          <span className="absolute bottom-full left-0">H</span>
         </span>
 
         <span className="letter relative inline-block">
-          <span>s</span>
-          <span className="absolute bottom-full left-0">s</span>
+          <span>S</span>
+          <span className="absolute bottom-full left-0">S</span>
         </span>
         <span className="letter relative inline-block">
-          <span>t</span>
-          <span className="absolute bottom-full left-0">t</span>
+          <span>T</span>
+          <span className="absolute bottom-full left-0">T</span>
         </span>
         <span className="letter relative inline-block">
-          <span>a</span>
-          <span className="absolute bottom-full left-0">a</span>
+          <span>A</span>
+          <span className="absolute bottom-full left-0">A</span>
         </span>
         <span className="letter relative inline-block">
-          <span>c</span>
-          <span className="absolute bottom-full left-0">c</span>
+          <span>C</span>
+          <span className="absolute bottom-full left-0">C</span>
         </span>
         <span className="letter relative inline-block">
-          <span>k</span>
-          <span className="absolute bottom-full left-0">k</span>
+          <span>K</span>
+          <span className="absolute bottom-full left-0">K</span>
         </span>
       </li>
     </ul>

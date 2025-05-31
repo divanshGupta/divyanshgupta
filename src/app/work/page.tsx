@@ -123,7 +123,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         onMouseLeave={() => setIsHovered(false)}
       >
         <div className="relative rounded-xl overflow-hidden w-full h-[500px]">
-          <div className="absolute inset-0 bg-neutral-900/60 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out" />
+          <div className="absolute inset-0 bg-neutral-900/40 backdrop-blur-md z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out" />
 
           <video
             ref={(el) => {
@@ -154,7 +154,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 src={project.backgroundImageUrl}
                 alt={project.title}
                 fill
-                className="object-cover"
+                className="object-cover scale-105 group-hover:scale-100 transition-transform duration-500 ease-in-out"
               />
             </motion.div>
           </div>

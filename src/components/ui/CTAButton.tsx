@@ -43,7 +43,7 @@ export default function CTAButton() {
       initial={{ opacity: 0, y: 100, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.5, delay: 0.5, ease: [0.25, 1, 0.5, 1] }}
-      className="py-2 pl-2 pr-8 rounded-2xl md:rounded-[20px] bg-neutral-900 border border-neutral-800 fixed left-4 md:left-1/2 right-4 md:right-auto md:-translate-x-1/2 bottom-6 md:bottom-8 w-full md:w-[750px] z-50  overflow-hidden"
+      className="py-2 pl-2 pr-8 rounded-2xl md:rounded-[20px] bg-neutral-900 border border-neutral-800 fixed left-4 md:left-1/2 right-4 md:right-auto md:-translate-x-1/2 bottom-6 w-full md:w-[700px] z-50  overflow-hidden"
     >
       <motion.div
         initial={{ height: 0, opacity: 0 }}
@@ -76,7 +76,7 @@ export default function CTAButton() {
             initial={{ width: "0%" }}
             animate={{ width: isOpen ? "100%" : "0%" }}
             transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
-            className=" h-px rounded bg-neutral-800"
+            className="h-px rounded bg-neutral-800"
           ></motion.div>
         </div>
       </motion.div>
@@ -85,7 +85,7 @@ export default function CTAButton() {
         <div className="flex items-center gap-4 md:gap-5">
           <div className="h-[60px] w-[60px] md:h-[80px] md:w-[80px] rounded-lg md:rounded-xl overflow-hidden relative">
             <Image
-              src="/images/other/me.png"
+              src="https://images.unsplash.com/photo-1728106700436-463b132d0768?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="CTA Button"
               fill
               className="object-cover object-center"
@@ -93,7 +93,7 @@ export default function CTAButton() {
           </div>
 
           <div className="flex flex-col gap-1.5 md:gap-2 w-[500px] relative">
-            <p className="text-lg md:text-xl font-bold text-neutral-100">
+            <p className="text-lg md:text-xl font-semibold text-neutral-100">
               Jason Zubiate
             </p>
             <Slider />

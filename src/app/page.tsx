@@ -6,6 +6,7 @@ import Services from "@/components/sections/Services";
 import TechnologiesList from "@/components/sections/TechnologiesList";
 import Footer from "@/components/layout/Footer";
 import Work from "@/components/sections/Work";
+import Hero from "@/components/sections/Hero";
 
 export default function Home() {
   // useTransition();
@@ -15,7 +16,7 @@ export default function Home() {
       {/* <div className="revealer fixed top-0 left-0 w-screen h-screen origin-[center_top] bg-neutral-900 pointer-events-none z-999"></div> */}
 
       <main>
-        <div className="h-screen bg-green-200 flex items-center justify-center">hero</div>
+        <Hero />
         <About />
         <Work />
         <Services />
