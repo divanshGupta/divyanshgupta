@@ -1,5 +1,6 @@
 export type Project = {
   title: string;
+  icon: string;
   slug: string;
   category: string;
   keywords: string[];
@@ -17,6 +18,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: "Jazmin Wong",
+    icon: "/images/work/jazmin-wong/jazmin-wong-icon.png",
     slug: "jazmin-wong",
     category: "Portfolio",
     keywords: [
@@ -69,6 +71,7 @@ export const projects: Project[] = [
   },
   {
     title: "Trackstack",
+    icon: "/images/work/trackstack/trackstack-icon.png",
     slug: "trackstack",
     category: "Product",
     keywords: [
@@ -138,6 +141,7 @@ export const projects: Project[] = [
   },
   {
     title: "Kick & Bass",
+    icon: "/images/work/kick-bass/kick-bass-icon.png",
     slug: "kick-bass",
     category: "Services",
     keywords: [
@@ -203,7 +207,8 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "SocialStats",
+    title: "Socialstats",
+    icon: "/images/work/socialstats/socialstats-icon.png",
     slug: "socialstats",
     category: "Product",
     keywords: [
@@ -226,8 +231,8 @@ export const projects: Project[] = [
     ],
     year: 2024,
     backgroundImageUrl: "/images/work/socialstats/cover.png",
-    videoUrl: "/videos/kickbass-preview-compressed.mp4",
-    link: "https://www.kick-bass.com",
+    videoUrl: "/videos/socialstats-preview-compressed.mp4",
+    link: "",
     media: [
       {
         type: "image",
@@ -257,6 +262,7 @@ export const projects: Project[] = [
   },
   {
     title: "Westend",
+    icon: "/images/work/westend/westend-icon.png",
     slug: "westend",
     category: "Portfolio",
     keywords: [
@@ -306,25 +312,9 @@ export const projects: Project[] = [
       },
     ],
   },
-  // {
-  //   title: "Presave",
-  //   projectType: ["Web Design"],
-  //   keywords: ["Web Design", "UX Design", "Responsive Design", "Art Direction"],
-  //   summary: [
-  //     "Designed an intuitive interface for an automated artist song ",
-  //     "release platform (formerly SongShare.com), serving thousands ",
-  //     "of artists. This 4-week project focused on seamless UX and ",
-  //     "efficient developer handoff.",
-  //   ],
-  //   year: 2024,
-  //   backgroundImageUrl:
-  //     "https://images.unsplash.com/photo-1735486228450-ef263cc0d6e4?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //   videoUrl: "/videos/presave-preview-compressed.mp4",
-  //   link: "https://www.presave.com",
-  // },
-
   {
     title: "DELIVRD",
+    icon: "/images/work/delivrd/delivrd-icon.png",
     slug: "delivrd",
     category: "Showcase",
     keywords: [
@@ -359,4 +349,20 @@ export const projects: Project[] = [
       },
     ],
   },
+  // {
+  //   title: "Presave",
+  //   projectType: ["Web Design"],
+  //   keywords: ["Web Design", "UX Design", "Responsive Design", "Art Direction"],
+  //   summary: [
+  //     "Designed an intuitive interface for an automated artist song ",
+  //     "release platform (formerly SongShare.com), serving thousands ",
+  //     "of artists. This 4-week project focused on seamless UX and ",
+  //     "efficient developer handoff.",
+  //   ],
+  //   year: 2024,
+  //   backgroundImageUrl:
+  //     "https://images.unsplash.com/photo-1735486228450-ef263cc0d6e4?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  //   videoUrl: "/videos/presave-preview-compressed.mp4",
+  //   link: "https://www.presave.com",
+  // },
 ];
