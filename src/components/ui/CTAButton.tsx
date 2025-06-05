@@ -3,13 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { motion } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
 import { lcddot } from "@/fonts";
 import { useTransitionRouter } from "next-view-transitions";
 import { usePathname } from "next/navigation";
 import useOnClickOutside from "@/hooks/useOnClickOutside";
-import useTransition from "@/hooks/useTransition";
+import { useFooter } from "@/contexts/footer-context";
 
 const navItems = [
   {
@@ -30,19 +30,42 @@ const navItems = [
 ];
 
 export default function CTAButton() {
-  const [isOpen, setIsOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const { footerRef } = useFooter();
+  const [isOpen, setIsOpen] = useState(false);
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsInitialLoad(false);
+    }, 3000);
+  }, []);
 
   useOnClickOutside(isOpen, ref as React.RefObject<HTMLElement>, () =>
     setIsOpen(false)
   );
 
+  const isFooterInView = useInView(footerRef, { amount: 0.1 });
+
   return (
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 100, scale: 0.95 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ duration: 0.5, delay: 0.5, ease: [0.25, 1, 0.5, 1] }}
+      animate={
+        !isFooterInView
+          ? { opacity: 1, y: 0, scale: 1 }
+          : { y: 200, scale: 0.95, opacity: 1 }
+      }
+      transition={{
+        duration: isInitialLoad ? 0.5 : 1,
+        delay: isInitialLoad ? 2 : 0,
+        ease: [0.25, 1, 0.5, 1],
+        opacity: {
+          duration: 0.5,
+          delay: 2,
+          ease: [0.25, 1, 0.5, 1],
+        },
+      }}
       className="py-2 pl-2 pr-8 rounded-2xl md:rounded-[20px] bg-neutral-900 border border-neutral-800 fixed left-4 md:left-1/2 right-4 md:right-auto md:-translate-x-1/2 bottom-6 w-full md:w-[700px] z-50  overflow-hidden"
     >
       <motion.div

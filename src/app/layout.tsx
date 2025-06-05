@@ -4,6 +4,7 @@ import { ReactLenis } from "lenis/react";
 import CTAButton from "@/components/ui/CTAButton";
 import { ViewTransitions } from "next-view-transitions";
 import { saans } from "@/fonts";
+import { FooterProvider } from "@/contexts/footer-context";
 import DocumentTitleChanger from "@/components/layout/DocumentTitleChanger";
 
 export default function RootLayout({
@@ -15,14 +16,16 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang="en">
         <ReactLenis root>
-          <body
-            className={`${saans.className} antialiased bg-neutral-100 text-neutral-900 overscroll-none`}
-          >
-            <DocumentTitleChanger />
-            <Header />
-            <CTAButton />
-            {children}
-          </body>
+          <FooterProvider>
+            <body
+              className={`${saans.className} antialiased bg-neutral-100 text-neutral-900 overscroll-none`}
+            >
+              <DocumentTitleChanger />
+              <Header />
+              <CTAButton />
+              {children}
+            </body>
+          </FooterProvider>
         </ReactLenis>
       </html>
     </ViewTransitions>
