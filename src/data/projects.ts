@@ -38,12 +38,12 @@ export const projects: Project[] = [
     year: 2025,
     backgroundImageUrl:
       "https://images.unsplash.com/photo-1744731036457-b74958fd6bf5?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    videoUrl: "/videos/jazminwong-preview-compressed.mp4",
+    videoUrl: "/videos/jazmin-wong-preview-compressed.mp4",
     link: "https://www.jazzicreates.tv",
     media: [
       {
         type: "image",
-        url: "/images/work/jazmin-wong/image-01.jpg",
+        url: "/images/work/jazmin-wong/image-01.png",
       },
       {
         type: "video",
@@ -51,11 +51,19 @@ export const projects: Project[] = [
       },
       {
         type: "image",
-        url: "/images/work/jazmin-wong/image-01.jpg",
+        url: "/images/work/jazmin-wong/image-03.png",
       },
       {
-        type: "video",
-        url: "/videos/work/jazmin-wong/video-01.mp4",
+        type: "image",
+        url: "/images/work/jazmin-wong/image-04.png",
+      },
+      {
+        type: "image",
+        url: "/images/work/jazmin-wong/image-05.png",
+      },
+      {
+        type: "image",
+        url: "/images/work/jazmin-wong/image-06.png",
       },
     ],
   },
@@ -65,12 +73,14 @@ export const projects: Project[] = [
     category: "Product",
     keywords: [
       "Art Direction",
+      "Naming & Copywriting",
+      "Voice & Tone",
       "Brand Design",
       "Strategy",
       "UX",
       "UI",
       "Web Design",
-      "Responsive Design",
+      "Product Design",
       "Media Production",
     ],
     summary: [
@@ -80,26 +90,49 @@ export const projects: Project[] = [
       "growth. I currently work on their product team as a developer.",
     ],
     year: 2025,
-    backgroundImageUrl:
-      "https://images.squarespace-cdn.com/content/v1/5c9534c4af4683461d462c6b/2aa072cf-19b7-4b05-a353-26bd9904bb6d/240329_DRUMSHEDS_Radio1Dance_JakeDavis_%40jakephilipdavis-6160+%281%29.jpg",
+    backgroundImageUrl: "/images/work/trackstack/cover.jpg",
     videoUrl: "/videos/trackstack-preview-compressed.mp4",
     link: "https://www.trackstack.app",
     media: [
       {
         type: "image",
-        url: "/images/work/jazmin-wong/image-01.jpg",
-      },
-      {
-        type: "video",
-        url: "/videos/work/jazmin-wong/video-01.mp4",
+        url: "/images/work/trackstack/image-01.png",
       },
       {
         type: "image",
-        url: "/images/work/jazmin-wong/image-01.jpg",
+        url: "/images/work/trackstack/image-02.png",
       },
       {
-        type: "video",
-        url: "/videos/work/jazmin-wong/video-01.mp4",
+        type: "image",
+        url: "/images/work/trackstack/image-07.png",
+      },
+      {
+        type: "image",
+        url: "/images/work/trackstack/image-03.png",
+      },
+      {
+        type: "image",
+        url: "/images/work/trackstack/image-05.png",
+      },
+      {
+        type: "image",
+        url: "/images/work/trackstack/image-06.png",
+      },
+      {
+        type: "image",
+        url: "/images/work/trackstack/image-04.png",
+      },
+      {
+        type: "image",
+        url: "/images/work/trackstack/image-08.png",
+      },
+      {
+        type: "image",
+        url: "/images/work/trackstack/image-09.png",
+      },
+      {
+        type: "image",
+        url: "/images/work/trackstack/image-10.png",
       },
     ],
   },
@@ -127,79 +160,101 @@ export const projects: Project[] = [
       "experience to optimize visitor-to-paid-member conversion.",
     ],
     year: 2024,
-    backgroundImageUrl:
-      "https://images.unsplash.com/photo-1599423424751-54e0c1187a02?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    backgroundImageUrl: "/images/work/kick-bass/cover.png",
     videoUrl: "/videos/kickbass-preview-compressed.mp4",
     link: "https://www.kick-bass.com",
     media: [
       {
         type: "image",
-        url: "/images/work/jazmin-wong/image-01.jpg",
-      },
-      {
-        type: "video",
-        url: "/videos/work/jazmin-wong/video-01.mp4",
+        url: "/images/work/kick-bass/image-01.png",
       },
       {
         type: "image",
-        url: "/images/work/jazmin-wong/image-01.jpg",
+        url: "/images/work/kick-bass/image-02.png",
       },
       {
-        type: "video",
-        url: "/videos/work/jazmin-wong/video-01.mp4",
+        type: "image",
+        url: "/images/work/kick-bass/image-03.png",
+      },
+      {
+        type: "image",
+        url: "/images/work/kick-bass/image-04.png",
+      },
+      {
+        type: "image",
+        url: "/images/work/kick-bass/image-05.png",
+      },
+      {
+        type: "image",
+        url: "/images/work/kick-bass/image-06.png",
+      },
+      {
+        type: "image",
+        url: "/images/work/kick-bass/image-07.png",
+      },
+      {
+        type: "image",
+        url: "/images/work/kick-bass/image-08.png",
+      },
+      {
+        type: "image",
+        url: "/images/work/kick-bass/image-09.png",
       },
     ],
   },
-
-  // // {
-  // //   title: "Inbox",
-  // //   projectType: ["Development"],
-  // //   details: [
-  // //     "Next.js",
-  // //     "Tailwind CSS",
-  // //     "GSAP",
-  // //     "Lenis",
-  // //     "Vercel",
-  // //     "Supabase",
-  // //     "Contentful",
-  // //     "Various APIs",
-  // //   ],
-  // //   summary: [
-  // //     "Collaborated with Trackstack co-founders to develop ",
-  // //     "a streamlined platform for DJs and producers to submit demos ",
-  // //     "to EDM labels, ensuring a transparent submission experience. ",
-  // //     "The platform now serves over 10,000 users.",
-  // //   ],
-  // //   year: 2024,
-  // //   fileType: "image",
-  // //   fileUrl: "/images/inbox-cover.png",
-  // //   link: "https://www.trackstack.app/inbox",
-  // // },
-  // // {
-  // //   title: "Linkstack",
-  // //   projectType: ["Web Design", "Development"],
-  // //   details: [
-  // //     "Next.js",
-  // //     "Tailwind CSS",
-  // //     "GSAP",
-  // //     "Lenis",
-  // //     "Vercel",
-  // //     "Supabase",
-  // //     "Contentful",
-  // //     "Various APIs",
-  // //   ],
-  // //   summary: [
-  // //     "Designed and developed a free link-in-bio platform tailored for ",
-  // //     "DJs. As part of the Trackdetails ecosystem, the platform ",
-  // //     "seamlessly integrates with their product suite, including demo ",
-  // //     "submissions to the Inbox platform.",
-  // //   ],
-  // //   year: 2024,
-  // //   fileType: "video",
-  // //   fileUrl:
-  // //     "https://framerusercontent.com/assets/xczsI9Xq2X6OvsvU8NVUiUJUXuA.mp4",
-  // //   link: "https://www.kick-bass.com",
-  // // },
+  {
+    title: "SocialStats",
+    slug: "socialstats",
+    category: "Product",
+    keywords: [
+      "Research & Insights",
+      "Naming & Copywriting",
+      "Competitive Study",
+      "Voice & Tone",
+      "Workshops",
+      "Strategy",
+      "UX",
+      "UI",
+      "Web Design",
+      "Responsive Design",
+    ],
+    summary: [
+      "Designed the home and pricings page for a social media analytics  ",
+      "platform that helps artists and creators track their social  ",
+      "media performance. This 4-week project focused on seamless UX  ",
+      "and efficient developer handoff.",
+    ],
+    year: 2024,
+    backgroundImageUrl: "/images/work/socialstats/cover.png",
+    videoUrl: "/videos/kickbass-preview-compressed.mp4",
+    link: "https://www.kick-bass.com",
+    media: [
+      {
+        type: "image",
+        url: "/images/work/socialstats/image-01.png",
+      },
+      {
+        type: "image",
+        url: "/images/work/socialstats/image-02.png",
+      },
+      {
+        type: "image",
+        url: "/images/work/socialstats/image-03.png",
+      },
+      {
+        type: "image",
+        url: "/images/work/socialstats/image-04.png",
+      },
+      {
+        type: "image",
+        url: "/images/work/socialstats/image-05.png",
+      },
+      {
+        type: "image",
+        url: "/images/work/socialstats/image-06.png",
+      },
+    ],
+  },
   {
     title: "Westend",
     slug: "westend",
@@ -227,19 +282,27 @@ export const projects: Project[] = [
     media: [
       {
         type: "image",
-        url: "/images/work/jazmin-wong/image-01.jpg",
-      },
-      {
-        type: "video",
-        url: "/videos/work/jazmin-wong/video-01.mp4",
+        url: "/images/work/westend/image-01.png",
       },
       {
         type: "image",
-        url: "/images/work/jazmin-wong/image-01.jpg",
+        url: "/images/work/westend/image-02.png",
       },
       {
-        type: "video",
-        url: "/videos/work/jazmin-wong/video-01.mp4",
+        type: "image",
+        url: "/images/work/westend/image-03.png",
+      },
+      {
+        type: "image",
+        url: "/images/work/westend/image-04.png",
+      },
+      {
+        type: "image",
+        url: "/images/work/westend/image-05.png",
+      },
+      {
+        type: "image",
+        url: "/images/work/westend/image-06.png",
       },
     ],
   },
@@ -259,30 +322,41 @@ export const projects: Project[] = [
   //   videoUrl: "/videos/presave-preview-compressed.mp4",
   //   link: "https://www.presave.com",
   // },
-  // {
-  //   title: "DELIVRD",
-  //   slug: "delivrd",
-  //   category: "Showcase",
-  //   keywords: [
-  //     "Next.js",
-  //     "Tailwind CSS",
-  //     "GSAP",
-  //     "Lenis",
-  //     "Supabase",
-  //     "Vercel",
-  //     "Web Design",
-  //     "Responsive Design",
-  //   ],
-  //   summary: [
-  //     "Developed a website that helps aspiring EDM producers easily ",
-  //     "find and submit demos to popular labels. Designed with a clean, ",
-  //     "minimal aesthetic and subtle micro-animations for an engaging ",
-  //     "user experience. I continue to maintain and improve the site.",
-  //   ],
-  //   year: 2023,
-  //   backgroundImageUrl:
-  //     "https://images.unsplash.com/photo-1617864848089-9c54bf240fe6?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //   videoUrl: "/videos/delivrd-preview-compressed.mp4",
-  //   link: "https://www.delivrd.live",
-  // },
+
+  {
+    title: "DELIVRD",
+    slug: "delivrd",
+    category: "Showcase",
+    keywords: [
+      "Next.js",
+      "Tailwind CSS",
+      "GSAP",
+      "Lenis",
+      "Supabase",
+      "Vercel",
+      "Web Design",
+      "Responsive Design",
+    ],
+    summary: [
+      "Developed a website that helps aspiring EDM producers easily ",
+      "find and submit demos to popular labels. Designed with a clean, ",
+      "minimal aesthetic and subtle micro-animations for an engaging ",
+      "user experience. I continue to maintain and improve the site.",
+    ],
+    year: 2023,
+    backgroundImageUrl:
+      "https://images.unsplash.com/photo-1617864848089-9c54bf240fe6?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    videoUrl: "/videos/delivrd-preview-compressed.mp4",
+    link: "https://www.delivrd.live",
+    media: [
+      {
+        type: "image",
+        url: "/images/work/delivrd/image-01.png",
+      },
+      {
+        type: "image",
+        url: "/images/work/delivrd/image-02.png",
+      },
+    ],
+  },
 ];

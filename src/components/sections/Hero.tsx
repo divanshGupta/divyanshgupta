@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { motion } from "motion/react";
 import { useRef } from "react";
+import Image from "next/image";
 import useWindowSize from "@/hooks/useWindowSize";
 import { ArrowDown } from "lucide-react";
 
@@ -140,24 +141,54 @@ export default function Hero() {
               </p>
             </motion.div>
           </div>
-          <div className="relative -left-[0.05em] overflow-hidden">
-            <motion.h1
-              initial={{ y: "100%" }}
-              animate={{ y: "0%" }}
-              transition={{
-                duration: 1,
-                delay: 0.1,
-                ease: [0.76, 0, 0.24, 1],
-              }}
-              className="text-[clamp(32px,11.6vw,400px)] whitespace-nowrap tracking-tight leading-[0.9]"
-            >
-              Design Engineer
-            </motion.h1>
+          <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-2">
+            <div className="overflow-hidden">
+              <motion.div
+                initial={{ y: "100%" }}
+                animate={{ y: "0%" }}
+                transition={{
+                  duration: 1,
+                  delay: 0.1,
+                  ease: [0.76, 0, 0.24, 1],
+                }}
+                className="w-full pointer-events-none lg:pr-20"
+              >
+                <Image
+                  src="/images/svg/design.svg"
+                  alt="Design"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="w-full h-[13vw] sm:w-auto sm:h-[10vw]"
+                />
+              </motion.div>
+            </div>
+            <div className="overflow-hidden">
+              <motion.div
+                initial={{ y: "100%" }}
+                animate={{ y: "0%" }}
+                transition={{
+                  duration: 1,
+                  delay: 0.1,
+                  ease: [0.76, 0, 0.24, 1],
+                }}
+                className="w-full pointer-events-none"
+              >
+                <Image
+                  src="/images/svg/engineer.svg"
+                  alt="Engineer"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="w-full h-auto sm:w-auto sm:h-[10vw]"
+                />
+              </motion.div>
+            </div>
           </div>
         </div>
 
         <div className="absolute left-8 bottom-6 flex items-center gap-1">
-          <ArrowDown className="w-[clamp(12px,1.2vw,20px)] h-[clamp(12px,1.2vw,20px)] text-neutral-900" />
+          <ArrowDown className="w-[clamp(16px,1.3vw,24px)] h-[clamp(16px,1.3vw,24px)] text-neutral-900" />
           <p className="text-[clamp(12px,1.2vw,20px)] font-medium">
             Scroll for
           </p>

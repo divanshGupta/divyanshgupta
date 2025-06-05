@@ -20,11 +20,17 @@ export default function Work() {
         </p>
       </div>
 
-      <ul className="flex gap-4">
-        <motion.li key={projects[0].title} className="w-1/2 h-[700px]">
+      <ul className="flex flex-col lg:flex-row gap-4">
+        <motion.li
+          key={projects[0].title}
+          className="w-full lg:w-1/2 h-[clamp(500px,40vw,1000px)]"
+        >
           <ProjectCard project={projects[0]} />
         </motion.li>
-        <motion.li key={projects[2].title} className="w-1/2 h-[700px]">
+        <motion.li
+          key={projects[2].title}
+          className="w-full lg:w-1/2 h-[clamp(500px,40vw,1000px)]"
+        >
           <ProjectCard project={projects[2]} />
         </motion.li>
       </ul>
@@ -47,7 +53,7 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <Link
       href={`/work/${project.slug}`}
-      className="flex flex-col gap-6 px-4 pt-4 pb-5 w-full h-full rounded-2xl bg-neutral-200 cursor-pointer group relative"
+      className="flex flex-col gap-6 px-4 pt-4 pb-5 2xl:pb-7 w-full h-full rounded-2xl bg-neutral-200 cursor-pointer group relative"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -89,16 +95,18 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
       </div>
 
-      <div className="flex flex-col gap-3 px-4">
+      <div className="flex flex-col gap-3 2xl:gap-4 px-4">
         <div className="flex justify-between w-full relative">
-          <p className="text-xl font-medium">{project.year}</p>
-          <p className="absolute left-1/2 -translate-x-1/2 text-xl font-medium">
+          <p className="text-[clamp(16px,1.2vw,28px)] font-medium">{project.year}</p>
+          <p className="absolute left-1/2 -translate-x-1/2 text-[clamp(16px,1.2vw,28px)] font-medium">
             {project.title}
           </p>
-          <p className="text-xl font-medium">{project.category}</p>
+          <p className="text-[clamp(16px,1.2vw,28px)] font-medium">
+            {project.category}
+          </p>
         </div>
 
-        <div className="flex justify-center items-center h-4 md:h-4.5 overflow-hidden relative w-full">
+        <div className="flex justify-center items-center h-4 md:h-4.5 2xl:h-5 overflow-hidden relative w-full">
           <div className="absolute left-0 h-full w-10 bg-linear-to-r from-neutral-200/95 to-neutral-200/0 z-10" />
           <div className="absolute right-0 h-full w-10 bg-linear-to-l from-neutral-200/95 to-neutral-200/0 z-10" />
 
@@ -107,7 +115,7 @@ function ProjectCard({ project }: { project: Project }) {
               initial={{ x: 0 }}
               animate={{ x: "-100%" }}
               transition={{ duration: 32, ease: "linear", repeat: Infinity }}
-              className={`${lcddot.className} text-[10px] md:text-xs tracking-widest text-neutral-600 uppercase whitespace-nowrap pr-1.5`}
+              className={`${lcddot.className} text-[clamp(10px,0.8vw,18px)] tracking-widest text-neutral-600 uppercase whitespace-nowrap pr-1.5`}
             >
               {project.keywords.map((keyword) => (
                 <span key={keyword}>{keyword}, </span>
@@ -117,7 +125,7 @@ function ProjectCard({ project }: { project: Project }) {
               initial={{ x: 0 }}
               animate={{ x: "-100%" }}
               transition={{ duration: 32, ease: "linear", repeat: Infinity }}
-              className={`${lcddot.className} text-[10px] md:text-xs tracking-widest text-neutral-600 uppercase whitespace-nowrap pr-1.5`}
+              className={`${lcddot.className} text-[clamp(10px,0.8vw,18px)] tracking-widest text-neutral-600 uppercase whitespace-nowrap pr-1.5`}
             >
               {project.keywords.map((keyword) => (
                 <span key={keyword}>{keyword}, </span>

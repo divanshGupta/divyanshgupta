@@ -19,13 +19,13 @@ export default function Work() {
     <>
       <div className="revealer fixed top-0 left-0 w-screen h-screen origin-[center_top] bg-neutral-900 pointer-events-none z-999"></div>
 
-      <div className="px-8 pt-[200px] pb-6">
-        <div className="overflow-hidden mb-6">
+      <div className="px-4 lg:px-8 pt-[clamp(200px,15vw,500px)]">
+        <div className="overflow-hidden mb-3 lg:mb-5">
           <motion.p
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             transition={{ duration: 0.8, delay: 2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[clamp(12px,1.2vw,20px)] font-medium"
+            className="text-[clamp(14px,1.2vw,24px)] font-medium"
           >
             [2022-2025]
           </motion.p>
@@ -35,7 +35,7 @@ export default function Work() {
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             transition={{ duration: 1, delay: 1.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[clamp(12px,10vw,200px)] font-bold uppercase leading-[0.8] tracking-tight"
+            className="text-[clamp(48px,7.5vw,200px)] font-bold uppercase leading-[0.8] tracking-tight"
           >
             Selected Work
           </motion.h1>
@@ -51,9 +51,9 @@ export default function Work() {
 
 function ProjectList() {
   return (
-    <div className="px-4 py-6 mb-24">
-      <div className="w-full bg-neutral-300 rounded-[20px] p-4">
-        <div className="grid grid-cols-2 gap-4">
+    <div className="px-2 lg:px-4 py-4 lg:py-6">
+      <div className="w-full bg-neutral-200 rounded-2xl lg:rounded-[20px] p-3 lg:p-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4">
           {projects.map((project, index) => (
             <ProjectCard key={project.title} project={project} index={index} />
           ))}
@@ -117,13 +117,13 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     >
       <Link
         href={`/work/${project.slug}`}
-        className="flex flex-col gap-6 px-4 pt-4 pb-5 rounded-2xl bg-neutral-200 cursor-pointer group relative"
+        className="flex flex-col gap-4 lg:gap-5 px-3 lg:px-4 pt-3 lg:pt-4 pb-5 lg:pb-6 rounded-xl lg:rounded-2xl bg-neutral-900 cursor-pointer group relative"
         onClick={handleNavigation(`/work/${project.slug}`)}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div className="relative rounded-xl overflow-hidden w-full h-[500px]">
-          <div className="absolute inset-0 bg-neutral-900/40 backdrop-blur-md z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out" />
+        <div className="relative rounded-lg lg:rounded-xl overflow-hidden w-full h-[300px] md:h-[350px] lg:h-[clamp(500px,32vw,800px)]">
+          <div className="absolute inset-0 bg-neutral-900/30 backdrop-blur-md z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out" />
 
           <video
             ref={(el) => {
@@ -160,25 +160,35 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 px-4">
-          <div className="flex justify-between w-full relative">
-            <p className="text-xl font-medium">{project.year}</p>
-            <p className="absolute left-1/2 -translate-x-1/2 text-xl font-medium">
-              {project.title}
-            </p>
-            <p className="text-xl font-medium">{project.category}</p>
+        <div className="flex flex-col gap-4 lg:gap-5 px-4">
+          <div className="flex justify-between items-center w-full relative">
+            <div className="flex items-center gap-2 lg:gap-3">
+              <div className="w-6 h-6 lg:w-8 lg:h-8 rounded-full bg-neutral-100"></div>
+              <p className="text-[clamp(14px,1.2vw,18px)] uppercase font-semibold text-neutral-100 tracking-wide">
+                {project.title}
+              </p>
+            </div>
+
+            <div className="flex gap-3 lg:gap-5">
+              <p className="text-[clamp(14px,1.2vw,18px)] uppercase font-semibold text-neutral-300 tracking-wide">
+                {project.category}
+              </p>
+              <p className="text-[clamp(14px,1.2vw,18px)] uppercase font-semibold text-neutral-300 tracking-wide">
+                {project.year}
+              </p>
+            </div>
           </div>
 
           <div className="flex justify-center items-center h-4 md:h-4.5 overflow-hidden relative w-full">
-            <div className="absolute left-0 h-full w-10 bg-linear-to-r from-neutral-200/95 to-neutral-200/0 z-10" />
-            <div className="absolute right-0 h-full w-10 bg-linear-to-l from-neutral-200/95 to-neutral-200/0 z-10" />
+            <div className="absolute left-0 h-full w-10 bg-linear-to-r from-neutral-900/95 to-neutral-200/0 z-10" />
+            <div className="absolute right-0 h-full w-10 bg-linear-to-l from-neutral-900/95 to-neutral-200/0 z-10" />
 
             <div className="flex overflow-hidden">
               <motion.p
                 initial={{ x: 0 }}
                 animate={{ x: "-100%" }}
                 transition={{ duration: 32, ease: "linear", repeat: Infinity }}
-                className={`${lcddot.className} text-[10px] md:text-xs tracking-widest text-neutral-600 uppercase whitespace-nowrap pr-1.5`}
+                className={`${lcddot.className} text-[10px] md:text-xs tracking-widest text-neutral-300 uppercase whitespace-nowrap pr-1.5`}
               >
                 {project.keywords.map((keyword) => (
                   <span key={keyword}>{keyword}, </span>
@@ -188,7 +198,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 initial={{ x: 0 }}
                 animate={{ x: "-100%" }}
                 transition={{ duration: 32, ease: "linear", repeat: Infinity }}
-                className={`${lcddot.className} text-[10px] md:text-xs tracking-widest text-neutral-600 uppercase whitespace-nowrap pr-1.5`}
+                className={`${lcddot.className} text-[10px] md:text-xs tracking-widest text-neutral-300 uppercase whitespace-nowrap pr-1.5`}
               >
                 {project.keywords.map((keyword) => (
                   <span key={keyword}>{keyword}, </span>

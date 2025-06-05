@@ -74,12 +74,12 @@ export default function TechnologiesLit() {
 
       <h4 className="font-semibold uppercase mb-4">Professional at</h4>
       <div ref={containerRef} className="relative">
-        <div className="grid grid-rows-2 h-120">
-          <div className="grid grid-cols-3 border-b border-neutral-300">
+        <div className="hidden lg:grid grid-rows-2">
+          <div className="grid grid-cols-3 border-b border-neutral-300 h-[clamp(200px,20vw,400px)]">
             <a
               href="https://reactjs.org"
               target="_blank"
-              className="grid-item flex items-center justify-center border-r border-neutral-300 group cursor-pointer"
+              className="grid-item flex items-center justify-center border-r border-neutral-300 group cursor-pointer "
             >
               <Image
                 src="/images/svg/react-logo.svg"
@@ -117,7 +117,7 @@ export default function TechnologiesLit() {
             </a>
           </div>
 
-          <div className="grid grid-cols-7">
+          <div className="grid grid-cols-7 h-[clamp(200px,20vw,400px)]">
             <a
               href="https://gsap.com/"
               target="_blank"
@@ -212,6 +212,139 @@ export default function TechnologiesLit() {
           </div>
         </div>
 
+        {/* Grid for mobile */}
+        <div className="grid grid-cols-2 lg:hidden">
+          <a
+            href="https://reactjs.org"
+            target="_blank"
+            className="grid-item flex items-center justify-center border-r border-b border-neutral-300 group cursor-pointer h-[clamp(200px,20vw,400px)]"
+          >
+            <Image
+              src="/images/svg/react-logo.svg"
+              alt="React"
+              width={70}
+              height={70}
+              className="z-10 transition-all duration-300"
+            />
+          </a>
+          <a
+            href="https://nextjs.org"
+            target="_blank"
+            className="grid-item flex items-center justify-center border-b border-neutral-300 group cursor-pointer h-[clamp(200px,20vw,400px)]"
+          >
+            <Image
+              src="/images/svg/nextjs-logotype-light-background.svg"
+              alt="Next.js"
+              width={100}
+              height={100}
+              className="z-10 transition-all duration-300"
+            />
+          </a>
+          <a
+            href="https://www.typescriptlang.org"
+            target="_blank"
+            className="grid-item flex items-center justify-center border-r border-b border-neutral-300 group cursor-pointer h-[clamp(200px,20vw,400px)]"
+          >
+            <Image
+              src="/images/svg/typescript-logo.svg"
+              alt="TypeScript"
+              width={64}
+              height={64}
+              className="z-10 transition-all duration-300"
+            />
+          </a>
+          <a
+            href="https://gsap.com/"
+            target="_blank"
+            className="grid-item flex items-center justify-center border-b border-neutral-300 group cursor-pointer h-[clamp(200px,20vw,400px)]"
+          >
+            <Image
+              src="/images/svg/gsap-black.svg"
+              alt="GSAP"
+              width={80}
+              height={80}
+              className="z-10 transition-all duration-300"
+            />
+          </a>
+          <a
+            href="https://motion.dev/"
+            target="_blank"
+            className="grid-item flex items-center justify-center border-r border-b border-neutral-300 group cursor-pointer h-[clamp(200px,20vw,400px)]"
+          >
+            <Image
+              src="/images/svg/motion.svg"
+              alt="Motion"
+              width={80}
+              height={80}
+              className="z-10 transition-all duration-300"
+            />
+          </a>
+          <a
+            href="https://tailwindcss.com/"
+            target="_blank"
+            className="grid-item flex items-center justify-center border-b border-neutral-300 group cursor-pointer h-[clamp(200px,20vw,400px)]"
+          >
+            <Image
+              src="/images/svg/tailwindcss-logo.svg"
+              alt="TailwindCSS"
+              width={70}
+              height={70}
+              className="z-10 transition-all duration-300"
+            />
+          </a>
+          <a
+            href="https://www.contentful.com/"
+            target="_blank"
+            className="grid-item flex items-center justify-center border-r border-b border-neutral-300 group cursor-pointer h-[clamp(200px,20vw,400px)]"
+          >
+            <Image
+              src="/images/svg/contentful-logo.svg"
+              alt="Contentful"
+              width={50}
+              height={50}
+              className="z-10 transition-all duration-300"
+            />
+          </a>
+          <a
+            href="https://supabase.com/"
+            target="_blank"
+            className="grid-item flex items-center justify-center border-b border-neutral-300 group cursor-pointer h-[clamp(200px,20vw,400px)]"
+          >
+            <Image
+              src="/images/svg/supabase-logo.svg"
+              alt="Supabase"
+              width={50}
+              height={50}
+              className="z-10 transition-all duration-300"
+            />
+          </a>
+          <a
+            href="https://vercel.com/"
+            target="_blank"
+            className="grid-item flex items-center justify-center border-r border-neutral-300 group h-[clamp(200px,20vw,400px)]"
+          >
+            <Image
+              src="/images/svg/vercel-logotype-light.svg"
+              alt="Vercel"
+              width={90}
+              height={90}
+              className="z-10 transition-all duration-300"
+            />
+          </a>
+          <a
+            href="https://www.figma.com/"
+            target="_blank"
+            className="grid-item flex items-center  border-neutral-300 justify-center group h-[clamp(200px,20vw,400px)]"
+          >
+            <Image
+              src="/images/svg/figma-logo.svg"
+              alt="Figma"
+              width={60}
+              height={60}
+              className="z-10 transition-all duration-300"
+            />
+          </a>
+        </div>
         <div
           ref={highlightRef}
           className="highlight hidden sm:block absolute top-0 left-0 bg-neutral-900 pointer-events-none transition-all duration-300"
@@ -246,7 +379,7 @@ function LetterScroll() {
   return (
     <ul
       ref={containerRef}
-      className="letter-scroll flex flex-col justify-center items-center h-screen py-24"
+      className="letter-scroll flex flex-col justify-center items-center h-[800px] py-24"
     >
       <li className="text-[clamp(100px,14vw,250px)] font-semibold tracking-tight leading-[0.85] overflow-hidden flex">
         <span className="letter relative inline-block">

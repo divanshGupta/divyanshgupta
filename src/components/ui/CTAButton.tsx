@@ -93,7 +93,7 @@ export default function CTAButton() {
           </div>
 
           <div className="flex flex-col gap-1.5 md:gap-2 w-[500px] relative">
-            <p className="text-lg md:text-xl font-semibold text-neutral-100">
+            <p className="text-lg font-semibold text-neutral-100 uppercase">
               Jason Zubiate
             </p>
             <Slider />
@@ -235,10 +235,10 @@ function NavItem({
           }}
           className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:-translate-y-1/2"
         >
-          <span className="text-lg md:text-xl font-bold text-neutral-100 mb-1.5">
+          <span className="text-lg md:text-xl font-semibold text-neutral-100 mb-1.5">
             {title}
           </span>
-          <span className="text-lg md:text-xl font-bold text-neutral-100 mb-1.5">
+          <span className="text-lg md:text-xl font-semibold text-neutral-100 mb-1.5">
             {title}
           </span>
         </motion.div>
