@@ -19,7 +19,7 @@ export default function Footer() {
     <footer ref={footerRef}>
       <div
         ref={containerRef}
-        className="px-2 lg:px-4 pt-8 lg:pt-16 pb-8 lg:pb-4 grid grid-cols-12 gap-4 relative"
+        className="px-2 lg:px-4 pt-8 lg:pt-16 pb-8 lg:pb-4 grid grid-cols-12 gap-2 lg:gap-4 relative"
       >
         <motion.h2
           style={{ y }}
@@ -30,20 +30,20 @@ export default function Footer() {
 
         <Link
           href="/work"
-          className="col-span-8 flex items-end p-6 bg-neutral-300/50 backdrop-blur-sm h-[350px] rounded-2xl text-[clamp(16px,1.4vw,24px)] font-medium leading-tight hover:backdrop-blur-md transition-all duration-500"
+          className="col-span-12 lg:col-span-8 flex items-end p-6 bg-neutral-300/50 backdrop-blur-sm h-[200px] lg:h-[350px] rounded-lg lg:rounded-xl text-[clamp(16px,1.4vw,24px)] font-medium leading-tight hover:backdrop-blur-md transition-all duration-500"
         >
           Work
         </Link>
         <Link
           href="/lab"
-          className="col-span-4 flex items-end p-6 bg-neutral-300/50 backdrop-blur-sm h-[350px] rounded-2xl text-[clamp(16px,1.4vw,24px)] font-medium leading-tight hover:backdrop-blur-md transition-all duration-500"
+          className="col-span-12 lg:col-span-4 flex items-end p-6 bg-neutral-300/50 backdrop-blur-sm h-[200px] lg:h-[350px] rounded-lg lg:rounded-xl text-[clamp(16px,1.4vw,24px)] font-medium leading-tight hover:backdrop-blur-md transition-all duration-500"
         >
           Lab
         </Link>
-        <div className="col-span-4 grid grid-rows-2 gap-4">
+        <div className="col-span-12 lg:col-span-4 grid grid-rows-2 gap-2 lg:gap-4">
           <a
             href="mailto:jason@itsjay.us"
-            className="flex items-end p-6 bg-neutral-300/50 backdrop-blur-sm rounded-2xl text-[clamp(16px,1.4vw,24px)] font-medium leading-tight hover:backdrop-blur-md transition-all duration-500"
+            className="flex items-end p-6 bg-neutral-300/50 backdrop-blur-sm h-[120px] lg:h-full rounded-lg lg:rounded-xl text-[clamp(16px,1.4vw,24px)] font-medium leading-tight hover:backdrop-blur-md transition-all duration-500"
           >
             Contact
           </a>
@@ -51,7 +51,7 @@ export default function Footer() {
             href="https://github.com/jasonzubiate"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-end p-6 bg-neutral-300/50 backdrop-blur-sm rounded-2xl text-[clamp(16px,1.4vw,24px)] font-medium leading-tight hover:backdrop-blur-md transition-all duration-500"
+            className="flex items-end p-6 bg-neutral-300/50 backdrop-blur-sm h-[120px] lg:h-full rounded-lg lg:rounded-xl text-[clamp(16px,1.4vw,24px)] font-medium leading-tight hover:backdrop-blur-md transition-all duration-500"
           >
             Github
           </a>
@@ -60,7 +60,7 @@ export default function Footer() {
           href="https://www.instagram.com/itsjay.us/"
           target="_blank"
           rel="noopener noreferrer"
-          className="col-span-4 flex items-end p-6 bg-neutral-300/50 backdrop-blur-sm h-[350px] rounded-2xl text-[clamp(16px,1.4vw,24px)] font-medium leading-tight hover:backdrop-blur-md transition-all duration-500"
+          className="col-span-6 lg:col-span-4 flex items-end p-6 bg-neutral-300/50 backdrop-blur-sm h-[120px] lg:h-[350px] rounded-lg lg:rounded-xl text-[clamp(16px,1.4vw,24px)] font-medium leading-tight hover:backdrop-blur-md transition-all duration-500"
         >
           Instagram
         </a>
@@ -68,7 +68,7 @@ export default function Footer() {
           href="https://www.linkedin.com/in/jasonzubiate/"
           target="_blank"
           rel="noopener noreferrer"
-          className="col-span-4 flex items-end p-6 bg-neutral-300/50 backdrop-blur-sm h-[350px] rounded-2xl text-[clamp(16px,1.4vw,24px)] font-medium leading-tight hover:backdrop-blur-md transition-all duration-500"
+          className="col-span-6 lg:col-span-4 flex items-end p-6 bg-neutral-300/50 backdrop-blur-sm h-[120px] lg:h-[350px] rounded-lg lg:rounded-xl text-[clamp(16px,1.4vw,24px)] font-medium leading-tight hover:backdrop-blur-md transition-all duration-500"
         >
           LinkedIn
         </a>
