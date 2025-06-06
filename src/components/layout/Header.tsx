@@ -60,8 +60,8 @@ function MailButton() {
           <span className="text-lg lg:text-xl 3xl:text-2xl">🤙🏼</span>
           {/* <Mail className="w-5 h-5 text-neutral-100" /> */}
         </div>
-        <div className="flex items-center relative px-5 lg:px-6 h-12 3xl:h-14 rounded-full bg-neutral-900 text-neutral-100 font-semibold text-[clamp(16px,1.2vw,20px)] border border-neutral-800 z-10">
-          <div className="overflow-hidden h-6 3xl:h-7">
+        <div className="flex items-center relative px-5 lg:px-6 h-12 lg:h-14 rounded-full bg-neutral-900 text-neutral-100 font-semibold text-[clamp(16px,1.2vw,20px)] border border-neutral-800 z-10">
+          <div className="overflow-hidden h-6 lg:h-7">
             <div className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:-translate-y-1/2">
               <span className="text-[clamp(16px,1.2vw,20px)] text-neutral-100 font-semibold mb-1.5">
                 Get in touch
