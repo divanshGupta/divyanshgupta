@@ -45,7 +45,7 @@ export default function CTAButton() {
     setIsOpen(false)
   );
 
-  const isFooterInView = useInView(footerRef, { amount: 0.1 });
+  const isFooterInView = useInView(footerRef, { amount: 0.4 });
 
   return (
     <motion.div

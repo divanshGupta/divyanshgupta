@@ -1,5 +1,6 @@
 "use client";
-
+import { motion } from "motion/react";
+import { Mail } from "lucide-react";
 export default function Header() {
   return (
     <header>
@@ -42,11 +43,36 @@ export default function Header() {
             June 2025
           </span>
         </div>
-
-        <button className="fixed right-4 lg:right-8 top-4 lg:top-5 px-5 py-3.5 rounded-full bg-neutral-900 text-neutral-100 font-semibold text-[clamp(16px,1.2vw,20px)] border border-neutral-800 cursor-pointer">
-          Get in touch
-        </button>
+        <MailButton />
       </div>
     </header>
+  );
+}
+
+function MailButton() {
+  return (
+    <a
+      href="mailto:jzubiate.dev@gmail.com"
+      className="fixed right-4 lg:right-8 top-4 lg:top-6 group cursor-pointer"
+    >
+      <div className="relative">
+        <div className="absolute left-0 top-0 w-12 3xl:w-14 h-12 3xl:h-14 bg-neutral-900 border border-neutral-800 rounded-full flex items-center justify-center rotate-180 scale-95 group-hover:scale-100 group-hover:rotate-0 group-hover:-translate-x-full transition-transform duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] -z-10">
+          <span className="text-lg lg:text-xl 3xl:text-2xl">🤙🏼</span>
+          {/* <Mail className="w-5 h-5 text-neutral-100" /> */}
+        </div>
+        <div className="flex items-center relative px-5 lg:px-6 h-12 3xl:h-14 rounded-full bg-neutral-900 text-neutral-100 font-semibold text-[clamp(16px,1.2vw,20px)] border border-neutral-800 z-10">
+          <div className="overflow-hidden h-6 3xl:h-7">
+            <div className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:-translate-y-1/2">
+              <span className="text-[clamp(16px,1.2vw,20px)] text-neutral-100 font-semibold mb-1.5">
+                Get in touch
+              </span>
+              <span className="text-[clamp(16px,1.2vw,20px)] text-neutral-100 font-semibold mb-1.5">
+                Get in touch
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
   );
 }
