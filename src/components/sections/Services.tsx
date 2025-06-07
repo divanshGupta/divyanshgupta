@@ -67,7 +67,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="px-2 lg:px-8 py-16 lg:py-24">
+    <section className="px-2 lg:px-4 py-16 lg:py-24">
       <div className="flex flex-col gap-16 lg:gap-24 bg-neutral-900 px-4 pt-16 lg:pt-24 pb-4 rounded-2xl lg:rounded-[20px]">
         <div className="lg:grid lg:grid-cols-12 gap-24">
           <div className="flex flex-col col-span-12 lg:col-span-10 lg:col-start-3">

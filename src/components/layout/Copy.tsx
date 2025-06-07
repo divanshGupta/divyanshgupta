@@ -113,7 +113,10 @@ export default function Copy({
   }
 
   return (
-    <div ref={containerRef} data-copy-wrapper="true">
+    <div
+      ref={containerRef}
+      data-copy-wrapper="true"
+    >
       {children}
     </div>
   );

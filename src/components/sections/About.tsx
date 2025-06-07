@@ -5,14 +5,19 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { wrapWordsInSpan } from "@/utils/string";
-import Image from "next/image";
+import useWindowSize from "@/hooks/useWindowSize";
+import Copy from "../layout/Copy";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
   const paragraphRef = useRef<HTMLParagraphElement>(null);
 
+  const { width } = useWindowSize();
+
   useGSAP(() => {
+    if (width < 1024) return;
+
     const paragraph = paragraphRef.current;
 
     if (!paragraph) return;
@@ -68,28 +73,60 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" className="flex justify-between pt-56 pb-28 px-8">
-      <div className="flex flex-col w-1/2">
+    <section
+      id="about"
+      className="grid grid-cols-12 gap-4 lg:gap-8 pt-56 pb-28 p-4 lg:px-8"
+    >
+      <div className="flex flex-col col-span-12 lg:col-span-7">
         <h4 className="font-semibold uppercase mb-4">Myself</h4>
+
+        {/* Mobile video */}
+        <div className="lg:hidden col-span-12 aspect-video rounded-lg overflow-hidden mb-4">
+          <video
+            src="/videos/about-video-compressed.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="pointer-events-none w-full h-full object-cover"
+            onError={(e) => console.error("Video loading error:", e)}
+            poster="/images/about-poster.jpg"
+          />
+        </div>
 
         <p
           ref={paragraphRef}
-          className="text-[clamp(16px,3.5vw,96px)] font-semibold  uppercase tracking-tight leading-none"
+          className="hidden lg:block text-[clamp(28px,3.5vw,96px)] font-semibold tracking-tight leading-none"
         >
           Passionate about merging design and engineering, I craft smooth,
           interactive experiences with purpose. With a focus on motion,
           performance, and detail, I help bring digital products to life for
           forward-thinking brands around the world.
         </p>
+
+        <Copy>
+          <p
+            ref={paragraphRef}
+            className="lg:hidden text-[clamp(28px,3.5vw,96px)] font-semibold tracking-tight leading-none"
+          >
+            Passionate about merging design and engineering, I craft smooth,
+            interactive experiences with purpose. With a focus on motion,
+            performance, and detail, I help bring digital products to life for
+            forward-thinking brands around the world.
+          </p>
+        </Copy>
       </div>
 
-      <div className="relative h-screen">
-        <div className="sticky top-[calc(100vh-20vw-164px)] w-[33vw] h-[20vw] rounded-lg overflow-hidden">
-          <Image
-            src="https://images.unsplash.com/photo-1742564386354-adb1a9dd4654?q=80&w=3260&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="About"
-            fill
-            className="object-cover aspect-video"
+      {/* Desktop video */}
+      <div className="hidden lg:block h-full col-span-5">
+        <div className="sticky top-[calc(100vh-20vw-172px)] w-full aspect-video rounded-lg lg:rounded-xl overflow-hidden">
+          <video
+            src="/videos/about-video-compressed.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="pointer-events-none"
           />
         </div>
       </div>

@@ -66,18 +66,18 @@
   animation: blink 1s infinite;
 }
 
-#about p span{
- @apply inline-block;
+#about p span {
+  @apply inline-block;
 }
 #about .word1 {
-    padding: 0 0 0 0.8em;
-    will-change: transform;
+  padding: 0 0 0 0.8em;
+  will-change: transform;
 }
 #about .word2 {
-    padding: 0 1.6em 0 0;
-    will-change: transform;
+  padding: 0 1.6em 0 0;
+  will-change: transform;
 }
 #about .word3 {
-    padding: 0 0 0 2.4em;
-    will-change: transform;
+  padding: 0 0 0 2.4em;
+  will-change: transform;
 }

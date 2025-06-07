@@ -117,7 +117,7 @@ export default function TechnologiesLit() {
             </a>
           </div>
 
-          <div className="grid grid-cols-7 h-[clamp(200px,20vw,400px)]">
+          <div className="grid grid-cols-7 h-[clamp(200px,15vw,400px)]">
             <a
               href="https://gsap.com/"
               target="_blank"
@@ -365,7 +365,7 @@ function LetterScroll() {
       ease: "power1.inOut",
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "33.33% bottom",
+        start: "40% bottom",
         end: "100% 80%",
         scrub: 1,
       },
@@ -379,9 +379,9 @@ function LetterScroll() {
   return (
     <ul
       ref={containerRef}
-      className="letter-scroll flex flex-col justify-center items-center h-[800px] py-24"
+      className="letter-scroll flex flex-col justify-center items-center h-[500px] lg:h-[800px] py-24"
     >
-      <li className="text-[clamp(100px,14vw,250px)] font-semibold tracking-tight leading-[0.85] overflow-hidden flex">
+      <li className="text-[clamp(48px,14vw,250px)] font-bold tracking-tight leading-[0.85] overflow-hidden flex">
         <span className="letter relative inline-block">
           <span>M</span>
           <span className="absolute bottom-full left-0">M</span>
@@ -407,7 +407,7 @@ function LetterScroll() {
           <span className="absolute bottom-full left-0">N</span>
         </span>
       </li>
-      <li className="text-[clamp(100px,14vw,250px)] font-semibold tracking-tight leading-[0.85] overflow-hidden flex">
+      <li className="text-[clamp(48px,14vw,250px)] font-bold tracking-tight leading-[0.9] lg:leading-[0.85] overflow-hidden flex">
         <span className="letter relative inline-block">
           <span>T</span>
           <span className="absolute bottom-full left-0">T</span>
@@ -420,7 +420,7 @@ function LetterScroll() {
           <span>C</span>
           <span className="absolute bottom-full left-0">C</span>
         </span>
-        <span className="letter relative inline-block mr-16">
+        <span className="letter relative inline-block mr-[clamp(16px,4.5vw,72px)]">
           <span>H</span>
           <span className="absolute bottom-full left-0">H</span>
         </span>
