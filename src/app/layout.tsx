@@ -1,4 +1,5 @@
 import "./globals.css";
+import { ViewTransitions } from "next-view-transitions";
 import Header from "../components/layout/Header";
 import { ReactLenis } from "lenis/react";
 import CTAButton from "@/components/ui/CTAButton";
@@ -19,19 +20,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <ReactLenis root>
-        <FooterProvider>
-          <body
-            className={`${saans.className} antialiased bg-neutral-100 text-neutral-900 overscroll-none`}
-          >
-            <DocumentTitleChanger />
-            <Header />
-            <CTAButton />
-            {children}
-          </body>
-        </FooterProvider>
-      </ReactLenis>
-    </html>
+    <ViewTransitions>
+      <html lang="en">
+        <ReactLenis root>
+          <FooterProvider>
+            <body
+              className={`${saans.className} antialiased bg-neutral-900 text-neutral-900 overscroll-none`}
+            >
+              <DocumentTitleChanger />
+              <Header />
+              <CTAButton />
+              {children}
+            </body>
+          </FooterProvider>
+        </ReactLenis>
+      </html>
+    </ViewTransitions>
   );
 }

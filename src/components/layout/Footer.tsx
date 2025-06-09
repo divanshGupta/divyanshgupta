@@ -2,11 +2,16 @@
 
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { useTransitionRouter } from "next-view-transitions";
 import { useFooter } from "@/contexts/footer-context";
+import { pageTransition } from "@/constants/pageTransition";
 
 export default function Footer() {
   const { footerRef } = useFooter();
+  const pathname = usePathname();
+  const router = useTransitionRouter();
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -30,12 +35,26 @@ export default function Footer() {
 
         <Link
           href="/work"
+          onClick={(e) => {
+            e.preventDefault();
+            if (pathname === "/work") return;
+            router.push("/work", {
+              onTransitionReady: pageTransition,
+            });
+          }}
           className="col-span-12 lg:col-span-8 flex items-end p-4 lg:p-6 bg-neutral-300/50 backdrop-blur-sm h-[200px] lg:h-[350px] rounded-lg lg:rounded-xl text-[clamp(16px,1.4vw,24px)] font-medium leading-tight hover:backdrop-blur-md transition-all duration-500"
         >
           Work
         </Link>
         <Link
           href="/lab"
+          onClick={(e) => {
+            e.preventDefault();
+            if (pathname === "/lab") return;
+            router.push("/lab", {
+              onTransitionReady: pageTransition,
+            });
+          }}
           className="col-span-12 lg:col-span-4 flex items-end p-4 lg:p-6 bg-neutral-300/50 backdrop-blur-sm h-[200px] lg:h-[350px] rounded-lg lg:rounded-xl text-[clamp(16px,1.4vw,24px)] font-medium leading-tight hover:backdrop-blur-md transition-all duration-500"
         >
           Lab

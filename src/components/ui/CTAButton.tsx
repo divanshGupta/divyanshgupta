@@ -8,6 +8,9 @@ import { useRef, useState, useEffect } from "react";
 import { lcddot } from "@/fonts";
 import useOnClickOutside from "@/hooks/useOnClickOutside";
 import { useFooter } from "@/contexts/footer-context";
+import { useTransitionRouter } from "next-view-transitions";
+import { pageTransition } from "@/constants/pageTransition";
+import { usePathname } from "next/navigation";
 
 const navItems = [
   {
@@ -182,10 +185,22 @@ function NavItem({
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
 }) {
+  const router = useTransitionRouter();
+  const pathname = usePathname();
+
   return (
     <Link
       href={href}
-      onClick={() => setIsOpen(false)}
+      onClick={(e) => {
+        e.preventDefault();
+        setIsOpen(false);
+        setTimeout(() => {
+          if (pathname === href) return;
+          router.push(href, {
+            onTransitionReady: pageTransition,
+          });
+        }, 500);
+      }}
       className="flex items-center gap-5 group cursor-pointer"
     >
       <motion.div
@@ -231,3 +246,5 @@ function NavItem({
     </Link>
   );
 }
+
+

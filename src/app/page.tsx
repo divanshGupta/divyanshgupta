@@ -9,7 +9,7 @@ import Hero from "@/components/sections/Hero";
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-neutral-100">
       <Hero />
       <About />
       <Work />

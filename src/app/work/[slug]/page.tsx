@@ -1,13 +1,13 @@
 "use client";
 
+import React from "react";
+import Image from "next/image";
 import { motion } from "motion/react";
 import { projects } from "@/data/projects";
 import { redirect } from "next/navigation";
 import { lcddot } from "@/fonts";
 import { use } from "react";
-import Image from "next/image";
 import Footer from "@/components/layout/Footer";
-import React from "react";
 
 type PageParams = {
   slug: string;
@@ -24,19 +24,24 @@ export default function Project({ params }: { params: Promise<PageParams> }) {
   }
 
   return (
-    <>
-      {/* <div className="revealer fixed top-0 left-0 w-screen h-screen origin-[center_top] bg-neutral-900 pointer-events-none z-999"></div> */}
-
-      <div className="px-2 lg:px-4 pt-[clamp(200px,15vw,500px)]">
-        <div className="flex flex-col items-center gap-[clamp(64px,6vw,200px)] px-3 lg:px-4 pt-[clamp(64px,10vw,128px)] pb-3 lg:pb-4 rounded-2xl lg:rounded-[20px] bg-neutral-900">
-          <motion.h1
-            initial={{ y: "100%" }}
-            animate={{ y: 0 }}
-            transition={{ duration: 1, delay: 2, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full text-neutral-100 text-center text-[clamp(64px,8vw,180px)] font-bold uppercase leading-[0.85]"
-          >
-            {project.title}
-          </motion.h1>
+    <main className="bg-neutral-100">
+      <div className="px-2 lg:px-4 pt-[clamp(128px,10vw,500px)]">
+        <motion.div
+          initial={{ y: "24px", opacity: 0, scale: 0.95 }}
+          animate={{ y: 0, opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col items-center gap-[clamp(64px,6vw,200px)] px-3 lg:px-4 pt-[clamp(64px,10vw,128px)] pb-3 lg:pb-4 rounded-2xl lg:rounded-[20px] bg-neutral-900"
+        >
+          <div className="overflow-hidden">
+            <motion.h1
+              initial={{ y: "100%" }}
+              animate={{ y: "0%" }}
+              transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full text-neutral-100 text-center text-[clamp(64px,8vw,180px)] font-bold uppercase leading-[0.85]"
+            >
+              {project.title}
+            </motion.h1>
+          </div>
 
           <div className="flex flex-col gap-12 lg:gap-16 2xl:gap-[clamp(64px,5vw,150px)] px-4 lg:px-5 pt-5 lg:pt-6 pb-4 lg:pb-5 rounded-lg lg:rounded-xl bg-neutral-800">
             <div className="flex flex-col gap-8 lg:grid lg:grid-cols-12">
@@ -47,7 +52,7 @@ export default function Project({ params }: { params: Promise<PageParams> }) {
                     animate={{ y: 0 }}
                     transition={{
                       duration: 1,
-                      delay: 2.2,
+                      delay: 1.2,
                       ease: [0.16, 1, 0.3, 1],
                     }}
                     className="text-xs lg:text-[clamp(14px,0.8vw,18px)] text-neutral-400 uppercase font-medium tracking-wider"
@@ -62,7 +67,7 @@ export default function Project({ params }: { params: Promise<PageParams> }) {
                     animate={{ y: 0 }}
                     transition={{
                       duration: 1,
-                      delay: 2.3,
+                      delay: 1.3,
                       ease: [0.16, 1, 0.3, 1],
                     }}
                     className="text-[clamp(48px,3.5vw,96px)] text-neutral-100 font-semibold tracking-tight leading-[0.8]"
@@ -79,7 +84,7 @@ export default function Project({ params }: { params: Promise<PageParams> }) {
                     animate={{ y: 0 }}
                     transition={{
                       duration: 1,
-                      delay: 2.2,
+                      delay: 1.2,
                       ease: [0.16, 1, 0.3, 1],
                     }}
                     className="text-xs lg:text-[clamp(14px,0.8vw,18px)] text-neutral-400 uppercase font-medium tracking-wider"
@@ -96,7 +101,7 @@ export default function Project({ params }: { params: Promise<PageParams> }) {
                       animate={{ y: 0, opacity: 1, scale: 1 }}
                       transition={{
                         duration: 1,
-                        delay: 2.3 + index * 0.025,
+                        delay: 1.3 + index * 0.025,
                         ease: [0.16, 1, 0.3, 1],
                       }}
                       className={`${lcddot.className} text-[10px] lg:text-[clamp(12px,0.7vw,16px)] text-neutral-100 uppercase tracking-[1.1] bg-neutral-100/10 px-2 3xl:px-3 pt-2 pb-1.5 rounded-md whitespace-nowrap`}
@@ -116,7 +121,7 @@ export default function Project({ params }: { params: Promise<PageParams> }) {
                     animate={{ y: 0 }}
                     transition={{
                       duration: 1,
-                      delay: 2.2,
+                      delay: 1.2,
                       ease: [0.16, 1, 0.3, 1],
                     }}
                     className="text-xs lg:text-[clamp(14px,0.8vw,18px)] text-neutral-400 uppercase font-medium tracking-wider"
@@ -131,7 +136,7 @@ export default function Project({ params }: { params: Promise<PageParams> }) {
                     animate={{ y: 0 }}
                     transition={{
                       duration: 1,
-                      delay: 2.3,
+                      delay: 1.3,
                       ease: [0.16, 1, 0.3, 1],
                     }}
                     className="text-[clamp(16px,1.3vw,30px)] text-neutral-100 font-medium leading-[1.3]"
@@ -201,7 +206,7 @@ export default function Project({ params }: { params: Promise<PageParams> }) {
                     animate={{ y: 0, opacity: 1, scale: 1 }}
                     transition={{
                       duration: 1,
-                      delay: 2.5,
+                      delay: 1.5,
                       ease: [0.16, 1, 0.3, 1],
                     }}
                     className="w-full h-[250px] lg:h-[clamp(600px,57vw,1200px)] rounded-lg lg:rounded-xl overflow-hidden relative"
@@ -228,10 +233,10 @@ export default function Project({ params }: { params: Promise<PageParams> }) {
               })}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <Footer />
-    </>
+    </main>
   );
 }

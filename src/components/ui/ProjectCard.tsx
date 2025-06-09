@@ -3,10 +3,11 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import { useRef } from "react";
+import { useState, useRef } from "react";
+import { useTransitionRouter } from "next-view-transitions";
 import { lcddot } from "@/fonts";
 import { Project } from "@/data/projects";
+import { pageTransition } from "@/constants/pageTransition";
 
 export default function ProjectCard({
   project,
@@ -17,6 +18,7 @@ export default function ProjectCard({
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const router = useTransitionRouter();
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -31,7 +33,7 @@ export default function ProjectCard({
       animate={{ y: 0, opacity: 1, scale: 1 }}
       transition={{
         duration: 1.5,
-        delay: 2 + index * 0.075,
+        delay: 1 + index * 0.075,
         ease: [0.16, 1, 0.3, 1],
       }}
     >
@@ -40,6 +42,12 @@ export default function ProjectCard({
         className="flex flex-col gap-4 lg:gap-5 px-3 lg:px-4 pt-3 lg:pt-4 pb-5 lg:pb-6 rounded-xl lg:rounded-2xl bg-neutral-900 cursor-pointer group relative"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        onClick={(e) => {
+          e.preventDefault();
+          router.push(`/work/${project.slug}`, {
+            onTransitionReady: pageTransition,
+          });
+        }}
       >
         <div className="relative rounded-lg lg:rounded-xl overflow-hidden w-full h-[260px] md:h-[350px] lg:h-[clamp(500px,32vw,800px)]">
           <div className="absolute inset-0 bg-neutral-900/30 backdrop-blur-md z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out" />
