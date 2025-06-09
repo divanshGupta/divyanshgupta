@@ -5,10 +5,12 @@ import CTAButton from "@/components/ui/CTAButton";
 import { saans } from "@/fonts";
 import { FooterProvider } from "@/contexts/footer-context";
 import DocumentTitleChanger from "@/components/layout/DocumentTitleChanger";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Jason Zubiate | Design Engineer",
-  description: "Software design engineer with expertise in Next.js, React, TypeScript, and Animation.",
+  description:
+    "Software design engineer with expertise in Next.js, React, TypeScript, and Animation.",
 };
 
 export default function RootLayout({
