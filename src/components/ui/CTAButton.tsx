@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView } from "motion/react";
 import { useRef, useState, useEffect } from "react";
 import { lcddot } from "@/fonts";
 import useOnClickOutside from "@/hooks/useOnClickOutside";
