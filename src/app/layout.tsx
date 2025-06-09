@@ -2,6 +2,7 @@ import "./globals.css";
 import { ViewTransitions } from "next-view-transitions";
 import Header from "../components/layout/Header";
 import { ReactLenis } from "lenis/react";
+import { Analytics } from "@vercel/analytics/next";
 import CTAButton from "@/components/ui/CTAButton";
 import { saans } from "@/fonts";
 import { FooterProvider } from "@/contexts/footer-context";
@@ -31,6 +32,7 @@ export default function RootLayout({
               <Header />
               <CTAButton />
               {children}
+              <Analytics />
             </body>
           </FooterProvider>
         </ReactLenis>
