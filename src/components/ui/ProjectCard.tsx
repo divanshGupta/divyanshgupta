@@ -3,10 +3,8 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useRef } from "react";
-import { useTransitionRouter } from "next-view-transitions";
 import { lcddot } from "@/fonts";
 import { Project } from "@/data/projects";
 
@@ -19,8 +17,6 @@ export default function ProjectCard({
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const router = useTransitionRouter();
-  const pathname = usePathname();
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -28,35 +24,6 @@ export default function ProjectCard({
   });
 
   const y = useTransform(scrollYProgress, [0, 1], ["-10vh", "10vh"]);
-
-  function triggerPageTransition() {
-    document.documentElement.animate(
-      [
-        {
-          clipPath: "polygon(25% 75%, 75% 75%, 75% 75%, 25% 75%)",
-        },
-        {
-          clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0 0%)",
-        },
-      ],
-      {
-        duration: 2000,
-        easing: "cubic-bezier(0.76, 0, 0.24, 1)",
-        pseudoElement: "::view-transition-new(root)",
-      }
-    );
-  }
-
-  const handleNavigation = (path: string) => (e: React.MouseEvent) => {
-    if (path === pathname) {
-      e.preventDefault();
-      return;
-    }
-
-    router.push(path, {
-      onTransitionReady: triggerPageTransition,
-    });
-  };
 
   return (
     <motion.div
@@ -71,7 +38,6 @@ export default function ProjectCard({
       <Link
         href={`/work/${project.slug}`}
         className="flex flex-col gap-4 lg:gap-5 px-3 lg:px-4 pt-3 lg:pt-4 pb-5 lg:pb-6 rounded-xl lg:rounded-2xl bg-neutral-900 cursor-pointer group relative"
-        onClick={handleNavigation(`/work/${project.slug}`)}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >

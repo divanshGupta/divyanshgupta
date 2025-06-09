@@ -3,7 +3,6 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import useWindowSize from "@/hooks/useWindowSize";
 import { motion, useScroll, useTransform, useInView } from "motion/react";
 import { useRef } from "react";
 import { lcddot } from "@/fonts";
@@ -95,15 +94,6 @@ export default function Services() {
 }
 
 function ServicesList() {
-  const { width } = useWindowSize();
-  const isMobile = width < 768; // Standard md breakpoint in Tailwind
-
-  useGSAP(() => {
-    if (isMobile) return;
-
-    const cards = gsap.utils.toArray(".service-card");
-  }, []);
-
   return (
     <ul className="flex flex-col">
       {services.map((service, index) => (
@@ -180,7 +170,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
       <motion.div className="lg:col-span-3">
         <div
           ref={imageContainerRef}
-          className="h-[220px] lg:h-[clamp(220px,15vw,360px)] rounded-lg overflow-hidden relative"
+          className="h-[220px] sm:h-[400px] md:h-[450px] lg:h-[clamp(220px,15vw,360px)] rounded-lg overflow-hidden relative"
         >
           <motion.div
             className="absolute inset-0 w-full h-[120%] lg:-top-[10%]"

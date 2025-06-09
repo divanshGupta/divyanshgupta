@@ -1,46 +1,91 @@
 "use client";
+
 import { motion } from "motion/react";
-import { Mail } from "lucide-react";
+
 export default function Header() {
   return (
     <header>
       <div className="overflow-hidden fixed left-4 lg:left-8 right-4 lg:right-8 top-4.5 lg:top-6 grid grid-cols-12 gap-4 lg:gap-8 z-50">
-        <div className="col-span-12 lg:col-span-3">
-          <span className="block font-medium text-[clamp(16px,1.2vw,20px)]">
-            US Based
+        <div className="hidden lg:block col-span-3">
+          <span className="block overflow-hidden">
+            <motion.div
+              initial={{ y: "100%" }}
+              animate={{ y: "0%" }}
+              transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="block font-medium text-[clamp(16px,1.2vw,20px)]"
+            >
+              US Based
+            </motion.div>
           </span>
-          <span className="block text-neutral-400 font-medium text-[clamp(16px,1.2vw,20px)]">
-            Working globally
+          <span className="block overflow-hidden">
+            <motion.div
+              initial={{ y: "100%" }}
+              animate={{ y: "0%" }}
+              transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="block font-medium text-neutral-400 text-[clamp(16px,1.2vw,20px)]"
+            >
+              Working globally
+            </motion.div>
+          </span>
+        </div>
+        <div className="col-span-3">
+          <span className="block overflow-hidden">
+            <motion.div
+              initial={{ y: "100%" }}
+              animate={{ y: "0%" }}
+              transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="block font-medium text-[clamp(16px,1.2vw,20px)]"
+            >
+              Building at
+            </motion.div>
+          </span>
+          <span className="block overflow-hidden">
+            <motion.div
+              initial={{ y: "100%" }}
+              animate={{ y: "0%" }}
+              transition={{ duration: 1, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
+              className="block font-medium text-[clamp(16px,1.2vw,20px)]"
+            >
+              <a
+                href="https://trackstack.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group"
+              >
+                <div className="overflow-hidden h-6">
+                  <div className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:-translate-y-1/2">
+                    <span className="text-[clamp(16px,1.2vw,20px)] text-neutral-400 font-medium mb-1.5">
+                      Trackstack
+                    </span>
+                    <span className="text-[clamp(16px,1.2vw,20px)] text-neutral-400 font-medium mb-1.5">
+                      Trackstack
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </motion.div>
           </span>
         </div>
         <div className="hidden lg:block col-span-3">
-          <span className="block font-medium text-[clamp(16px,1.2vw,20px)]">
-            Building at
+          <span className="block overflow-hidden">
+            <motion.div
+              initial={{ y: "100%" }}
+              animate={{ y: "0%" }}
+              transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="block font-medium text-[clamp(16px,1.2vw,20px)]"
+            >
+              Freelance availability
+            </motion.div>
           </span>
-          <a
-            href="https://trackstack.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group"
-          >
-            <div className="overflow-hidden h-6">
-              <div className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:-translate-y-1/2">
-                <span className="text-[clamp(16px,1.2vw,20px)] text-neutral-400 font-medium mb-1.5">
-                  Trackstack
-                </span>
-                <span className="text-[clamp(16px,1.2vw,20px)] text-neutral-400 font-medium mb-1.5">
-                  Trackstack
-                </span>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div className="hidden lg:block col-span-3">
-          <span className="block font-medium text-[clamp(16px,1.2vw,20px)]">
-            Freelance availability
-          </span>
-          <span className="block text-neutral-400 font-medium text-[clamp(16px,1.2vw,20px)]">
-            June 2025
+          <span className="block overflow-hidden">
+            <motion.div
+              initial={{ y: "100%" }}
+              animate={{ y: "0%" }}
+              transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="block font-medium text-neutral-400 text-[clamp(16px,1.2vw,20px)]"
+            >
+              June 2025
+            </motion.div>
           </span>
         </div>
         <MailButton />
@@ -51,7 +96,10 @@ export default function Header() {
 
 function MailButton() {
   return (
-    <a
+    <motion.a
+      initial={{ opacity: 0, scale: 0.95, y: 16 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
       href="mailto:jzubiate.dev@gmail.com"
       className="fixed right-4 lg:right-8 top-4 lg:top-6 group cursor-pointer"
     >
@@ -73,6 +121,6 @@ function MailButton() {
           </div>
         </div>
       </div>
-    </a>
+    </motion.a>
   );
 }

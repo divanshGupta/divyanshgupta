@@ -1,18 +1,13 @@
 "use client";
 
 import { motion } from "motion/react";
-import useTransition from "@/hooks/useTransition";
 import { projects } from "@/data/projects";
 import ProjectCard from "@/components/ui/ProjectCard";
 import Footer from "@/components/layout/Footer";
 
 export default function Work() {
-  useTransition();
-
   return (
     <>
-      <div className="revealer fixed top-0 left-0 w-screen h-screen origin-[center_top] bg-neutral-900 pointer-events-none z-999"></div>
-
       <div className="px-4 lg:px-8 pt-[clamp(200px,15vw,500px)]">
         <div className="overflow-hidden mb-3 lg:mb-5">
           <motion.p

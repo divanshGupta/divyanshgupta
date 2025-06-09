@@ -16,7 +16,10 @@ export default function Work() {
   });
 
   return (
-    <section ref={sectionRef} className="flex flex-col items-center py-28 px-4 lg:px-8">
+    <section
+      ref={sectionRef}
+      className="flex flex-col items-center py-28 px-4 lg:px-8"
+    >
       <h2 className="flex justify-between w-full mb-6 lg:mb-8">
         <Copy>
           <span className="text-[clamp(48px,12vw,200px)] font-bold tracking-tight leading-[0.8] uppercase">
@@ -25,7 +28,7 @@ export default function Work() {
         </Copy>
         <Copy delay={0.2}>
           <span className="text-[clamp(48px,12vw,200px)] font-bold tracking-tight leading-[0.8] uppercase">
-            '25
+            &apos;25
           </span>
         </Copy>
       </h2>

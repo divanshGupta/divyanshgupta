@@ -1,15 +1,11 @@
 "use client";
 
 import { motion } from "motion/react";
-import InfiniteGrid from "@/components/layout/InfiniteGrid";
-import useTransition from "@/hooks/useTransition";
+// import InfiniteGrid from "@/components/layout/InfiniteGrid";
 
 export default function Lab() {
-  useTransition();
-
   return (
     <>
-      <div className="revealer fixed top-0 left-0 w-screen h-screen origin-[center_top] bg-neutral-900 pointer-events-none z-999"></div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="overflow-hidden">
           <motion.h1

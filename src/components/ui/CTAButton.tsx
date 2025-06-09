@@ -6,8 +6,6 @@ import { Menu, X } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { lcddot } from "@/fonts";
-import { useTransitionRouter } from "next-view-transitions";
-import { usePathname } from "next/navigation";
 import useOnClickOutside from "@/hooks/useOnClickOutside";
 import { useFooter } from "@/contexts/footer-context";
 
@@ -57,16 +55,16 @@ export default function CTAButton() {
           : { y: 200, scale: 0.95, opacity: 1 }
       }
       transition={{
-        duration: isInitialLoad ? 0.5 : 1,
-        delay: isInitialLoad ? 2 : 0,
-        ease: [0.25, 1, 0.5, 1],
+        duration: 1,
+        delay: isInitialLoad ? 1 : 0,
+        ease: [0.16, 1, 0.3, 1],
         opacity: {
-          duration: 0.5,
-          delay: 2,
-          ease: [0.25, 1, 0.5, 1],
+          duration: 1,
+          delay: 1,
+          ease: [0.16, 1, 0.3, 1],
         },
       }}
-      className="py-2 pl-2 pr-8 rounded-2xl md:rounded-[20px] bg-neutral-900 border border-neutral-800 fixed left-4 md:left-1/2 right-4 md:right-auto md:-translate-x-1/2 bottom-6 w-full md:w-[700px] z-50  overflow-hidden"
+      className="py-2 pl-2 pr-4 md:pr-8 rounded-2xl md:rounded-[20px] bg-neutral-900 border border-neutral-800 fixed left-4 md:left-1/2 right-4 md:right-auto md:-translate-x-1/2 bottom-6 md:w-[700px] z-50 overflow-hidden"
     >
       <motion.div
         initial={{ height: 0, opacity: 0 }}
@@ -76,7 +74,7 @@ export default function CTAButton() {
         }}
         transition={{
           duration: 0.5,
-          ease: [0.25, 1, 0.5, 1],
+          ease: [0.16, 1, 0.3, 1],
         }}
         className="overflow-hidden"
       >
@@ -98,7 +96,7 @@ export default function CTAButton() {
           <motion.div
             initial={{ width: "0%" }}
             animate={{ width: isOpen ? "100%" : "0%" }}
-            transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
+            transition={{ duration: 1, ease: [0.87, 0, 0.13, 1] }}
             className="h-px rounded bg-neutral-800"
           ></motion.div>
         </div>
@@ -115,8 +113,8 @@ export default function CTAButton() {
             />
           </div>
 
-          <div className="flex flex-col gap-1.5 md:gap-2 w-[500px] relative">
-            <p className="text-lg font-semibold text-neutral-100 uppercase">
+          <div className="flex flex-col gap-1.5 md:gap-2 w-[250px] sm:w-[500px] relative">
+            <p className="md:text-lg font-semibold text-neutral-100 uppercase">
               Jason Zubiate
             </p>
             <Slider />
@@ -184,46 +182,10 @@ function NavItem({
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
 }) {
-  const router = useTransitionRouter();
-  const pathname = usePathname();
-
-  function triggerPageTransition() {
-    document.documentElement.animate(
-      [
-        {
-          clipPath: "polygon(25% 75%, 75% 75%, 75% 75%, 25% 75%)",
-        },
-        {
-          clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0 0%)",
-        },
-      ],
-      {
-        duration: 2000,
-        easing: "cubic-bezier(0.76, 0, 0.24, 1)",
-        pseudoElement: "::view-transition-new(root)",
-      }
-    );
-  }
-
-  const handleNavigation = (path: string) => (e: React.MouseEvent) => {
-    if (path === pathname) {
-      e.preventDefault();
-      return;
-    }
-
-    router.push(path, {
-      onTransitionReady: triggerPageTransition,
-    });
-
-    setTimeout(() => {
-      setIsOpen(false);
-    }, 500);
-  };
-
   return (
     <Link
       href={href}
-      onClick={handleNavigation(href)}
+      onClick={() => setIsOpen(false)}
       className="flex items-center gap-5 group cursor-pointer"
     >
       <motion.div
@@ -236,7 +198,7 @@ function NavItem({
         transition={{
           duration: 0.5,
           delay: 0.4 + -index * 0.075,
-          ease: [0.25, 1, 0.5, 1],
+          ease: [0.16, 1, 0.3, 1],
         }}
         className="w-[60px] h-[60px] md:w-[80px] md:h-[80px] rounded-lg md:rounded-xl overflow-hidden relative"
       >
@@ -254,7 +216,7 @@ function NavItem({
           transition={{
             duration: 0.5,
             delay: 0.2 + -index * 0.075,
-            ease: [0.25, 1, 0.5, 1],
+            ease: [0.16, 1, 0.3, 1],
           }}
           className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:-translate-y-1/2"
         >
