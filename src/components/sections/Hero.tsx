@@ -207,7 +207,8 @@ export default function Hero() {
           <div className="video-preview relative w-full aspect-video overflow-hidden rounded-3xl">
             <div className="video-wrapper absolute top-0 left-0 w-full h-full overflow-hidden rounded-2xl">
               <video
-                src="https://framerusercontent.com/assets/aFG2kQFYK0jA3f70gojhgdLj5Fo.mp4"
+                // src="https://framerusercontent.com/assets/aFG2kQFYK0jA3f70gojhgdLj5Fo.mp4"
+                src="/videos/hero-video-compressed.mp4"
                 autoPlay
                 muted
                 loop
