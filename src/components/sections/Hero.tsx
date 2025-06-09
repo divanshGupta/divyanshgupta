@@ -58,10 +58,10 @@ export default function Hero() {
                 <Image
                   src="/images/svg/design.svg"
                   alt="Design"
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                  className=" w-auto h-[14vw] md:h-[15vw] lg:h-[16vw]"
+                  width={484}
+                  height={108}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="w-auto h-[14vw] md:h-[15vw] lg:h-[16vw]"
                 />
               </motion.div>
             </div>
@@ -79,9 +79,9 @@ export default function Hero() {
                 <Image
                   src="/images/svg/engineer.svg"
                   alt="Engineer"
-                  width={0}
-                  height={0}
-                  sizes="100vw"
+                  width={659}
+                  height={107}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="w-full h-auto"
                 />
               </motion.div>
@@ -128,9 +128,9 @@ export default function Hero() {
                 <Image
                   src="/images/svg/design.svg"
                   alt="Design"
-                  width={0}
-                  height={0}
-                  sizes="100vw"
+                  width={484}
+                  height={108}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="w-auto h-full"
                 />
               </motion.div>
@@ -149,9 +149,9 @@ export default function Hero() {
                 <Image
                   src="/images/svg/engineer.svg"
                   alt="Engineer"
-                  width={0}
-                  height={0}
-                  sizes="100vw"
+                  width={659}
+                  height={107}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="w-auto h-full"
                 />
               </motion.div>
