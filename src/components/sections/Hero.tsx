@@ -57,7 +57,7 @@ export default function Hero() {
                 <img
                   src="/images/svg/design.svg"
                   alt="Design"
-                  className="w-auto h-[14vw] md:h-[15vw] lg:h-[16vw]"
+                  className="h-[15vw] md:h-[16vw] lg:h-[17vw]"
                 />
               </motion.div>
             </div>
@@ -70,12 +70,11 @@ export default function Hero() {
                   delay: 0.4,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="w-full pointer-events-none"
               >
                 <img
                   src="/images/svg/engineer.svg"
                   alt="Engineer"
-                  className="w-full h-auto"
+                  className="w-full pointer-events-none"
                 />
               </motion.div>
             </div>
@@ -107,7 +106,7 @@ export default function Hero() {
             </motion.div>
           </div>
           <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-2 lg:gap-0">
-            <div className="overflow-hidden h-[10vw]">
+            <div className="overflow-hidden mr-[4vw]">
               <motion.div
                 initial={{ y: "100%" }}
                 animate={{ y: "0%" }}
@@ -116,16 +115,15 @@ export default function Hero() {
                   delay: 0.4,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="w-auto h-full pointer-events-none pr-[4vw] "
               >
                 <img
-                  src="/images/svg/design.svg"
+                  src="/images/other/design.png"
                   alt="Design"
-                  className="w-auto h-full"
+                  className="h-[10vw] w-auto object-contain pointer-events-none"
                 />
               </motion.div>
             </div>
-            <div className="overflow-hidden h-[10vw]">
+            <div className="overflow-hidden">
               <motion.div
                 initial={{ y: "100%" }}
                 animate={{ y: "0%" }}
@@ -134,12 +132,11 @@ export default function Hero() {
                   delay: 0.4,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="w-auto h-full pointer-events-none"
               >
                 <img
                   src="/images/svg/engineer.svg"
                   alt="Engineer"
-                  className="w-auto h-full"
+                  className="h-[10vw] w-auto object-contain pointer-events-none"
                 />
               </motion.div>
             </div>
@@ -182,7 +179,7 @@ export default function Hero() {
         </div>
       </section>
 
-      <section className="hidden lg:block intro h-[100svh] px-8">
+      <section className="hidden md:block intro h-[100svh] px-8">
         <DesktopVideo />
       </section>
     </>
@@ -214,7 +211,7 @@ function MobileVideo() {
   }, [isInView]);
 
   return (
-    <div ref={containerRef} className="relative">
+    <div ref={containerRef} className="relative md:hidden">
       <motion.video
         ref={videoRef}
         initial={{ clipPath: "inset(0 0 100% 0)" }}
@@ -278,6 +275,7 @@ function DesktopVideo() {
 
     if (width >= 768) {
       const breakpoints = [
+        { maxWidth: 900, translateY: -95, movMultiplier: 550 },
         { maxWidth: 1000, translateY: -105, movMultiplier: 500 },
         { maxWidth: 1100, translateY: -110, movMultiplier: 550 },
         { maxWidth: 1200, translateY: -105, movMultiplier: 600 },
