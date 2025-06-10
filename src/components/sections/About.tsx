@@ -3,6 +3,7 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { wrapWordsInSpan } from "@/utils/string";
 import useWindowSize from "@/hooks/useWindowSize";
@@ -12,8 +13,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
   const paragraphRef = useRef<HTMLParagraphElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const { width } = useWindowSize();
+
+  const isVideoInView = useInView(videoRef, {
+    once: false,
+    margin: "0px 0px -30% 0px",
+  });
 
   useGSAP(() => {
     if (width < 1024) return;
@@ -78,11 +85,17 @@ export default function About() {
       className="grid grid-cols-12 gap-4 lg:gap-8 pt-56 pb-28 p-4 lg:px-8"
     >
       <div className="flex flex-col col-span-12 lg:col-span-7">
-        <h4 className="font-semibold uppercase mb-4">Myself</h4>
+        <Copy>
+          <h4 className="font-semibold uppercase mb-4">Myself</h4>
+        </Copy>
 
         {/* Mobile video */}
         <div className="lg:hidden col-span-12 aspect-video rounded-lg overflow-hidden mb-4">
-          <video
+          <motion.video
+            ref={videoRef}
+            initial={{ clipPath: "inset(0 0 100% 0)" }}
+            animate={isVideoInView ? { clipPath: "inset(0 0 0 0)" } : {}}
+            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
             src="/videos/about-video-compressed.mp4"
             autoPlay
             muted

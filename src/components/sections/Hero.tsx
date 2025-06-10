@@ -386,12 +386,12 @@ function DesktopVideo() {
       ref={videoContainerRef}
       initial={{ clipPath: "inset(0 0 100% 0)" }}
       animate={{ clipPath: "inset(0 0 0 0)" }}
-      transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 1.2, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
       className="video-preview relative w-full aspect-video overflow-hidden rounded-3xl will-change-transform cursor-pointer "
       onClick={() => setIsMuted(!isMuted)}
     >
       <div className="video-wrapper absolute top-0 left-0 w-full h-full overflow-hidden rounded-2xl">
-        <video
+        <motion.video
           ref={videoRef}
           src="/videos/hero-video-compressed.mp4"
           autoPlay
