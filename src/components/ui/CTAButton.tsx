@@ -67,7 +67,7 @@ export default function CTAButton() {
           ease: [0.16, 1, 0.3, 1],
         },
       }}
-      className="py-2 pl-2 pr-4 md:pr-8 rounded-2xl md:rounded-[20px] bg-neutral-900 border border-neutral-800 fixed left-4 md:left-1/2 right-4 md:right-auto md:-translate-x-1/2 bottom-6 md:w-[700px] z-50 overflow-hidden"
+      className="py-2 pl-2 pr-4 md:pr-8 rounded-2xl md:rounded-[20px] bg-neutral-900 border border-neutral-800 fixed left-4 md:left-1/2 right-4 md:right-auto md:-translate-x-1/2 bottom-4 md:bottom-6 md:w-[700px] z-50 overflow-hidden"
     >
       <motion.div
         initial={{ height: 0, opacity: 0 }}
@@ -246,5 +246,3 @@ function NavItem({
     </Link>
   );
 }
-
-

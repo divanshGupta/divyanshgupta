@@ -12,19 +12,19 @@ gsap.registerPlugin(Observer);
 const imagePaths = [
   "/images/lab/01.png",
   "/images/lab/02.png",
-  "/images/lab/03.jpg",
+  "/images/lab/03.png",
   "/images/lab/04.png",
   "/images/lab/05.png",
   "/images/lab/06.png",
   "/images/lab/07.png",
   "/images/lab/08.png",
-  "/images/lab/09.jpg",
-  "/images/lab/10.jpg",
-  "/images/lab/11.jpg",
-  "/images/lab/12.jpg",
-  "/images/lab/13.jpg",
-  "/images/lab/14.jpg",
-  "/images/lab/15.jpg",
+  "/images/lab/09.png",
+  "/images/lab/10.png",
+  "/images/lab/11.png",
+  "/images/lab/12.png",
+  "/images/lab/13.png",
+  "/images/lab/14.png",
+  "/images/lab/15.png",
 ];
 
 export default function InfiniteGrid() {
@@ -91,7 +91,7 @@ export default function InfiniteGrid() {
     >
       {imagePaths.map((path, index) => (
         <div
-          className="w-[18vw] aspect-square select-none will-change-transform z-0"
+          className="w-[50vw] md:w-[18vw] aspect-square select-none will-change-transform rounded-xl overflow-hidden z-0"
           key={`${index}-${ariaHidden ? "hidden" : "visible"}`}
         >
           <motion.img

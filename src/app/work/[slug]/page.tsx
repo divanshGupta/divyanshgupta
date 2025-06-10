@@ -37,7 +37,7 @@ export default function Project({ params }: { params: Promise<PageParams> }) {
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
               transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="w-full text-neutral-100 text-center text-[clamp(64px,8vw,180px)] font-bold uppercase leading-[0.85]"
+              className="w-full text-neutral-100 text-center text-5xl md:text-[clamp(64px,8vw,180px)] font-bold uppercase leading-[0.85]"
             >
               {project.title}
             </motion.h1>
@@ -153,7 +153,7 @@ export default function Project({ params }: { params: Promise<PageParams> }) {
                 if (index % 4 === 2) {
                   return (
                     <div key={index} className="flex gap-4 lg:gap-5">
-                      <div className="w-1/2 h-[200px] lg:h-[clamp(600px,40vw,1200px)] rounded-lg lg:rounded-xl overflow-hidden relative">
+                      <div className="w-1/2 h-[160px] lg:h-[clamp(600px,40vw,1200px)] rounded-lg lg:rounded-xl overflow-hidden relative">
                         {media.type === "image" ? (
                           <Image
                             src={media.url}
@@ -171,7 +171,7 @@ export default function Project({ params }: { params: Promise<PageParams> }) {
                           />
                         )}
                       </div>
-                      <motion.div className="w-1/2 h-[200px] lg:h-[clamp(600px,40vw,1200px)] rounded-lg lg:rounded-xl overflow-hidden relative">
+                      <motion.div className="w-1/2 h-[160px] lg:h-[clamp(600px,40vw,1200px)] rounded-lg lg:rounded-xl overflow-hidden relative">
                         {project.media[index + 1]?.type === "image" ? (
                           <Image
                             src={project.media[index + 1].url}
@@ -209,7 +209,7 @@ export default function Project({ params }: { params: Promise<PageParams> }) {
                       delay: 1.5,
                       ease: [0.16, 1, 0.3, 1],
                     }}
-                    className="w-full h-[250px] lg:h-[clamp(600px,57vw,1200px)] rounded-lg lg:rounded-xl overflow-hidden relative"
+                    className="w-full h-[200px] lg:h-[clamp(600px,57vw,1200px)] rounded-lg lg:rounded-xl overflow-hidden relative"
                   >
                     {media.type === "image" ? (
                       <Image
