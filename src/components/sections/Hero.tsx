@@ -5,7 +5,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "motion/react";
-import Image from "next/image";
 import useWindowSize from "@/hooks/useWindowSize";
 import { ArrowDown, Volume2, VolumeX } from "lucide-react";
 
