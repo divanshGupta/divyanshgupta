@@ -69,7 +69,7 @@ export default function TechnologiesLit() {
   }, []);
 
   return (
-    <section className="pb-24 px-8">
+    <section className="pb-24 px-4 lg:px-8">
       <LetterScroll />
 
       <h4 className="font-semibold uppercase mb-4">Professional at</h4>
