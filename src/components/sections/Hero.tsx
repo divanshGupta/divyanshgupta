@@ -55,12 +55,9 @@ export default function Hero() {
                 }}
                 className="w-full pointer-events-none lg:pr-[4vw]"
               >
-                <Image
+                <img
                   src="/images/svg/design.svg"
                   alt="Design"
-                  width={484}
-                  height={108}
-                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="w-auto h-[14vw] md:h-[15vw] lg:h-[16vw]"
                 />
               </motion.div>
@@ -76,12 +73,9 @@ export default function Hero() {
                 }}
                 className="w-full pointer-events-none"
               >
-                <Image
+                <img
                   src="/images/svg/engineer.svg"
                   alt="Engineer"
-                  width={659}
-                  height={107}
-                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="w-full h-auto"
                 />
               </motion.div>
@@ -125,12 +119,9 @@ export default function Hero() {
                 }}
                 className="w-auto h-full pointer-events-none pr-[4vw] "
               >
-                <Image
+                <img
                   src="/images/svg/design.svg"
                   alt="Design"
-                  width={484}
-                  height={108}
-                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="w-auto h-full"
                 />
               </motion.div>
@@ -146,12 +137,9 @@ export default function Hero() {
                 }}
                 className="w-auto h-full pointer-events-none"
               >
-                <Image
+                <img
                   src="/images/svg/engineer.svg"
                   alt="Engineer"
-                  width={659}
-                  height={107}
-                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="w-auto h-full"
                 />
               </motion.div>
@@ -291,10 +279,10 @@ function DesktopVideo() {
 
     if (width >= 768) {
       const breakpoints = [
-        { maxWidth: 1000, translateY: -105, movMultiplier: 450 },
-        { maxWidth: 1100, translateY: -110, movMultiplier: 500 },
-        { maxWidth: 1200, translateY: -105, movMultiplier: 550 },
-        { maxWidth: 1300, translateY: -100, movMultiplier: 600 },
+        { maxWidth: 1000, translateY: -105, movMultiplier: 500 },
+        { maxWidth: 1100, translateY: -110, movMultiplier: 550 },
+        { maxWidth: 1200, translateY: -105, movMultiplier: 600 },
+        { maxWidth: 1300, translateY: -100, movMultiplier: 650 },
       ];
 
       const getInitialValues = () => {
@@ -307,15 +295,9 @@ function DesktopVideo() {
           }
         }
 
-        // For screens larger than 1300px, calculate a dynamic multiplier
-        // Base multiplier for 1300px screens
-        const baseMultiplier = 600;
-        // // Calculate additional multiplier based on screen width
-        // const additionalMultiplier = (width - 1300) * 0.5;
-
         return {
           translateY: -115,
-          movementMultiplier: baseMultiplier,
+          movementMultiplier: 700,
         };
       };
 
@@ -356,7 +338,10 @@ function DesktopVideo() {
       });
 
       document.addEventListener("mousemove", (e) => {
-        animationState.targetMouseX = (e.clientX / width - 0.5) * 2;
+        const margin = 32;
+        const availableWidth = width - margin * 2;
+        const mouseX = e.clientX - margin;
+        animationState.targetMouseX = (mouseX / availableWidth - 0.5) * 2;
       });
 
       const animate = () => {
@@ -370,10 +355,20 @@ function DesktopVideo() {
           movementMultiplier,
         } = animationState;
 
-        const scaleMovementMultiplier = (1 - scale) * movementMultiplier;
+        // Get video width (scaled)
+        const videoWidth = videoContainer.offsetWidth * scale;
+        const maxTranslate = (width - videoWidth) / 2 - 32; // 32px margin
 
-        const maxHorizontalMovement =
+        // Adjust movement multiplier based on scale
+        const scaleMovementMultiplier = (1 - scale) * movementMultiplier;
+        let maxHorizontalMovement =
           scale < 0.95 ? targetMouseX * scaleMovementMultiplier : 0;
+
+        // Clamp so video never goes past margin
+        maxHorizontalMovement = Math.max(
+          Math.min(maxHorizontalMovement, maxTranslate),
+          -maxTranslate
+        );
 
         animationState.currentMouseX = gsap.utils.interpolate(
           currentMouseX,
