@@ -107,12 +107,14 @@ export default function CTAButton() {
 
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4 md:gap-5">
-          <div className="h-[60px] w-[60px] md:h-[80px] md:w-[80px] rounded-lg md:rounded-xl overflow-hidden relative">
-            <Image
-              src="https://images.unsplash.com/photo-1728106700436-463b132d0768?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="CTA Button"
-              fill
-              className="object-cover object-center"
+          <div className="h-[60px] w-[60px] md:h-[80px] md:w-[80px] rounded-lg md:rounded-xl bg-neutral-100 overflow-hidden relative">
+            <video
+              src="/videos/emoji.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute top-[52%] left-[47%] -translate-x-1/2 -translate-y-1/2 h-full w-full scale-140"
             />
           </div>
 
