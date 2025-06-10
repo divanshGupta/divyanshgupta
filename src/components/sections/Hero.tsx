@@ -55,7 +55,7 @@ export default function Hero() {
                 className="w-full pointer-events-none lg:pr-[4vw]"
               >
                 <img
-                  src="/images/svg/design.svg"
+                  src="/images/other/design.png"
                   alt="Design"
                   className="h-[15vw] md:h-[16vw] lg:h-[17vw]"
                 />
@@ -72,7 +72,7 @@ export default function Hero() {
                 }}
               >
                 <img
-                  src="/images/svg/engineer.svg"
+                  src="/images/other/engineer.png"
                   alt="Engineer"
                   className="w-full pointer-events-none"
                 />
@@ -134,7 +134,7 @@ export default function Hero() {
                 }}
               >
                 <img
-                  src="/images/svg/engineer.svg"
+                  src="/images/other/engineer.png"
                   alt="Engineer"
                   className="h-[10vw] w-auto object-contain pointer-events-none"
                 />
