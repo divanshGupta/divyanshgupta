@@ -16,17 +16,17 @@ const navItems = [
   {
     title: "Home",
     href: "/",
-    imageUrl: "/images/pages/lab.png",
+    imageUrl: "/images/pages/home-icon.png",
   },
   {
     title: "Work",
     href: "/work",
-    imageUrl: "/images/pages/work.png",
+    imageUrl: "/images/pages/work-icon.png",
   },
   {
     title: "Lab",
     href: "/lab",
-    imageUrl: "/images/pages/lab.png",
+    imageUrl: "/images/pages/lab-icon.png",
   },
 ];
 
@@ -121,9 +121,12 @@ export default function CTAButton() {
           </div>
 
           <div className="flex flex-col gap-1.5 md:gap-2 w-[250px] sm:w-[500px] relative">
-            <p className="md:text-lg font-semibold text-neutral-100 uppercase">
+            <Link
+              href="/"
+              className="md:text-lg font-semibold text-neutral-100 uppercase"
+            >
               Jason Zubiate
-            </p>
+            </Link>
             <Slider />
           </div>
         </div>

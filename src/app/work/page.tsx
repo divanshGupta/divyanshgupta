@@ -7,7 +7,7 @@ import ProjectCard from "@/components/ui/ProjectCard";
 export default function Work() {
   return (
     <main className="bg-neutral-100">
-      <div className="px-4 lg:px-8 pt-[clamp(128px,12vw,500px)]">
+      <div className="px-4 lg:px-8 pt-[200px] md:pt-[clamp(128px,12vw,500px)]">
         <div className="overflow-hidden mb-3 lg:mb-5">
           <motion.p
             initial={{ y: "100%" }}
