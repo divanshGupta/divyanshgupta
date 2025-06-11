@@ -7,7 +7,7 @@ import { projects } from "@/data/projects";
 import { redirect } from "next/navigation";
 import { lcddot } from "@/fonts";
 import { use } from "react";
-import Footer from "@/components/layout/Footer";
+
 
 type PageParams = {
   slug: string;
