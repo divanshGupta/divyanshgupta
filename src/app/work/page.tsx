@@ -3,7 +3,6 @@
 import { motion } from "motion/react";
 import { projects } from "@/data/projects";
 import ProjectCard from "@/components/ui/ProjectCard";
-import Footer from "@/components/layout/Footer";
 
 export default function Work() {
   return (
@@ -32,8 +31,6 @@ export default function Work() {
       </div>
 
       <ProjectList />
-
-      <Footer />
     </main>
   );
 }

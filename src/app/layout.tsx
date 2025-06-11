@@ -8,6 +8,7 @@ import { saans } from "@/fonts";
 import { FooterProvider } from "@/contexts/footer-context";
 import DocumentTitleChanger from "@/components/layout/DocumentTitleChanger";
 import { metadata } from "./metadata";
+import FooterWrapper from "@/components/layout/FooterWrapper";
 
 export { metadata };
 
@@ -28,6 +29,7 @@ export default function RootLayout({
               <Header />
               <CTAButton />
               {children}
+              <FooterWrapper />
               <Analytics />
             </body>
           </FooterProvider>

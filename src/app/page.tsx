@@ -3,7 +3,6 @@
 import About from "@/components/sections/About";
 import Services from "@/components/sections/Services";
 import TechnologiesList from "@/components/sections/TechnologiesList";
-import Footer from "@/components/layout/Footer";
 import Work from "@/components/sections/Work";
 import Hero from "@/components/sections/Hero";
 
@@ -15,7 +14,6 @@ export default function Home() {
       <Work />
       <Services />
       <TechnologiesList />
-      <Footer />
     </main>
   );
 }

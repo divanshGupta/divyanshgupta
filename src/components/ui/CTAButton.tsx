@@ -35,6 +35,7 @@ export default function CTAButton() {
   const { footerRef } = useFooter();
   const [isOpen, setIsOpen] = useState(false);
   const [isInitialLoad, setIsInitialLoad] = useState(true);
+  const pathname = usePathname();
 
   useEffect(() => {
     setTimeout(() => {
@@ -47,13 +48,14 @@ export default function CTAButton() {
   );
 
   const isFooterInView = useInView(footerRef, { amount: 0.4 });
+  const shouldAnimate = pathname !== "/lab" && footerRef.current;
 
   return (
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 100, scale: 0.95 }}
       animate={
-        !isFooterInView
+        !shouldAnimate || !isFooterInView
           ? { opacity: 1, y: 0, scale: 1 }
           : { y: 200, scale: 0.95, opacity: 1 }
       }
