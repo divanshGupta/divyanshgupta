@@ -84,7 +84,7 @@ export default function Header() {
               transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
               className="block font-medium text-neutral-400 text-[clamp(16px,1.2vw,20px)]"
             >
-              June 2025
+              July 2025
             </motion.div>
           </span>
         </div>
