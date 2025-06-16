@@ -7,6 +7,7 @@ import { projects } from "@/data/projects";
 import { redirect } from "next/navigation";
 import { lcddot } from "@/fonts";
 import { use } from "react";
+import { ArrowUpRight } from "lucide-react";
 
 type PageParams = {
   slug: string;
@@ -142,6 +143,26 @@ export default function Project({ params }: { params: Promise<PageParams> }) {
                   {project.summary}
                 </motion.p>
               </div>
+
+              {project.url ? (
+                <div className="overflow-hidden">
+                  <motion.a
+                    initial={{ y: "100%" }}
+                    animate={{ y: 0 }}
+                    transition={{
+                      duration: 1,
+                      delay: 1.3,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs lg:text-[clamp(14px,0.8vw,18px)] text-neutral-400 uppercase font-medium tracking-wider flex items-center gap-1 hover:underline hover:text-neutral-100 transition-all duration-300"
+                  >
+                    Visit site <ArrowUpRight className="w-4 h-4" />
+                  </motion.a>
+                </div>
+              ) : null}
             </div>
           </div>
 

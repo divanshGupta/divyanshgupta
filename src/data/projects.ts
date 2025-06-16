@@ -6,9 +6,9 @@ export type Project = {
   keywords: string[];
   summary: string[];
   year: number;
+  url: string | null;
   backgroundImageUrl: string;
   videoUrl: string;
-  link: string;
   media: {
     type: "image" | "video";
     url: string;
@@ -38,10 +38,10 @@ export const projects: Project[] = [
       "Designed and developed a personal website for Jazmin Wong, a creative content strategist. The project emphasized a bold, engaging layout with playful micro-interactions to reflect her dynamic approach to content creation.",
     ],
     year: 2025,
+    url: "https://jazzicreates.tv",
     backgroundImageUrl:
       "https://images.unsplash.com/photo-1744731036457-b74958fd6bf5?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     videoUrl: "/videos/jazmin-wong-preview-compressed.mp4",
-    link: "https://www.jazzicreates.tv",
     media: [
       {
         type: "image",
@@ -93,9 +93,9 @@ export const projects: Project[] = [
       "growth. I currently work on their product team as a developer.",
     ],
     year: 2025,
+    url: null,
     backgroundImageUrl: "/images/work/trackstack/cover.jpg",
     videoUrl: "/videos/trackstack-preview-compressed.mp4",
-    link: "https://www.trackstack.app",
     media: [
       {
         type: "image",
@@ -164,9 +164,9 @@ export const projects: Project[] = [
       "experience to optimize visitor-to-paid-member conversion.",
     ],
     year: 2024,
+    url: "https://kick-bass.com",
     backgroundImageUrl: "/images/work/kick-bass/cover.png",
     videoUrl: "/videos/kickbass-preview-compressed.mp4",
-    link: "https://www.kick-bass.com",
     media: [
       {
         type: "image",
@@ -230,9 +230,9 @@ export const projects: Project[] = [
       "and efficient developer handoff.",
     ],
     year: 2024,
+    url: null,
     backgroundImageUrl: "/images/work/socialstats/cover.png",
     videoUrl: "/videos/socialstats-preview-compressed.mp4",
-    link: "",
     media: [
       {
         type: "image",
@@ -282,9 +282,9 @@ export const projects: Project[] = [
       "releases, past performances, and upcoming tour dates.",
     ],
     year: 2024,
+    url: "https://itsthewestend.com",
     backgroundImageUrl: "/images/other/westend.jpg",
     videoUrl: "/videos/westend-preview-compressed.mp4",
-    link: "https://www.itsthewestend.com",
     media: [
       {
         type: "image",
@@ -334,10 +334,10 @@ export const projects: Project[] = [
       "user experience. I continue to maintain and improve the site.",
     ],
     year: 2023,
+    url: "https://delivrd.live",
     backgroundImageUrl:
       "https://images.unsplash.com/photo-1617864848089-9c54bf240fe6?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     videoUrl: "/videos/delivrd-preview-compressed.mp4",
-    link: "https://www.delivrd.live",
     media: [
       {
         type: "image",
