@@ -282,7 +282,7 @@ export const projects: Project[] = [
       "releases, past performances, and upcoming tour dates.",
     ],
     year: 2024,
-    url: "https://itsthewestend.com",
+    url: "https://itsthewestend.vercel.app",
     backgroundImageUrl: "/images/other/westend.jpg",
     videoUrl: "/videos/westend-preview-compressed.mp4",
     media: [
