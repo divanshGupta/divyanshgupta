@@ -79,7 +79,9 @@ export default function TechnologiesLit() {
             <a
               href="https://reactjs.org"
               target="_blank"
-              className="grid-item flex items-center justify-center border-r border-neutral-300 group cursor-pointer "
+              rel="noopener noreferrer"
+              className="grid-item flex items-center justify-center border-r border-neutral-300 group cursor-pointer"
+              aria-label="Visit React website"
             >
               <Image
                 src="/images/svg/react-logo.svg"
@@ -92,7 +94,9 @@ export default function TechnologiesLit() {
             <a
               href="https://nextjs.org"
               target="_blank"
+              rel="noopener noreferrer"
               className="grid-item flex items-center justify-center border-r border-neutral-300 group cursor-pointer"
+              aria-label="Visit Next.js website"
             >
               <Image
                 src="/images/svg/nextjs-logotype-light-background.svg"
@@ -105,7 +109,9 @@ export default function TechnologiesLit() {
             <a
               href="https://www.typescriptlang.org"
               target="_blank"
+              rel="noopener noreferrer"
               className="grid-item flex items-center justify-center group cursor-pointer"
+              aria-label="Visit TypeScript website"
             >
               <Image
                 src="/images/svg/typescript-logo.svg"
@@ -121,7 +127,9 @@ export default function TechnologiesLit() {
             <a
               href="https://gsap.com/"
               target="_blank"
+              rel="noopener noreferrer"
               className="grid-item flex items-center justify-center border-r border-neutral-300 group cursor-pointer"
+              aria-label="Visit GSAP website"
             >
               <Image
                 src="/images/svg/gsap-black.svg"
@@ -134,7 +142,9 @@ export default function TechnologiesLit() {
             <a
               href="https://motion.dev/"
               target="_blank"
+              rel="noopener noreferrer"
               className="grid-item flex items-center justify-center border-r border-neutral-300 group cursor-pointer"
+              aria-label="Visit Motion website"
             >
               <Image
                 src="/images/svg/motion.svg"
@@ -147,7 +157,9 @@ export default function TechnologiesLit() {
             <a
               href="https://tailwindcss.com/"
               target="_blank"
+              rel="noopener noreferrer"
               className="grid-item flex items-center justify-center border-r border-neutral-300 group cursor-pointer"
+              aria-label="Visit TailwindCSS website"
             >
               <Image
                 src="/images/svg/tailwindcss-logo.svg"
@@ -160,7 +172,9 @@ export default function TechnologiesLit() {
             <a
               href="https://www.contentful.com/"
               target="_blank"
+              rel="noopener noreferrer"
               className="grid-item flex items-center justify-center border-r border-neutral-300 group cursor-pointer"
+              aria-label="Visit Contentful website"
             >
               <Image
                 src="/images/svg/contentful-logo.svg"
@@ -173,7 +187,9 @@ export default function TechnologiesLit() {
             <a
               href="https://supabase.com/"
               target="_blank"
+              rel="noopener noreferrer"
               className="grid-item flex items-center justify-center border-r border-neutral-300 group cursor-pointer"
+              aria-label="Visit Supabase website"
             >
               <Image
                 src="/images/svg/supabase-logo.svg"
@@ -186,7 +202,9 @@ export default function TechnologiesLit() {
             <a
               href="https://vercel.com/"
               target="_blank"
+              rel="noopener noreferrer"
               className="grid-item flex items-center justify-center border-r border-neutral-300 group"
+              aria-label="Visit Vercel website"
             >
               <Image
                 src="/images/svg/vercel-logotype-light.svg"
@@ -199,7 +217,9 @@ export default function TechnologiesLit() {
             <a
               href="https://www.figma.com/"
               target="_blank"
+              rel="noopener noreferrer"
               className="grid-item flex items-center justify-center group"
+              aria-label="Visit Figma website"
             >
               <Image
                 src="/images/svg/figma-logo.svg"
@@ -217,7 +237,9 @@ export default function TechnologiesLit() {
           <a
             href="https://reactjs.org"
             target="_blank"
+            rel="noopener noreferrer"
             className="grid-item flex items-center justify-center border-r border-b border-neutral-300 group cursor-pointer h-[clamp(200px,20vw,400px)]"
+            aria-label="Visit React website"
           >
             <Image
               src="/images/svg/react-logo.svg"
@@ -230,7 +252,9 @@ export default function TechnologiesLit() {
           <a
             href="https://nextjs.org"
             target="_blank"
+            rel="noopener noreferrer"
             className="grid-item flex items-center justify-center border-b border-neutral-300 group cursor-pointer h-[clamp(200px,20vw,400px)]"
+            aria-label="Visit Next.js website"
           >
             <Image
               src="/images/svg/nextjs-logotype-light-background.svg"
@@ -243,7 +267,9 @@ export default function TechnologiesLit() {
           <a
             href="https://www.typescriptlang.org"
             target="_blank"
+            rel="noopener noreferrer"
             className="grid-item flex items-center justify-center border-r border-b border-neutral-300 group cursor-pointer h-[clamp(200px,20vw,400px)]"
+            aria-label="Visit TypeScript website"
           >
             <Image
               src="/images/svg/typescript-logo.svg"
@@ -256,7 +282,9 @@ export default function TechnologiesLit() {
           <a
             href="https://gsap.com/"
             target="_blank"
+            rel="noopener noreferrer"
             className="grid-item flex items-center justify-center border-b border-neutral-300 group cursor-pointer h-[clamp(200px,20vw,400px)]"
+            aria-label="Visit GSAP website"
           >
             <Image
               src="/images/svg/gsap-black.svg"
@@ -282,7 +310,9 @@ export default function TechnologiesLit() {
           <a
             href="https://tailwindcss.com/"
             target="_blank"
+            rel="noopener noreferrer"
             className="grid-item flex items-center justify-center border-b border-neutral-300 group cursor-pointer h-[clamp(200px,20vw,400px)]"
+            aria-label="Visit TailwindCSS website"
           >
             <Image
               src="/images/svg/tailwindcss-logo.svg"
@@ -295,7 +325,9 @@ export default function TechnologiesLit() {
           <a
             href="https://www.contentful.com/"
             target="_blank"
+            rel="noopener noreferrer"
             className="grid-item flex items-center justify-center border-r border-b border-neutral-300 group cursor-pointer h-[clamp(200px,20vw,400px)]"
+            aria-label="Visit TailwindCSS website"
           >
             <Image
               src="/images/svg/contentful-logo.svg"
@@ -308,7 +340,9 @@ export default function TechnologiesLit() {
           <a
             href="https://supabase.com/"
             target="_blank"
+            rel="noopener noreferrer"
             className="grid-item flex items-center justify-center border-b border-neutral-300 group cursor-pointer h-[clamp(200px,20vw,400px)]"
+            aria-label="Visit Supabase website"
           >
             <Image
               src="/images/svg/supabase-logo.svg"
@@ -321,7 +355,9 @@ export default function TechnologiesLit() {
           <a
             href="https://vercel.com/"
             target="_blank"
+            rel="noopener noreferrer"
             className="grid-item flex items-center justify-center border-r border-neutral-300 group h-[clamp(200px,20vw,400px)]"
+            aria-label="Visit Vercel website"
           >
             <Image
               src="/images/svg/vercel-logotype-light.svg"
@@ -334,7 +370,9 @@ export default function TechnologiesLit() {
           <a
             href="https://www.figma.com/"
             target="_blank"
+            rel="noopener noreferrer"
             className="grid-item flex items-center  border-neutral-300 justify-center group h-[clamp(200px,20vw,400px)]"
+            aria-label="Visit Figma website"
           >
             <Image
               src="/images/svg/figma-logo.svg"

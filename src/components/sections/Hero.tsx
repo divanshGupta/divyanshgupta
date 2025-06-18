@@ -230,12 +230,14 @@ function MobileVideo() {
         transition={{ duration: 1, delay: 3, ease: [0.16, 1, 0.3, 1] }}
         onClick={() => setIsMuted(!isMuted)}
         className="absolute bottom-2 right-2 z-10"
+        aria-label={isMuted ? "Unmute video" : "Mute video"}
+        role="button"
       >
         <div className="bg-neutral-100/50 shadow-2xl backdrop-blur-2xl w-10 h-10 rounded-full flex items-center justify-center">
           {isMuted ? (
-            <Volume2 className="w-5 h-5 text-neutral-900" />
+            <Volume2 className="w-5 h-5 text-neutral-900" aria-hidden="true" />
           ) : (
-            <VolumeX className="w-5 h-5 text-neutral-900" />
+            <VolumeX className="w-5 h-5 text-neutral-900" aria-hidden="true" />
           )}
         </div>
       </motion.button>
@@ -406,12 +408,20 @@ function DesktopVideo() {
         transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
         onClick={() => setIsMuted(!isMuted)}
         className="absolute bottom-8 right-8 z-10 scale-0 group-hover:scale-100 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform"
+        aria-label={isMuted ? "Unmute video" : "Mute video"}
+        role="button"
       >
         <div className="bg-neutral-100/50 shadow-2xl backdrop-blur-2xl w-[4vw] h-[4vw] rounded-full flex items-center justify-center">
           {isMuted ? (
-            <Volume2 className="w-[2vw] h-[2vw] text-neutral-900" />
+            <Volume2
+              className="w-[2vw] h-[2vw] text-neutral-900"
+              aria-hidden="true"
+            />
           ) : (
-            <VolumeX className="w-[2vw] h-[2vw] text-neutral-900" />
+            <VolumeX
+              className="w-[2vw] h-[2vw] text-neutral-900"
+              aria-hidden="true"
+            />
           )}
         </div>
       </motion.button>

@@ -135,11 +135,19 @@ export default function CTAButton() {
           <X
             onClick={() => setIsOpen((prev) => !prev)}
             className="w-7 h-7 text-neutral-100 hover:text-neutral-400 transition-all duration-300 cursor-pointer"
+            aria-label="Close menu"
+            role="button"
+            aria-expanded={isOpen}
+            aria-controls="navigation-menu"
           />
         ) : (
           <Menu
             onClick={() => setIsOpen((prev) => !prev)}
             className="w-7 h-7 text-neutral-100 hover:text-neutral-400 transition-all duration-300 cursor-pointer"
+            aria-label="Open menu"
+            role="button"
+            aria-expanded={isOpen}
+            aria-controls="navigation-menu"
           />
         )}
       </div>

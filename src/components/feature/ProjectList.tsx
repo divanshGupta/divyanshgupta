@@ -25,6 +25,9 @@ export default function ProjectList() {
                 ? "bg-neutral-900 text-neutral-50"
                 : "bg-neutral-900/10 text-neutral-900"
             }`}
+            aria-label={`Filter by ${project.title}`}
+            aria-pressed={currentProject.title === project.title}
+            role="button"
           >
             <div className="overflow-hidden h-5">
               <div className="flex flex-col group-hover:-translate-y-1/2 transition-transform duration-300">
