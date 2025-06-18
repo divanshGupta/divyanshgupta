@@ -61,11 +61,11 @@ export default function CTAButton() {
       }
       transition={{
         duration: 1,
-        delay: isInitialLoad ? 1 : 0,
+        delay: isInitialLoad ? 3 : 0,
         ease: [0.16, 1, 0.3, 1],
         opacity: {
           duration: 1,
-          delay: 1,
+          delay: 3,
           ease: [0.16, 1, 0.3, 1],
         },
       }}

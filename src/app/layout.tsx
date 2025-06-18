@@ -9,6 +9,7 @@ import { FooterProvider } from "@/contexts/footer-context";
 import DocumentTitleChanger from "@/components/layout/DocumentTitleChanger";
 import { metadata } from "./metadata";
 import FooterWrapper from "@/components/layout/FooterWrapper";
+import LoadingScreen from "@/components/layout/LoadingScreen";
 
 export { metadata };
 
@@ -25,6 +26,7 @@ export default function RootLayout({
             <body
               className={`${saans.className} antialiased bg-neutral-900 text-neutral-900 overscroll-none`}
             >
+              <LoadingScreen />
               <DocumentTitleChanger />
               <Header />
               <CTAButton />

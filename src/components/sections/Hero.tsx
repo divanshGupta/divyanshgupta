@@ -23,7 +23,7 @@ export default function Hero() {
                 animate={{ y: "0%" }}
                 transition={{
                   duration: 1,
-                  delay: 0.2,
+                  delay: 2.5,
                   ease: [0.16, 1, 0.3, 1],
                 }}
                 className="flex justify-between w-full"
@@ -49,7 +49,7 @@ export default function Hero() {
                 animate={{ y: "0%" }}
                 transition={{
                   duration: 1,
-                  delay: 0.4,
+                  delay: 2.6,
                   ease: [0.16, 1, 0.3, 1],
                 }}
                 className="w-full pointer-events-none lg:pr-[4vw]"
@@ -67,7 +67,7 @@ export default function Hero() {
                 animate={{ y: "0%" }}
                 transition={{
                   duration: 1,
-                  delay: 0.4,
+                  delay: 2.7,
                   ease: [0.16, 1, 0.3, 1],
                 }}
               >
@@ -91,7 +91,7 @@ export default function Hero() {
               animate={{ y: "0%" }}
               transition={{
                 duration: 1,
-                delay: 0.3,
+                delay: 2.5,
                 ease: [0.16, 1, 0.3, 1],
               }}
               className="flex justify-between w-full"
@@ -112,7 +112,7 @@ export default function Hero() {
                 animate={{ y: "0%" }}
                 transition={{
                   duration: 1.2,
-                  delay: 0.4,
+                  delay: 2.6,
                   ease: [0.16, 1, 0.3, 1],
                 }}
               >
@@ -129,7 +129,7 @@ export default function Hero() {
                 animate={{ y: "0%" }}
                 transition={{
                   duration: 1.2,
-                  delay: 0.4,
+                  delay: 2.6,
                   ease: [0.16, 1, 0.3, 1],
                 }}
               >
@@ -149,7 +149,7 @@ export default function Hero() {
             animate={{ y: "0%" }}
             transition={{
               duration: 1,
-              delay: 1,
+              delay: 3,
               ease: [0.16, 1, 0.3, 1],
             }}
             className="flex items-center gap-1"
@@ -166,7 +166,7 @@ export default function Hero() {
             animate={{ y: "0%" }}
             transition={{
               duration: 1,
-              delay: 1,
+              delay: 3,
               ease: [0.16, 1, 0.3, 1],
             }}
             className="flex items-center gap-1"
@@ -197,17 +197,17 @@ function MobileVideo() {
     if (!video) return;
 
     if (isInView) {
-      video.play().catch(() => {
-        // Handle autoplay failure
-        console.log("Autoplay failed");
-      });
+      // Initial delay of 2.5 seconds
+      const timeoutId = setTimeout(() => {
+        video.play().catch(() => {
+          console.log("Autoplay failed");
+        });
+      }, 2500);
+
+      return () => clearTimeout(timeoutId);
     } else {
       video.pause();
     }
-
-    return () => {
-      video.pause();
-    };
   }, [isInView]);
 
   return (
@@ -216,7 +216,7 @@ function MobileVideo() {
         ref={videoRef}
         initial={{ clipPath: "inset(0 0 100% 0)" }}
         animate={{ clipPath: "inset(0 0 0 0)" }}
-        transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 1.2, delay: 2.6, ease: [0.16, 1, 0.3, 1] }}
         src="/videos/hero-video-compressed.mp4"
         muted={isMuted}
         loop
@@ -227,7 +227,7 @@ function MobileVideo() {
       <motion.button
         initial={{ opacity: 0, scale: 0.8, y: 12 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 1, delay: 3, ease: [0.16, 1, 0.3, 1] }}
         onClick={() => setIsMuted(!isMuted)}
         className="absolute bottom-2 right-2 z-10"
       >
@@ -255,17 +255,17 @@ function DesktopVideo() {
     if (!video) return;
 
     if (isInView) {
-      video.play().catch(() => {
-        // Handle autoplay failure
-        console.log("Autoplay failed");
-      });
+      // Initial delay of 2.5 seconds
+      const timeoutId = setTimeout(() => {
+        video.play().catch(() => {
+          console.log("Autoplay failed");
+        });
+      }, 2500);
+
+      return () => clearTimeout(timeoutId);
     } else {
       video.pause();
     }
-
-    return () => {
-      video.pause();
-    };
   }, [isInView]);
 
   useGSAP(() => {
@@ -386,7 +386,7 @@ function DesktopVideo() {
       ref={videoContainerRef}
       initial={{ clipPath: "inset(0 0 100% 0)" }}
       animate={{ clipPath: "inset(0 0 0 0)" }}
-      transition={{ duration: 1.2, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 1.2, delay: 2.6, ease: [0.16, 1, 0.3, 1] }}
       className="video-preview relative w-full aspect-video overflow-hidden rounded-3xl will-change-transform cursor-pointer "
       onClick={() => setIsMuted(!isMuted)}
     >
@@ -394,7 +394,6 @@ function DesktopVideo() {
         <motion.video
           ref={videoRef}
           src="/videos/hero-video-compressed.mp4"
-          autoPlay
           muted={isMuted}
           loop
           playsInline

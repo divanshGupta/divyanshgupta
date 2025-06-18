@@ -11,7 +11,7 @@ export default function Header() {
             <motion.div
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
-              transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 1, delay: 3, ease: [0.16, 1, 0.3, 1] }}
               className="block font-medium text-[clamp(16px,1.2vw,20px)]"
             >
               US Based
@@ -21,7 +21,7 @@ export default function Header() {
             <motion.div
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
-              transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 1, delay: 3.1, ease: [0.16, 1, 0.3, 1] }}
               className="block font-medium text-neutral-400 text-[clamp(16px,1.2vw,20px)]"
             >
               Working globally
@@ -33,7 +33,7 @@ export default function Header() {
             <motion.div
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
-              transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 1, delay: 3, ease: [0.16, 1, 0.3, 1] }}
               className="block font-medium text-[clamp(16px,1.2vw,20px)]"
             >
               Building at
@@ -43,7 +43,7 @@ export default function Header() {
             <motion.div
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
-              transition={{ duration: 1, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 1, delay: 3.1, ease: [0.16, 1, 0.3, 1] }}
               className="block font-medium text-[clamp(16px,1.2vw,20px)]"
             >
               <a
@@ -71,7 +71,7 @@ export default function Header() {
             <motion.div
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
-              transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 1, delay: 3, ease: [0.16, 1, 0.3, 1] }}
               className="block font-medium text-[clamp(16px,1.2vw,20px)]"
             >
               Freelance availability
@@ -81,7 +81,7 @@ export default function Header() {
             <motion.div
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
-              transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 1, delay: 3.1, ease: [0.16, 1, 0.3, 1] }}
               className="block font-medium text-neutral-400 text-[clamp(16px,1.2vw,20px)]"
             >
               July 2025
@@ -99,14 +99,13 @@ function MailButton() {
     <motion.a
       initial={{ opacity: 0, scale: 0.95, y: 16 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 1, delay: 3, ease: [0.16, 1, 0.3, 1] }}
       href="mailto:jzubiate.dev@gmail.com"
       className="fixed right-4 lg:right-8 top-4 lg:top-6 group cursor-pointer"
     >
       <div className="relative">
         <div className="absolute left-0 top-0 w-12 3xl:w-14 h-12 3xl:h-14 bg-neutral-900 border border-neutral-800 rounded-full flex items-center justify-center rotate-180 scale-95 group-hover:scale-100 group-hover:rotate-0 group-hover:-translate-x-full transition-transform duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] -z-10">
           <span className="text-lg lg:text-xl 3xl:text-2xl">🤙🏼</span>
-          {/* <Mail className="w-5 h-5 text-neutral-100" /> */}
         </div>
         <div className="flex items-center relative px-5 lg:px-6 h-12 lg:h-14 rounded-full bg-neutral-900 text-neutral-100 font-semibold text-[clamp(16px,1.2vw,20px)] border border-neutral-800 z-10">
           <div className="overflow-hidden h-6 lg:h-7">
