@@ -27,7 +27,7 @@ export default function LoadingScreen() {
       initial={{ opacity: 1 }}
       animate={isLoading ? { opacity: 1 } : { opacity: 0 }}
       transition={{ delay: 1 }}
-      className="loading-screen fixed flex items-center justify-center inset-0 z-999 bg-neutral-100 w-screen h-screen"
+      className="loading-screen fixed flex items-center justify-center inset-0 z-999 bg-neutral-100 w-screen h-screen pointer-events-none"
     >
       <div className="overflow-hidden">
         <motion.p
