@@ -234,7 +234,7 @@ function MobileVideo() {
         role="button"
       >
         <div className="bg-neutral-100/50 shadow-2xl backdrop-blur-2xl w-10 h-10 rounded-full flex items-center justify-center">
-          {isMuted ? (
+          {!isMuted ? (
             <Volume2 className="w-5 h-5 text-neutral-900" aria-hidden="true" />
           ) : (
             <VolumeX className="w-5 h-5 text-neutral-900" aria-hidden="true" />
