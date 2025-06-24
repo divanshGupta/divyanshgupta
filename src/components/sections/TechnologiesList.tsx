@@ -403,8 +403,9 @@ function LetterScroll() {
       ease: "power1.inOut",
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "40% bottom",
+        start: "40% 95%",
         end: "100% 80%",
+        markers: true,
         scrub: 1,
       },
       stagger: {
