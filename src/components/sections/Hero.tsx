@@ -7,10 +7,13 @@ import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "motion/react";
 import useWindowSize from "@/hooks/useWindowSize";
 import { ArrowDown, Volume2, VolumeX } from "lucide-react";
+import useInitialLoad from "@/contexts/initial-load-context";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
+  const { isInitialLoad } = useInitialLoad();
+
   return (
     <>
       <section className="h-[100svh] relative px-4 lg:px-8">
@@ -23,7 +26,7 @@ export default function Hero() {
                 animate={{ y: "0%" }}
                 transition={{
                   duration: 1,
-                  delay: 2.5,
+                  delay: isInitialLoad ? 2.5 : 0.5,
                   ease: [0.16, 1, 0.3, 1],
                 }}
                 className="flex justify-between w-full"
@@ -49,7 +52,7 @@ export default function Hero() {
                 animate={{ y: "0%" }}
                 transition={{
                   duration: 1,
-                  delay: 2.6,
+                  delay: isInitialLoad ? 2.6 : 0.6,
                   ease: [0.16, 1, 0.3, 1],
                 }}
                 className="w-full pointer-events-none lg:pr-[4vw]"
@@ -67,7 +70,7 @@ export default function Hero() {
                 animate={{ y: "0%" }}
                 transition={{
                   duration: 1,
-                  delay: 2.7,
+                  delay: isInitialLoad ? 2.7 : 0.7,
                   ease: [0.16, 1, 0.3, 1],
                 }}
               >
@@ -91,7 +94,7 @@ export default function Hero() {
               animate={{ y: "0%" }}
               transition={{
                 duration: 1,
-                delay: 2.5,
+                delay: isInitialLoad ? 2.5 : 0.5,
                 ease: [0.16, 1, 0.3, 1],
               }}
               className="flex justify-between w-full"
@@ -112,7 +115,7 @@ export default function Hero() {
                 animate={{ y: "0%" }}
                 transition={{
                   duration: 1.2,
-                  delay: 2.6,
+                  delay: isInitialLoad ? 2.6 : 0.6,
                   ease: [0.16, 1, 0.3, 1],
                 }}
               >
@@ -129,7 +132,7 @@ export default function Hero() {
                 animate={{ y: "0%" }}
                 transition={{
                   duration: 1.2,
-                  delay: 2.6,
+                  delay: isInitialLoad ? 2.6 : 0.6,
                   ease: [0.16, 1, 0.3, 1],
                 }}
               >
@@ -149,7 +152,7 @@ export default function Hero() {
             animate={{ y: "0%" }}
             transition={{
               duration: 1,
-              delay: 3,
+              delay: isInitialLoad ? 3 : 1,
               ease: [0.16, 1, 0.3, 1],
             }}
             className="flex items-center gap-1"
@@ -166,7 +169,7 @@ export default function Hero() {
             animate={{ y: "0%" }}
             transition={{
               duration: 1,
-              delay: 3,
+              delay: isInitialLoad ? 3 : 1,
               ease: [0.16, 1, 0.3, 1],
             }}
             className="flex items-center gap-1"
@@ -191,24 +194,25 @@ function MobileVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: false });
+  const { isInitialLoad } = useInitialLoad();
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
     if (isInView) {
-      // Initial delay of 2.5 seconds
+      const delay = isInitialLoad ? 2500 : 500;
       const timeoutId = setTimeout(() => {
         video.play().catch(() => {
           console.log("Autoplay failed");
         });
-      }, 2500);
+      }, delay);
 
       return () => clearTimeout(timeoutId);
     } else {
       video.pause();
     }
-  }, [isInView]);
+  }, [isInView, isInitialLoad]);
 
   return (
     <div ref={containerRef} className="relative md:hidden">
@@ -216,7 +220,11 @@ function MobileVideo() {
         ref={videoRef}
         initial={{ clipPath: "inset(0 0 100% 0)" }}
         animate={{ clipPath: "inset(0 0 0 0)" }}
-        transition={{ duration: 1.2, delay: 2.6, ease: [0.16, 1, 0.3, 1] }}
+        transition={{
+          duration: 1.2,
+          delay: isInitialLoad ? 2.6 : 0.6,
+          ease: [0.16, 1, 0.3, 1],
+        }}
         src="/videos/hero-video-compressed.mp4"
         muted={isMuted}
         loop
@@ -227,7 +235,11 @@ function MobileVideo() {
       <motion.button
         initial={{ opacity: 0, scale: 0.8, y: 12 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 1, delay: 3, ease: [0.16, 1, 0.3, 1] }}
+        transition={{
+          duration: 1,
+          delay: isInitialLoad ? 3 : 1,
+          ease: [0.16, 1, 0.3, 1],
+        }}
         onClick={() => setIsMuted(!isMuted)}
         className="absolute bottom-2 right-2 z-10"
         aria-label={isMuted ? "Unmute video" : "Mute video"}
@@ -251,24 +263,26 @@ function DesktopVideo() {
   const { width } = useWindowSize();
   const isInView = useInView(videoContainerRef, { once: false });
   const [isMuted, setIsMuted] = useState(true);
+  const { isInitialLoad } = useInitialLoad();
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
     if (isInView) {
-      // Initial delay of 2.5 seconds
+      // Initial delay based on isInitialLoad
+      const delay = isInitialLoad ? 2500 : 500;
       const timeoutId = setTimeout(() => {
         video.play().catch(() => {
           console.log("Autoplay failed");
         });
-      }, 2500);
+      }, delay);
 
       return () => clearTimeout(timeoutId);
     } else {
       video.pause();
     }
-  }, [isInView]);
+  }, [isInView, isInitialLoad]);
 
   useGSAP(() => {
     const videoContainer = videoContainerRef.current;
@@ -388,7 +402,11 @@ function DesktopVideo() {
       ref={videoContainerRef}
       initial={{ clipPath: "inset(0 0 100% 0)" }}
       animate={{ clipPath: "inset(0 0 0 0)" }}
-      transition={{ duration: 1.2, delay: 2.6, ease: [0.16, 1, 0.3, 1] }}
+      transition={{
+        duration: 1.2,
+        delay: isInitialLoad ? 2.6 : 0.6,
+        ease: [0.16, 1, 0.3, 1],
+      }}
       className="video-preview relative w-full aspect-video overflow-hidden rounded-3xl will-change-transform cursor-pointer "
       onClick={() => setIsMuted(!isMuted)}
     >
@@ -405,7 +423,11 @@ function DesktopVideo() {
       <motion.button
         initial={{ opacity: 0, scale: 0.8, y: 12 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+        transition={{
+          duration: 1,
+          delay: isInitialLoad ? 1 : 0,
+          ease: [0.16, 1, 0.3, 1],
+        }}
         onClick={() => setIsMuted(!isMuted)}
         className="absolute bottom-8 right-8 z-10 scale-0 group-hover:scale-100 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform"
         aria-label={isMuted ? "Unmute video" : "Mute video"}

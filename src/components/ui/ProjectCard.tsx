@@ -8,6 +8,7 @@ import { useTransitionRouter } from "next-view-transitions";
 import { lcddot } from "@/fonts";
 import { Project } from "@/data/projects";
 import { pageTransition } from "@/constants/pageTransition";
+import useInitialLoad from "@/contexts/initial-load-context";
 
 export default function ProjectCard({
   project,
@@ -19,6 +20,7 @@ export default function ProjectCard({
   const [isHovered, setIsHovered] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const router = useTransitionRouter();
+  const { isInitialLoad } = useInitialLoad();
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -33,7 +35,7 @@ export default function ProjectCard({
       animate={{ y: 0, opacity: 1, scale: 1 }}
       transition={{
         duration: 1.5,
-        delay: 1 + index * 0.075,
+        delay: (isInitialLoad ? 3 : 1) + index * 0.075,
         ease: [0.16, 1, 0.3, 1],
       }}
     >

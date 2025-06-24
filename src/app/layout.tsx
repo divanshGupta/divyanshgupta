@@ -10,6 +10,7 @@ import DocumentTitleChanger from "@/components/layout/DocumentTitleChanger";
 import { metadata } from "./metadata";
 import FooterWrapper from "@/components/layout/FooterWrapper";
 import LoadingScreen from "@/components/layout/LoadingScreen";
+import { InitialLoadProvider } from "@/contexts/initial-load-context";
 
 export { metadata };
 
@@ -22,19 +23,21 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang="en">
         <ReactLenis root>
-          <FooterProvider>
-            <body
-              className={`${saans.className} antialiased bg-neutral-900 text-neutral-900 overscroll-none`}
-            >
-              <LoadingScreen />
-              <DocumentTitleChanger />
-              <Header />
-              <CTAButton />
-              {children}
-              <FooterWrapper />
-              <Analytics />
-            </body>
-          </FooterProvider>
+          <InitialLoadProvider>
+            <FooterProvider>
+              <body
+                className={`${saans.className} antialiased bg-neutral-900 text-neutral-900 overscroll-none`}
+              >
+                <LoadingScreen />
+                <DocumentTitleChanger />
+                <Header />
+                <CTAButton />
+                {children}
+                <FooterWrapper />
+                <Analytics />
+              </body>
+            </FooterProvider>
+          </InitialLoadProvider>
         </ReactLenis>
       </html>
     </ViewTransitions>

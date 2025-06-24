@@ -4,13 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion, useInView } from "motion/react";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { lcddot } from "@/fonts";
 import useOnClickOutside from "@/hooks/useOnClickOutside";
 import { useFooter } from "@/contexts/footer-context";
 import { useTransitionRouter } from "next-view-transitions";
 import { pageTransition } from "@/constants/pageTransition";
 import { usePathname } from "next/navigation";
+import useInitialLoad from "@/contexts/initial-load-context";
 
 const navItems = [
   {
@@ -34,14 +35,8 @@ export default function CTAButton() {
   const ref = useRef<HTMLDivElement>(null);
   const { footerRef } = useFooter();
   const [isOpen, setIsOpen] = useState(false);
-  const [isInitialLoad, setIsInitialLoad] = useState(true);
+  const { isInitialLoad } = useInitialLoad();
   const pathname = usePathname();
-
-  useEffect(() => {
-    setTimeout(() => {
-      setIsInitialLoad(false);
-    }, 3000);
-  }, []);
 
   useOnClickOutside(isOpen, ref as React.RefObject<HTMLElement>, () =>
     setIsOpen(false)

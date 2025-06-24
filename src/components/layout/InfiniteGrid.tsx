@@ -4,7 +4,9 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { motion } from "motion/react";
 import { useRef } from "react";
+import Image from "next/image";
 import Observer from "gsap/Observer";
+import useInitialLoad from "@/contexts/initial-load-context";
 
 gsap.registerPlugin(Observer);
 
@@ -29,6 +31,7 @@ const imagePaths = [
 
 export default function InfiniteGrid() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { isInitialLoad } = useInitialLoad();
 
   useGSAP(() => {
     if (!containerRef.current) return;
@@ -90,43 +93,42 @@ export default function InfiniteGrid() {
       aria-hidden={ariaHidden ? "true" : undefined}
     >
       {imagePaths.map((path, index) => (
-        <div
-          className="w-[50vw] md:w-[18vw] aspect-square select-none will-change-transform rounded-xl overflow-hidden z-0"
+        <motion.div
+          className="w-[50vw] md:w-[18vw] aspect-square select-none will-change-[scale,clipPath] rounded-xl overflow-hidden z-0 relative"
           key={`${index}-${ariaHidden ? "hidden" : "visible"}`}
+          initial={
+            ariaHidden
+              ? undefined
+              : {
+                  clipPath: "polygon(15% 50%, 85% 50%, 85% 50%, 15% 50%)",
+                  scale: 1.3,
+                }
+          }
+          animate={
+            ariaHidden
+              ? undefined
+              : {
+                  clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+                  scale: 1,
+                }
+          }
+          transition={
+            ariaHidden
+              ? undefined
+              : {
+                  duration: 1,
+                  delay: isInitialLoad ? 2.8 : 0.8,
+                  ease: [0.76, 0, 0.24, 1],
+                }
+          }
         >
-          <motion.img
+          <Image
             src={path || "/placeholder.svg"}
             alt=""
-            className="w-full h-full block object-contain z-0"
-            initial={
-              ariaHidden
-                ? undefined
-                : {
-                    opacity: 0,
-                    y: 50,
-                    scale: 0.9,
-                  }
-            }
-            animate={
-              ariaHidden
-                ? undefined
-                : {
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                  }
-            }
-            transition={
-              ariaHidden
-                ? undefined
-                : {
-                    duration: 1.5,
-                    delay: 1.5 + index * 0.025,
-                    ease: [0.16, 1, 0.3, 1],
-                  }
-            }
+            fill
+            className="w-full h-full object-contain z-0"
           />
-        </div>
+        </motion.div>
       ))}
     </div>
   );
