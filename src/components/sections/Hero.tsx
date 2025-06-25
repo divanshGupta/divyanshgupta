@@ -16,7 +16,7 @@ export default function Hero() {
 
   return (
     <>
-      <section className="h-[100svh] relative px-4 lg:px-8">
+      <section className="h-[100svh] relative px-4 lg:px-8 overflow-x-hidden">
         {/* Mobile */}
         <div className="flex flex-col justify-between h-full py-32 lg:hidden">
           <div className="flex flex-col gap-1">
@@ -295,7 +295,6 @@ function DesktopVideo() {
         { maxWidth: 1600, translateY: -100, movMultiplier: 600 },
         { maxWidth: 2000, translateY: -110, movMultiplier: 700 },
         { maxWidth: 2500, translateY: -115, movMultiplier: 700 },
-        { maxWidth: 2800, translateY: -120, movMultiplier: 700 },
       ];
 
       const getInitialValues = () => {
@@ -351,41 +350,29 @@ function DesktopVideo() {
       });
 
       document.addEventListener("mousemove", (e) => {
-        const margin = 32;
-        const availableWidth = width - margin * 2;
-        const mouseX = e.clientX - margin;
-        animationState.targetMouseX = (mouseX / availableWidth - 0.5) * 2;
+        const mouseX = e.clientX;
+        animationState.targetMouseX = (mouseX / width - 0.5) * 2;
       });
 
       const animate = () => {
         if (width < 768) return;
 
-        const {
-          scale,
-          targetMouseX,
-          currentMouseX,
-          currentTranslateY,
-          movementMultiplier,
-        } = animationState;
+        const { scale, targetMouseX, currentMouseX, currentTranslateY } =
+          animationState;
 
-        // Get video width (scaled)
+        const margin = 32; // or whatever value you want
         const videoWidth = videoContainer.offsetWidth * scale;
-        const maxTranslate = (width - videoWidth) / 2 - 32; // 32px margin
+        const maxTranslate = (width - margin * 2 - videoWidth) / 2;
 
-        // Adjust movement multiplier based on scale
-        const scaleMovementMultiplier = (1 - scale) * movementMultiplier;
-        let maxHorizontalMovement =
-          scale < 0.95 ? targetMouseX * scaleMovementMultiplier : 0;
-
-        // Clamp so video never goes past margin
-        maxHorizontalMovement = Math.max(
-          Math.min(maxHorizontalMovement, maxTranslate),
+        let horizontalMovement = targetMouseX * maxTranslate;
+        horizontalMovement = Math.max(
+          Math.min(horizontalMovement, maxTranslate),
           -maxTranslate
         );
 
         animationState.currentMouseX = gsap.utils.interpolate(
           currentMouseX,
-          maxHorizontalMovement,
+          horizontalMovement,
           0.15
         );
 
