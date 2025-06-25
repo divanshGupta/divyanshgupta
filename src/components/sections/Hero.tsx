@@ -292,10 +292,10 @@ function DesktopVideo() {
     if (width >= 768) {
       const breakpoints = [
         { maxWidth: 900, translateY: -95, movMultiplier: 550 },
-        { maxWidth: 1000, translateY: -105, movMultiplier: 500 },
-        { maxWidth: 1100, translateY: -110, movMultiplier: 550 },
-        { maxWidth: 1200, translateY: -105, movMultiplier: 600 },
-        { maxWidth: 1300, translateY: -100, movMultiplier: 650 },
+        { maxWidth: 1600, translateY: -100, movMultiplier: 600 },
+        { maxWidth: 2000, translateY: -110, movMultiplier: 700 },
+        { maxWidth: 2500, translateY: -115, movMultiplier: 700 },
+        { maxWidth: 2800, translateY: -120, movMultiplier: 700 },
       ];
 
       const getInitialValues = () => {
@@ -309,7 +309,7 @@ function DesktopVideo() {
         }
 
         return {
-          translateY: -115,
+          translateY: -125,
           movementMultiplier: 700,
         };
       };
