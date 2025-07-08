@@ -1,7 +1,6 @@
 export const labs = [
   "/images/lab/01.png",
   "/videos/lab/02-compressed.mov",
-  "/images/lab/02.png",
   "/images/lab/03.png",
   "/images/lab/04.png",
   "/images/lab/05.png",
