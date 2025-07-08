@@ -7,27 +7,9 @@ import { useRef } from "react";
 import Image from "next/image";
 import Observer from "gsap/Observer";
 import useInitialLoad from "@/contexts/initial-load-context";
+import { labs } from "@/data/labs";
 
 gsap.registerPlugin(Observer);
-
-// Define the image paths
-const imagePaths = [
-  "/images/lab/01.png",
-  "/images/lab/02.png",
-  "/images/lab/03.png",
-  "/images/lab/04.png",
-  "/images/lab/05.png",
-  "/images/lab/06.png",
-  "/images/lab/07.png",
-  "/images/lab/08.png",
-  "/images/lab/09.png",
-  "/images/lab/10.png",
-  "/images/lab/11.png",
-  "/images/lab/12.png",
-  "/images/lab/13.png",
-  "/images/lab/14.png",
-  "/images/lab/15.png",
-];
 
 export default function InfiniteGrid() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -92,7 +74,7 @@ export default function InfiniteGrid() {
       className="grid w-max grid-cols-[repeat(5,1fr)] gap-[10vw] p-[5vw] pointer-events-none"
       aria-hidden={ariaHidden ? "true" : undefined}
     >
-      {imagePaths.map((path, index) => (
+      {labs.map((path, index) => (
         <motion.div
           className="w-[50vw] md:w-[18vw] aspect-square select-none will-change-[scale,clipPath] rounded-xl overflow-hidden z-0 relative"
           key={`${index}-${ariaHidden ? "hidden" : "visible"}`}
@@ -122,12 +104,23 @@ export default function InfiniteGrid() {
                 }
           }
         >
-          <Image
-            src={path || "/placeholder.svg"}
-            alt=""
-            fill
-            className="w-full h-full object-contain z-0"
-          />
+          {path.includes(".png") ? (
+            <Image
+              src={path || "/placeholder.svg"}
+              alt=""
+              fill
+              className="w-full h-full object-contain z-0"
+            />
+          ) : (
+            <video
+              src={path}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-contain z-0"
+            />
+          )}
         </motion.div>
       ))}
     </div>
