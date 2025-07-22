@@ -1,11 +1,11 @@
 export const labs = [
-  "/images/lab/01.png",
+  "/videos/lab/01-compressed.mov",
   "/videos/lab/02-compressed.mov",
   "/images/lab/03.png",
   "/images/lab/04.png",
   "/images/lab/05.png",
   "/images/lab/06.png",
-  "/images/lab/07.png",
+  "/videos/lab/07-compressed.mov",
   "/images/lab/08.png",
   "/images/lab/09.png",
   "/images/lab/10.png",
