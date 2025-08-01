@@ -17,55 +17,50 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Jazmin Wong",
+    title: "Wevstack",
     icon: "/images/work/jazmin-wong/jazmin-wong-icon.png",
     slug: "jazmin-wong",
     category: "Portfolio",
     keywords: [
-      "Art Direction",
-      "Voice & Tone",
       "UI",
       "UX",
       "Next.js",
       "Tailwind CSS",
       "GSAP",
       "Motion",
-      "Matter.js",
-      "Lenis",
       "Vercel",
     ],
     summary: [
-      "Designed and developed a personal website for Jazmin Wong, a creative content strategist. The project emphasized a bold, engaging layout with playful micro-interactions to reflect her dynamic approach to content creation.",
+      "Designed and developed a website of collection of curated web development tools.",
     ],
     year: 2025,
-    url: "https://jazzicreates.tv",
-    backgroundImageUrl:
-      "https://images.unsplash.com/photo-1744731036457-b74958fd6bf5?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "https://wevstack.vercel.app",
+    backgroundImageUrl: "/images/work/wevstack/wevstack-hero.png",
     videoUrl: "/videos/jazmin-wong-preview-compressed.mp4",
     media: [
       {
         type: "image",
-        url: "/images/work/jazmin-wong/image-01.png",
+        url: "/images/work/wevstack/hero.png",
       },
+      // {
+      //   type: "video",
+      //   url: "/videos/work/wevstack/hero.mp4",
+      // },
       {
-        type: "video",
-        url: "/videos/work/jazmin-wong/video-01.mp4",
+        type: "image",
+        url: "/images/work/wevstack/cards.png",
       },
       {
         type: "image",
-        url: "/images/work/jazmin-wong/image-03.png",
+        url: "/images/work/wevstack/card.png",
       },
       {
         type: "image",
-        url: "/images/work/jazmin-wong/image-04.png",
+        url: "/images/work/wevstack/logo.png",
       },
       {
         type: "image",
-        url: "/images/work/jazmin-wong/image-05.png",
-      },
-      {
-        type: "image",
-        url: "/images/work/jazmin-wong/image-06.png",
+        url: "/images/work/wevstack/footer.png",
       },
     ],
   },

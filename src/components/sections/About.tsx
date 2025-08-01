@@ -9,6 +9,7 @@ import { wrapWordsInSpan } from "@/utils/string";
 import useWindowSize from "@/hooks/useWindowSize";
 import Copy from "../layout/Copy";
 import Image from "next/image";
+import { IMAGES_MANIFEST } from "next/dist/shared/lib/constants";
 // import aboutImage from './images/divyansh.jpeg';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -93,7 +94,7 @@ export default function About() {
 
         {/* Mobile video */}
         <div className="lg:hidden col-span-12 aspect-video rounded-lg overflow-hidden mb-4">
-          <motion.video
+          {/* <motion.video
             ref={videoRef}
             initial={{ clipPath: "inset(0 0 100% 0)" }}
             animate={isVideoInView ? { clipPath: "inset(0 0 0 0)" } : {}}
@@ -106,6 +107,16 @@ export default function About() {
             className="pointer-events-none w-full h-full object-cover"
             onError={(e) => console.error("Video loading error:", e)}
             poster="/images/about-poster.jpg"
+          /> */}
+          {/* temporarily replacing video with a image, will update later */}
+          <motion.img
+            src="/images/divyansh.jpeg"
+            alt="About Image"
+            className="object-cover"
+            onError={(e) => {
+              e.target.onerror = null; // prevent infinite loop
+              e.target.src = "/images/other/design.jpg";
+            }}
           />
         </div>
 

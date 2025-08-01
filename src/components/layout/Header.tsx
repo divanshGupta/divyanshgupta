@@ -55,10 +55,10 @@ export default function Header() {
                 <div className="overflow-hidden h-6">
                   <div className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:-translate-y-1/2">
                     <span className="text-[clamp(16px,1.2vw,20px)] text-neutral-400 font-medium mb-1.5">
-                      JK Adventure
+                      JK Tourism
                     </span>
                     <span className="text-[clamp(16px,1.2vw,20px)] text-neutral-400 font-medium mb-1.5">
-                      JK Adventure
+                      JK Tourism
                     </span>
                   </div>
                 </div>
