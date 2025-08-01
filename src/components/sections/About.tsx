@@ -3,27 +3,24 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { motion, useInView } from "motion/react";
+import { motion } from "motion/react";
 import { useRef } from "react";
 import { wrapWordsInSpan } from "@/utils/string";
 import useWindowSize from "@/hooks/useWindowSize";
 import Copy from "../layout/Copy";
-import Image from "next/image";
-import { IMAGES_MANIFEST } from "next/dist/shared/lib/constants";
-// import aboutImage from './images/divyansh.jpeg';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
   const paragraphRef = useRef<HTMLParagraphElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  // const videoRef = useRef<HTMLVideoElement>(null); // Uncomment if you want to use video
 
   const { width } = useWindowSize();
 
-  const isVideoInView = useInView(videoRef, {
-    once: false,
-    margin: "0px 0px -30% 0px",
-  });
+  // const isVideoInView = useInView(videoRef, {
+  //   once: false,
+  //   margin: "0px 0px -30% 0px",
+  // });
 
   useGSAP(() => {
     if (width < 1024) return;
@@ -114,8 +111,9 @@ export default function About() {
             alt="About Image"
             className="object-cover"
             onError={(e) => {
-              e.target.onerror = null; // prevent infinite loop
-              e.target.src = "/images/other/design.jpg";
+              const target = e.target as HTMLImageElement;
+              target.onerror = null; // prevent infinite loop
+              target.src = "/images/other/design.jpg";
             }}
           />
         </div>
@@ -156,14 +154,16 @@ export default function About() {
           /> */}
           {/*temporarily replacing video with image */}
           <img
-            src="/images/divyansh.jpeg" 
+            src="/images/divyansh.jpeg"
             alt="About Image"
             className="object-cover"
             onError={(e) => {
-              e.target.onerror = null; // prevent infinite loop
-              e.target.src = "/images/other/design.jpg";
+              const target = e.target as HTMLImageElement;
+              target.onerror = null; // prevent infinite loop
+              target.src = "/images/other/design.jpg";
             }}
           />
+
         </div>
       </div>
     </section>

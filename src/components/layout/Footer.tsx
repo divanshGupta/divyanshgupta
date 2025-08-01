@@ -1,18 +1,17 @@
 "use client";
-
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 // import { useTransitionRouter } from "next-view-transitions";
 import { useFooter } from "@/contexts/footer-context";
-import { pageTransition } from "@/constants/pageTransition";
-import { useRouter } from 'next/navigation';
+// import { pageTransition } from "@/constants/pageTransition";
+import { usePathname } from "next/navigation";
+
+
 
 export default function Footer() {
   const { footerRef } = useFooter();
   const pathname = usePathname();
-  const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -38,11 +37,11 @@ export default function Footer() {
         <Link
           href="/work"
           onClick={(e) => {
-            e.preventDefault();
-            if (pathname === "/work") return;
-            router.push("/work", {
-              onTransitionReady: pageTransition,
-            });
+            if (pathname === "/lab") {
+              e.preventDefault(); // stop unnecessary reload
+              return;
+            }
+            // let Link handle the routing
           }}
           className="col-span-12 lg:col-span-8 flex items-end p-4 lg:p-6 bg-neutral-300/50 backdrop-blur-xs h-[200px] lg:h-[350px] rounded-lg lg:rounded-xl text-[clamp(16px,1.4vw,24px)] font-medium leading-tight cursor-pointer hover:backdrop-blur-md transition-all duration-500"
         >
@@ -51,11 +50,11 @@ export default function Footer() {
         <Link
           href="/lab"
           onClick={(e) => {
-            e.preventDefault();
-            if (pathname === "/lab") return;
-            router.push("/lab", {
-              onTransitionReady: pageTransition,
-            });
+            if (pathname === "/lab") {
+              e.preventDefault(); // stop unnecessary reload
+              return;
+            }
+            // let Link handle the routing
           }}
           className="col-span-12 lg:col-span-4 flex items-end p-4 lg:p-6 bg-neutral-300/50 backdrop-blur-sm h-[200px] lg:h-[350px] rounded-lg lg:rounded-xl text-[clamp(16px,1.4vw,24px)] font-medium leading-tight cursor-pointer hover:backdrop-blur-md transition-all duration-500"
         >

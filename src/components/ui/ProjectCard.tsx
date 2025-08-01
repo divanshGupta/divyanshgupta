@@ -3,13 +3,12 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useRef } from "react";
+import { useRef } from "react";
 // import { useTransitionRouter } from "next-view-transitions";
 import { lcddot } from "@/fonts";
 import { Project } from "@/data/projects";
-import { pageTransition } from "@/constants/pageTransition";
+// import { pageTransition } from "@/constants/pageTransition";
 import useInitialLoad from "@/contexts/initial-load-context";
-import { useRouter } from 'next/navigation';
 
 export default function ProjectCard({
   project,
@@ -18,9 +17,8 @@ export default function ProjectCard({
   project: Project;
   index: number;
 }) {
-  const [isHovered, setIsHovered] = useState(false);
+  // const [isHovered, setIsHovered] = useState(false); // Uncomment if you want to use hover state
   const containerRef = useRef<HTMLDivElement>(null);
-  const router = useRouter();
   const { isInitialLoad } = useInitialLoad();
 
   const { scrollYProgress } = useScroll({
@@ -43,14 +41,8 @@ export default function ProjectCard({
       <Link
         href={`/work/${project.slug}`}
         className="flex flex-col gap-4 lg:gap-5 px-3 lg:px-4 pt-3 lg:pt-4 pb-5 lg:pb-6 rounded-xl lg:rounded-2xl bg-neutral-900 cursor-pointer group relative"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        onClick={(e) => {
-          e.preventDefault();
-          router.push(`/work/${project.slug}`, {
-            onTransitionReady: pageTransition,
-          });
-        }}
+        // onMouseEnter={() => setIsHovered(true)}
+        // onMouseLeave={() => setIsHovered(false)}
       >
         <div className="relative rounded-lg lg:rounded-xl overflow-hidden w-full h-[260px] md:h-[350px] lg:h-[clamp(500px,32vw,800px)]">
           <div className="absolute inset-0 bg-neutral-900/30 backdrop-blur-md z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out" />

@@ -8,8 +8,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 // import { useTransitionRouter } from "next-view-transitions";
-import { pageTransition } from "@/constants/pageTransition";
-import { useRouter } from 'next/navigation';
+// import { pageTransition } from "@/constants/pageTransition";
+import { usePathname } from "next/navigation";
 
 export default function Work() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -17,7 +17,8 @@ export default function Work() {
     once: true,
     margin: "0px 0px -55% 0px",
   });
-  const router = useRouter();
+  const pathname = usePathname();
+  // const router = useRouter();
 
   return (
     <section
@@ -69,11 +70,12 @@ export default function Work() {
         href="/work"
         className="flex items-center gap-1 group"
         onClick={(e) => {
-          e.preventDefault();
-          router.push("/work", {
-            onTransitionReady: pageTransition,
-          });
-        }}
+            if (pathname === "/lab") {
+              e.preventDefault(); // stop unnecessary reload
+              return;
+            }
+            // let Link handle the routing
+          }}
       >
         <span className="text-[clamp(20px,1.5vw,32px)] font-medium">
           See all
