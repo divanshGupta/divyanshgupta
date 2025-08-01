@@ -85,11 +85,11 @@ export default function About() {
   return (
     <section
       id="about"
-      className="grid grid-cols-12 gap-4 lg:gap-8 pt-56 pb-28 p-4 lg:px-8"
+      className="grid grid-cols-12 gap-4 lg:gap-8 pt-30 pb-28 p-4 lg:px-8"
     >
       <div className="flex flex-col col-span-12 lg:col-span-7">
         <Copy>
-          <h4 className="font-semibold uppercase mb-4">Myself</h4>
+          <h4 className="font-bold tracking-tight leading-[0.8] uppercase text-4xl md:text-lg mb-4">Myself</h4>
         </Copy>
 
         {/* Mobile video */}

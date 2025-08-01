@@ -18,9 +18,9 @@ export default function Hero() {
     <>
       <section className="h-[100svh] relative px-4 lg:px-8 overflow-x-hidden">
         {/* Mobile */}
-        <div className="flex flex-col justify-between h-full py-32 lg:hidden">
-          <div className="flex flex-col gap-1">
-            <div className="overflow-hidden mb-1 w-full relative">
+        <div className="flex flex-col justify-between h-full py-32 lg:hidden ">
+          <div className="flex flex-col gap-1 ">
+            <div className="overflow-hidden mb-1 w-full relative ">
               <motion.div
                 initial={{ y: "100%" }}
                 animate={{ y: "0%" }}
@@ -45,8 +45,8 @@ export default function Hero() {
             <MobileVideo />
           </div>
 
-          <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-2 lg:gap-0">
-            <div className="overflow-hidden flex items-center justify-center w-full">
+          <div className="flex flex-col lg:flex-row lg:justify-between items-center pb-20">
+            <div className="overflow-hidden flex items-center justify-center w-full leading-none ">
               <motion.div
                 initial={{ y: "100%" }}
                 animate={{ y: "0%" }}
@@ -62,11 +62,11 @@ export default function Hero() {
                   alt="Design"
                   className="h-[15vw] md:h-[16vw] lg:h-[17vw]"
                 /> */}
-                <h1 className="text-[65px] font-extrabold -tracking-tight">DIVYANSH</h1> {/* Replacing img temporarily with heading text */}
+                <h1 className="text-[65px] font-extrabold -tracking-tight">Frontend</h1> {/* Replacing img temporarily with heading text */}
 
               </motion.div>
             </div>
-            <div className="overflow-hidden w-full">
+            <div className="overflow-hidden flex items-center justify-start w-full leading-none">
               <motion.div
                 initial={{ y: "100%" }}
                 animate={{ y: "0%" }}
@@ -81,7 +81,7 @@ export default function Hero() {
                   alt="Engineer"
                   className="w-full pointer-events-none"
                 /> */}
-                <h1 className="text-[65px] font-extrabold -tracking-tight">GUPTA</h1> {/* Replacing img temporarily with heading text */}
+                <h1 className="text-[65px] font-extrabold -tracking-tight">Developer</h1> {/* Replacing img temporarily with heading text */}
 
               </motion.div>
             </div>
@@ -128,7 +128,7 @@ export default function Hero() {
                   alt="Design"
                   className="h-[10vw] w-auto object-contain pointer-events-none"
                 /> */}
-                <h1 className="text-[150px] font-extrabold -tracking-tight">DIVYANSH</h1> {/* Replacing img temporarily with heading text */}
+                <h1 className="text-[120px] font-extrabold -tracking-tight">Fontend</h1> {/* Replacing img temporarily with heading text */}
               </motion.div>
             </div>
             <div className="overflow-hidden">
@@ -146,7 +146,7 @@ export default function Hero() {
                   alt="Engineer"
                   className="h-[10vw] w-auto object-contain pointer-events-none"
                 /> */}
-                <h1 className="text-[150px] font-extrabold -tracking-tight">GUPTA</h1> {/* Replacing img temporarily with heading text */}
+                <h1 className="text-[120px] font-extrabold -tracking-tight">Developer</h1> {/* Replacing img temporarily with heading text */}
               </motion.div>
             </div>
           </div>
