@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 // import { useTransitionRouter } from "next-view-transitions";
 import { lcddot } from "@/fonts";
 import { Project } from "@/data/projects";
@@ -17,7 +17,8 @@ export default function ProjectCard({
   project: Project;
   index: number;
 }) {
-  // const [isHovered, setIsHovered] = useState(false); // Uncomment if you want to use hover state
+  const [isHovered, setIsHovered] = useState(false); 
+
   const containerRef = useRef<HTMLDivElement>(null);
   const { isInitialLoad } = useInitialLoad();
 
@@ -41,13 +42,13 @@ export default function ProjectCard({
       <Link
         href={`/work/${project.slug}`}
         className="flex flex-col gap-4 lg:gap-5 px-3 lg:px-4 pt-3 lg:pt-4 pb-5 lg:pb-6 rounded-xl lg:rounded-2xl bg-neutral-900 cursor-pointer group relative"
-        // onMouseEnter={() => setIsHovered(true)}
-        // onMouseLeave={() => setIsHovered(false)}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
         <div className="relative rounded-lg lg:rounded-xl overflow-hidden w-full h-[260px] md:h-[350px] lg:h-[clamp(500px,32vw,800px)]">
           <div className="absolute inset-0 bg-neutral-900/30 backdrop-blur-md z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out" />
 
-          {/* <video
+          <video
             ref={(el) => {
               if (el) {
                 if (isHovered) {
@@ -65,7 +66,7 @@ export default function ProjectCard({
             muted
             loop
             playsInline
-          ></video> */}
+          ></video>
 
           <div ref={containerRef} className="w-full h-full">
             <motion.div

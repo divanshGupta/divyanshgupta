@@ -3,24 +3,25 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { motion } from "motion/react";
+import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { wrapWordsInSpan } from "@/utils/string";
 import useWindowSize from "@/hooks/useWindowSize";
 import Copy from "../layout/Copy";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
   const paragraphRef = useRef<HTMLParagraphElement>(null);
-  // const videoRef = useRef<HTMLVideoElement>(null); // Uncomment if you want to use video
+  const videoRef = useRef<HTMLVideoElement>(null); // Uncomment if you want to use video
 
   const { width } = useWindowSize();
 
-  // const isVideoInView = useInView(videoRef, {
-  //   once: false,
-  //   margin: "0px 0px -30% 0px",
-  // });
+  const isVideoInView = useInView(videoRef, {
+    once: false,
+    margin: "0px 0px -30% 0px",
+  });
 
   useGSAP(() => {
     if (width < 1024) return;
@@ -107,6 +108,7 @@ export default function About() {
           /> */}
           {/* temporarily replacing video with a image, will update later */}
           <motion.img
+          animate={isVideoInView ? { clipPath: "inset(0 0 0 0)" } : {}}
             src="/images/divyansh.jpeg"
             alt="About Image"
             className="object-cover"
@@ -153,7 +155,7 @@ export default function About() {
             className="pointer-events-none"
           /> */}
           {/*temporarily replacing video with image */}
-          <img
+          <Image
             src="/images/divyansh.jpeg"
             alt="About Image"
             className="object-cover"
@@ -162,6 +164,7 @@ export default function About() {
               target.onerror = null; // prevent infinite loop
               target.src = "/images/other/design.jpg";
             }}
+            fill
           />
 
         </div>
