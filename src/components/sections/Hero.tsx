@@ -46,7 +46,7 @@ export default function Hero() {
           </div>
 
           <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-2 lg:gap-0">
-            <div className="overflow-hidden">
+            <div className="overflow-hidden flex items-center justify-center w-full">
               <motion.div
                 initial={{ y: "100%" }}
                 animate={{ y: "0%" }}
@@ -57,11 +57,13 @@ export default function Hero() {
                 }}
                 className="w-full pointer-events-none lg:pr-[4vw]"
               >
-                <img
+                {/* <img
                   src="/images/other/design.png"
                   alt="Design"
                   className="h-[15vw] md:h-[16vw] lg:h-[17vw]"
-                />
+                /> */}
+                <h1 className="text-[65px] font-extrabold -tracking-tight">DIVYANSH</h1> {/* Replacing img temporarily with heading text */}
+
               </motion.div>
             </div>
             <div className="overflow-hidden w-full">
@@ -74,11 +76,13 @@ export default function Hero() {
                   ease: [0.16, 1, 0.3, 1],
                 }}
               >
-                <img
+                {/* <img
                   src="/images/other/engineer.png"
                   alt="Engineer"
                   className="w-full pointer-events-none"
-                />
+                /> */}
+                <h1 className="text-[65px] font-extrabold -tracking-tight">GUPTA</h1> {/* Replacing img temporarily with heading text */}
+
               </motion.div>
             </div>
           </div>
@@ -119,11 +123,12 @@ export default function Hero() {
                   ease: [0.16, 1, 0.3, 1],
                 }}
               >
-                <img
+                {/* <img
                   src="/images/other/design.png"
                   alt="Design"
                   className="h-[10vw] w-auto object-contain pointer-events-none"
-                />
+                /> */}
+                <h1 className="text-[150px] font-extrabold -tracking-tight">DIVYANSH</h1> {/* Replacing img temporarily with heading text */}
               </motion.div>
             </div>
             <div className="overflow-hidden">
@@ -136,11 +141,12 @@ export default function Hero() {
                   ease: [0.16, 1, 0.3, 1],
                 }}
               >
-                <img
+                {/* <img
                   src="/images/other/engineer.png"
                   alt="Engineer"
                   className="h-[10vw] w-auto object-contain pointer-events-none"
-                />
+                /> */}
+                <h1 className="text-[150px] font-extrabold -tracking-tight">GUPTA</h1> {/* Replacing img temporarily with heading text */}
               </motion.div>
             </div>
           </div>

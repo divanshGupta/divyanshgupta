@@ -8,10 +8,11 @@ import { useRef, useState } from "react";
 import { lcddot } from "@/fonts";
 import useOnClickOutside from "@/hooks/useOnClickOutside";
 import { useFooter } from "@/contexts/footer-context";
-import { useTransitionRouter } from "next-view-transitions";
+// import { useTransitionRouter } from "next-view-transitions";
 import { pageTransition } from "@/constants/pageTransition";
 import { usePathname } from "next/navigation";
 import useInitialLoad from "@/contexts/initial-load-context";
+import { useRouter } from 'next/navigation';
 
 const navItems = [
   {
@@ -105,13 +106,19 @@ export default function CTAButton() {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4 md:gap-5">
           <div className="h-[60px] w-[60px] md:h-[80px] md:w-[80px] rounded-lg md:rounded-xl bg-neutral-100 overflow-hidden relative">
-            <video
+            {/* <video
               src="/videos/emoji.mov"
               autoPlay
               muted
               loop
               playsInline
               className="absolute top-[52%] left-[47%] -translate-x-1/2 -translate-y-1/2 h-full w-full scale-140"
+            /> */}
+            <Image
+              src="/images/profile.jpg"
+              alt="Emoji"
+              fill
+              className="object-cover object-center"  
             />
           </div>
 
@@ -120,7 +127,7 @@ export default function CTAButton() {
               href="/"
               className="md:text-lg font-semibold text-neutral-100 uppercase"
             >
-              Jason Zubiate
+              Divyansh Gupta
             </Link>
             <Slider />
           </div>
@@ -163,7 +170,7 @@ function Slider() {
           transition={{ duration: 32, ease: "linear", repeat: Infinity }}
           className={`${lcddot.className} text-[10px] md:text-xs tracking-widest text-neutral-300 uppercase whitespace-nowrap pr-1.5`}
         >
-          Creative Design Engineer, Awwwards Stalker, Product Builder, Next.js
+          Frontend Engineer, Awwwards Stalker, Product Builder, Next.js
           Enthusiast,
         </motion.p>
         <motion.p
@@ -172,7 +179,7 @@ function Slider() {
           transition={{ duration: 32, ease: "linear", repeat: Infinity }}
           className={`${lcddot.className} text-[10px] md:text-xs tracking-widest text-neutral-300 uppercase whitespace-nowrap pr-1.5`}
         >
-          Creative Design Engineer, Awwwards Stalker, Product Builder, Next.js
+          Frontend Engineer, Awwwards Stalker, Product Builder, Next.js
           Enthusiast,
         </motion.p>
       </div>
@@ -195,7 +202,7 @@ function NavItem({
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
 }) {
-  const router = useTransitionRouter();
+  const router = useRouter();
   const pathname = usePathname();
 
   return (

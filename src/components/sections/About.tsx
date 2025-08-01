@@ -8,6 +8,8 @@ import { useRef } from "react";
 import { wrapWordsInSpan } from "@/utils/string";
 import useWindowSize from "@/hooks/useWindowSize";
 import Copy from "../layout/Copy";
+import Image from "next/image";
+// import aboutImage from './images/divyansh.jpeg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -133,13 +135,23 @@ export default function About() {
       {/* Desktop video */}
       <div className="hidden lg:block h-full col-span-5">
         <div className="sticky top-[calc(100vh-20vw-172px)] w-full aspect-video rounded-lg lg:rounded-xl overflow-hidden">
-          <video
+          {/* <video
             src="/videos/about-video-compressed.mp4"
             autoPlay
             muted
             loop
             playsInline
             className="pointer-events-none"
+          /> */}
+          {/*temporarily replacing video with image */}
+          <img
+            src="/images/divyansh.jpeg" 
+            alt="About Image"
+            className="object-cover"
+            onError={(e) => {
+              e.target.onerror = null; // prevent infinite loop
+              e.target.src = "/images/other/design.jpg";
+            }}
           />
         </div>
       </div>

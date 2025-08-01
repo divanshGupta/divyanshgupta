@@ -7,8 +7,9 @@ import Copy from "../layout/Copy";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
-import { useTransitionRouter } from "next-view-transitions";
+// import { useTransitionRouter } from "next-view-transitions";
 import { pageTransition } from "@/constants/pageTransition";
+import { useRouter } from 'next/navigation';
 
 export default function Work() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -16,7 +17,7 @@ export default function Work() {
     once: true,
     margin: "0px 0px -55% 0px",
   });
-  const router = useTransitionRouter();
+  const router = useRouter();
 
   return (
     <section

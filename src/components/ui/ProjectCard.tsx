@@ -4,11 +4,12 @@ import { motion, useScroll, useTransform } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef } from "react";
-import { useTransitionRouter } from "next-view-transitions";
+// import { useTransitionRouter } from "next-view-transitions";
 import { lcddot } from "@/fonts";
 import { Project } from "@/data/projects";
 import { pageTransition } from "@/constants/pageTransition";
 import useInitialLoad from "@/contexts/initial-load-context";
+import { useRouter } from 'next/navigation';
 
 export default function ProjectCard({
   project,
@@ -19,7 +20,7 @@ export default function ProjectCard({
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const router = useTransitionRouter();
+  const router = useRouter();
   const { isInitialLoad } = useInitialLoad();
 
   const { scrollYProgress } = useScroll({

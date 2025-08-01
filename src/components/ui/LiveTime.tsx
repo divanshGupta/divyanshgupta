@@ -50,7 +50,7 @@ export default function LiveTime() {
         transition={{ duration: 0.25, ease: "easeOut" }}
         className="font-medium tracking-tight z-999"
       >
-        <span>Los Angeles, CA {hours}</span>
+        <span>Mangalore, Karnataka {hours}</span>
         <span style={{ opacity: showSemicolon ? 1 : 0 }}>:</span>
         <span>{minutes}</span>
       </motion.p>

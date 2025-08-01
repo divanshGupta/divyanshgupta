@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Jason Zubiate | Design Engineer",
-  description: "Jason Zubiate | Software design engineer based in Los Angeles.",
+  title: "Divyansh Gupta | Frontend Developer",
+  description: "Divyansh Gupta | Software developer based in Mangalore.",
 
   // Basic SEO
   keywords: [
@@ -14,24 +14,34 @@ export const metadata: Metadata = {
     "Software engineer",
     "Software developer",
     "Design engineer",
+    "Frontend Developer",
+    "Fullstack developer",
+    "MERN stack developer",
+    "React developer",
+    "Next.js developer",
+    "JavaScript developer",
+    "TypeScript developer",
+    "Node.js developer",
+    "Express.js developer",
+    "Software engineer in Mangalore",
   ],
-  authors: [{ name: "Jason Zubiate", url: "https://itsjay.us" }],
-  creator: "Jason Zubiate",
-  publisher: "Jason Zubiate",
+  authors: [{ name: "Divyansh Gupta", url: "https://divyanshgupta.vercel.app" }],
+  creator: "Divyansh Gupta",
+  publisher: "Divyansh Gupta",
 
   // Open Graph
   openGraph: {
-    title: "Software Design Engineer",
+    title: "Divyansh Gupta - Frontend Developer",
     description:
-      "Jason Zubiate | Software design engineer based in Los Angeles.",
-    url: "https://itsjay.us",
-    siteName: "itsjay.us",
+      "Divyansh Gupta | Software developer based in Mangalore.",
+    url: "https://divyanshgupta.vercel.app",
+    siteName: "divyanshgupta.vercel.app",
     images: [
       {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Jason Zubiate - Design Engineer",
+        alt: "Divyansh Gupta - Frontend Developer",
       },
     ],
     locale: "en_US",
@@ -41,23 +51,23 @@ export const metadata: Metadata = {
   // Twitter
   twitter: {
     card: "summary_large_image",
-    title: "Jason Zubiate - Design Engineer",
+    title: "Divyansh Gupta - Frontend Developer",
     description:
-      "Jason Zubiate | Software design engineer based in Los Angeles.",
-    creator: "@itsjay.us",
+      "Divyansh Gupta | Software developer based in Mangalore.",
+    creator: "@hey_divyansh",
     images: [
       {
         url: "/src/app/opengraph-image.png",
         width: 1200,
         height: 675,
-        alt: "Jason Zubiate - Design Engineer",
+        alt: "Divyansh Gupta - Frontend Developer",
       },
     ],
   },
 
   // Canonical URL
   alternates: {
-    canonical: "https://itsjay.us",
+    canonical: "https://divyanshgupta.vercel.app",
   },
 
   // Robots
@@ -71,26 +81,26 @@ export const metadata: Metadata = {
   },
 
   // Verification
-  verification: {
-    google: "google-site-verification-code-123456",
-    yandex: "yandex-verification-code-123456",
-    yahoo: "yahoo-verification-code-123456",
-    other: {
-      me: ["https://linkedin.com/in/jasonzubiate"],
-    },
-  },
+  // verification: {
+  //   google: "google-site-verification-code-123456",
+  //   yandex: "yandex-verification-code-123456",
+  //   yahoo: "yahoo-verification-code-123456",
+  //   other: {
+  //     me: ["https://www.linkedin.com/in/divyansh-raj-gupta/"],
+  //   },
+  // },
 
   // App links
   appleWebApp: {
-    title: "Jason Zubiate Portfolio",
+    title: "Divyansh Gupta Portfolio",
     statusBarStyle: "default",
   },
 
   // Icons
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: "/images/favicon/favicon.ico",
+    shortcut: "/images/favicon/favicon-16x16.png",
+    apple: "/images/favicon/apple-touch-icon.png",
   },
 
   // Other

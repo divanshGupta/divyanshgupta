@@ -4,14 +4,15 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { useTransitionRouter } from "next-view-transitions";
+// import { useTransitionRouter } from "next-view-transitions";
 import { useFooter } from "@/contexts/footer-context";
 import { pageTransition } from "@/constants/pageTransition";
+import { useRouter } from 'next/navigation';
 
 export default function Footer() {
   const { footerRef } = useFooter();
   const pathname = usePathname();
-  const router = useTransitionRouter();
+  const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -29,9 +30,9 @@ export default function Footer() {
       >
         <motion.h2
           style={{ y }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-bold text-[clamp(100px,14vw,250px)] tracking-tight"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-bold text-[clamp(40px,11vw,200px)] tracking-normal"
         >
-          itsjay.us
+          divyanshgupta.dev
         </motion.h2>
 
         <Link
@@ -43,7 +44,7 @@ export default function Footer() {
               onTransitionReady: pageTransition,
             });
           }}
-          className="col-span-12 lg:col-span-8 flex items-end p-4 lg:p-6 bg-neutral-300/50 backdrop-blur-sm h-[200px] lg:h-[350px] rounded-lg lg:rounded-xl text-[clamp(16px,1.4vw,24px)] font-medium leading-tight cursor-pointer hover:backdrop-blur-md transition-all duration-500"
+          className="col-span-12 lg:col-span-8 flex items-end p-4 lg:p-6 bg-neutral-300/50 backdrop-blur-xs h-[200px] lg:h-[350px] rounded-lg lg:rounded-xl text-[clamp(16px,1.4vw,24px)] font-medium leading-tight cursor-pointer hover:backdrop-blur-md transition-all duration-500"
         >
           Work
         </Link>
@@ -68,7 +69,7 @@ export default function Footer() {
             Contact
           </a>
           <a
-            href="https://github.com/jasonzubiate"
+            href="https://github.com/divanshGupta"
             target="_blank"
             rel="noopener noreferrer"
             className="lg:col-span-12 flex items-end p-4 lg:p-6 bg-neutral-300/50 backdrop-blur-sm h-[120px] lg:h-full rounded-lg lg:rounded-xl text-[clamp(16px,1.4vw,24px)] font-medium leading-tight cursor-pointer hover:backdrop-blur-md transition-all duration-500"
@@ -77,7 +78,7 @@ export default function Footer() {
           </a>
         </div>
         <a
-          href="https://www.instagram.com/itsjay.us/"
+          href="https://www.instagram.com/divansgupta/"
           target="_blank"
           rel="noopener noreferrer"
           className="col-span-6 lg:col-span-4 flex items-end p-4 lg:p-6 bg-neutral-300/50 backdrop-blur-sm h-[120px] lg:h-[350px] rounded-lg lg:rounded-xl text-[clamp(16px,1.4vw,24px)] font-medium leading-tight cursor-pointer hover:backdrop-blur-md transition-all duration-500"
@@ -85,7 +86,7 @@ export default function Footer() {
           Instagram
         </a>
         <a
-          href="https://www.linkedin.com/in/jasonzubiate/"
+          href="https://www.linkedin.com/in/divyansh-raj-gupta/"
           target="_blank"
           rel="noopener noreferrer"
           className="col-span-6 lg:col-span-4 flex items-end p-4 lg:p-6 bg-neutral-300/50 backdrop-blur-sm h-[120px] lg:h-[350px] rounded-lg lg:rounded-xl text-[clamp(16px,1.4vw,24px)] font-medium leading-tight cursor-pointer hover:backdrop-blur-md transition-all duration-500"

@@ -1,5 +1,5 @@
 import "./globals.css";
-import { ViewTransitions } from "next-view-transitions";
+// import { ViewTransitions } from "next-view-transitions";
 import Header from "../components/layout/Header";
 import { ReactLenis } from "lenis/react";
 import { Analytics } from "@vercel/analytics/next";
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ViewTransitions>
+    <>
       <html lang="en">
         <ReactLenis root>
           <InitialLoadProvider>
@@ -40,6 +40,6 @@ export default function RootLayout({
           </InitialLoadProvider>
         </ReactLenis>
       </html>
-    </ViewTransitions>
+    </>
   );
 }

@@ -14,7 +14,7 @@ export default function Header() {
               transition={{ duration: 1, delay: 3, ease: [0.16, 1, 0.3, 1] }}
               className="block font-medium text-[clamp(16px,1.2vw,20px)]"
             >
-              US Based
+              India Based
             </motion.div>
           </span>
           <span className="block overflow-hidden">
@@ -47,7 +47,7 @@ export default function Header() {
               className="block font-medium text-[clamp(16px,1.2vw,20px)]"
             >
               <a
-                href="https://trackstack.app"
+                href="https://jk-adventure.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group"
@@ -55,10 +55,10 @@ export default function Header() {
                 <div className="overflow-hidden h-6">
                   <div className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:-translate-y-1/2">
                     <span className="text-[clamp(16px,1.2vw,20px)] text-neutral-400 font-medium mb-1.5">
-                      Trackstack
+                      JK Adventure
                     </span>
                     <span className="text-[clamp(16px,1.2vw,20px)] text-neutral-400 font-medium mb-1.5">
-                      Trackstack
+                      JK Adventure
                     </span>
                   </div>
                 </div>
@@ -100,7 +100,7 @@ function MailButton() {
       initial={{ opacity: 0, scale: 0.95, y: 16 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ duration: 1, delay: 3, ease: [0.16, 1, 0.3, 1] }}
-      href="mailto:jzubiate.dev@gmail.com"
+      href="mailto:divyanshg556@gmail.com"
       className="fixed right-4 lg:right-8 top-4 lg:top-6 group cursor-pointer"
       aria-label="Send me an email"
       role="button"
