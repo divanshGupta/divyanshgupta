@@ -14,6 +14,7 @@ import { InitialLoadProvider } from "@/contexts/initial-load-context";
 
 export { metadata };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{

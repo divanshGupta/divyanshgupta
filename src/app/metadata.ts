@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "Express.js developer",
     "Software engineer in Mangalore",
   ],
-  authors: [{ name: "Divyansh Gupta", url: "https://divyanshgupta.vercel.app" }],
+  authors: [{ name: "Divyansh Gupta", url: "https://divyanshgupta.vercel.app/" }],
   creator: "Divyansh Gupta",
   publisher: "Divyansh Gupta",
 
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "Divyansh Gupta - Frontend Developer",
     description:
       "Divyansh Gupta | Software developer based in Mangalore.",
-    url: "https://divyanshgupta.vercel.app",
+    url: "https://divyanshgupta.vercel.app/",
     siteName: "divyanshgupta.vercel.app",
     images: [
       {
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
 
   // Canonical URL
   alternates: {
-    canonical: "https://divyanshgupta.vercel.app",
+    canonical: "https://divyanshgupta.vercel.app/",
   },
 
   // Robots
