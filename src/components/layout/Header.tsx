@@ -47,7 +47,7 @@ export default function Header() {
               className="block font-medium text-[clamp(16px,1.2vw,20px)]"
             >
               <a
-                href="https://jk-adventure.vercel.app/"
+                href="https://simtrading.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group"
@@ -55,10 +55,10 @@ export default function Header() {
                 <div className="overflow-hidden h-6">
                   <div className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:-translate-y-1/2">
                     <span className="text-[clamp(16px,1.2vw,20px)] text-neutral-400 font-medium mb-1.5">
-                      JK Tourism
+                      SimTrading
                     </span>
                     <span className="text-[clamp(16px,1.2vw,20px)] text-neutral-400 font-medium mb-1.5">
-                      JK Tourism
+                      SimTrading
                     </span>
                   </div>
                 </div>
@@ -84,7 +84,7 @@ export default function Header() {
               transition={{ duration: 1, delay: 3.1, ease: [0.16, 1, 0.3, 1] }}
               className="block font-medium text-neutral-400 text-[clamp(16px,1.2vw,20px)]"
             >
-              September 2025
+              January 2025
             </motion.div>
           </span>
         </div>

@@ -62,7 +62,7 @@ export default function Hero() {
                   alt="Design"
                   className="h-[15vw] md:h-[16vw] lg:h-[17vw]"
                 /> */}
-                <h1 className="text-[65px] font-extrabold -tracking-tight">Frontend</h1> {/* Replacing img temporarily with heading text */}
+                <h1 className="text-[65px] font-extrabold -tracking-tight">Fullstack</h1> {/* Replacing img temporarily with heading text */}
 
               </motion.div>
             </div>
