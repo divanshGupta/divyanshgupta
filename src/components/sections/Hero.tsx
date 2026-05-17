@@ -128,7 +128,7 @@ export default function Hero() {
                   alt="Design"
                   className="h-[10vw] w-auto object-contain pointer-events-none"
                 /> */}
-                <h1 className="text-[120px] font-extrabold -tracking-tight">Fontend</h1> {/* Replacing img temporarily with heading text */}
+                <h1 className="text-[120px] font-extrabold -tracking-tight">Fullstack</h1> {/* Replacing img temporarily with heading text */}
               </motion.div>
             </div>
             <div className="overflow-hidden">
