@@ -1,19 +1,22 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Divyansh Gupta | Frontend Developer",
-  description: "Divyansh Gupta | Software developer based in Mangalore.",
+  title: "Divyansh Gupta | Fullstack Developer",
+  description: "Divyansh Gupta | Fullstack developer based in Mangalore.",
 
   // Basic SEO
   keywords: [
-    "Sofware design engieer",
-    "Senior software design engineer",
-    "Software engineer",
-    "Frontend engineer",
-    "Software architect",
+    "Divyansh Raj Gupta",
+    "Divyansh Gupta",
+    "Divyansh",
+    "Divansh Gupta",
+    "Divans Gupta",
+    "Divyansh Gupta Developer",
+    "Divyansh Gupta Freelance",
+    "Divyansh Gupta Varanasi",
+    "Divyansh Gupta Backend",
     "Software engineer",
     "Software developer",
-    "Design engineer",
     "Frontend Developer",
     "Fullstack developer",
     "MERN stack developer",
@@ -23,7 +26,6 @@ export const metadata: Metadata = {
     "TypeScript developer",
     "Node.js developer",
     "Express.js developer",
-    "Software engineer in Mangalore",
   ],
   authors: [{ name: "Divyansh Gupta", url: "https://divyanshgupta.vercel.app/" }],
   creator: "Divyansh Gupta",
@@ -31,9 +33,9 @@ export const metadata: Metadata = {
 
   // Open Graph
   openGraph: {
-    title: "Divyansh Gupta - Frontend Developer",
+    title: "Divyansh Gupta - Fullstack Developer",
     description:
-      "Divyansh Gupta | Software developer based in Mangalore.",
+      "Divyansh Gupta | Fullstack developer based in Mangalore.",
     url: "https://divyanshgupta.vercel.app/",
     siteName: "divyanshgupta.vercel.app",
     images: [
@@ -41,7 +43,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Divyansh Gupta - Frontend Developer",
+        alt: "Divyansh Gupta - Fullstack Developer",
       },
     ],
     locale: "en_US",
@@ -51,16 +53,16 @@ export const metadata: Metadata = {
   // Twitter
   twitter: {
     card: "summary_large_image",
-    title: "Divyansh Gupta - Frontend Developer",
+    title: "Divyansh Gupta - Fullstack Developer",
     description:
-      "Divyansh Gupta | Software developer based in Mangalore.",
+      "Divyansh Gupta | Fullstack developer based in Mangalore.",
     creator: "@hey_divyansh",
     images: [
       {
         url: "/src/app/opengraph-image.png",
         width: 1200,
         height: 675,
-        alt: "Divyansh Gupta - Frontend Developer",
+        alt: "Divyansh Gupta - Fullstack Developer",
       },
     ],
   },
